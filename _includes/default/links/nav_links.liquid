@@ -1,3 +1,10 @@
+{%- comment -%} 
+This component defines the layout of link lists that is common to all the website. It is used for horizontal lists and accepts several parameters: 
+- links: name of the file where links are defined
+- fw: class name for specifying font weight
+- divider: if this parameter is present, the list is separated by | 
+{%- endcomment -%}
+
 {%- assign links = include.links -%}
 {%- assign fw = include.fw -%}
 {%- assign url = page.url | remove: '.html' -%}
