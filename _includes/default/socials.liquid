@@ -1,0 +1,5 @@
+{%- for social in site.data.socials -%}
+    <a href="{{ social.link }}" class="text-reset no-underline btn btn-circle me-2 {{include.class}}">
+        <i class="{{ social.icon }}"></i>
+    </a>
+{%- endfor -%}

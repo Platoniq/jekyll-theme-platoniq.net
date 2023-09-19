@@ -1,0 +1,19 @@
+.no-underline {
+  text-decoration: none;
+}
+
+a {
+  color: $white;
+}
+
+a:hover {
+  color: $primary;
+}
+
+.not-current-link {
+  color: rgba($gray-400, 0.7);
+}
+
+.side-nav-item:hover {
+  color: $brand;
+}

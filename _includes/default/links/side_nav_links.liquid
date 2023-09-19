@@ -1,0 +1,21 @@
+{%- assign links = include.links -%}
+
+<div class="pt-5 pb-5">
+    <ul class="navbar-nav justify-content-end flex-grow-1">
+        {%- for link in site.data.[links] -%}
+        <li class="nav-item ">
+            <a class="nav-link side-nav-item" aria-current="page" href="{{ link.link }}">
+                {% if include.header%}
+                    <h4>
+                        {{ link.name }}
+                    </h4>
+                {% else %}
+                    <h5>
+                        {{ link.name }}
+                    </h5>
+                {% endif %}
+            </a>
+        </li>
+        {%- endfor -%}
+    </ul>
+</div>

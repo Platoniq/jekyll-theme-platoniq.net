@@ -1,0 +1,21 @@
+<section class="d-flex justify-content-lg-between p-5 border-bottom border-top hr-light">
+    <div class="me-5 d-block w-50">
+        {%- comment -%} TODO: Replace this with netlify newsletter info {%- endcomment -%}
+        <h6 class="fw-bold">{{site.data.newsletter.title}}</h6>
+        <h4>{{site.data.newsletter.description}}</h4>
+    </div>
+
+    <div class="w-50">
+        <div class="input-group mb-3 ">
+            <input type="text" class="form-control bg-transparent text-white" placeholder="{{ site.data.newsletter.email-label }}"
+                aria-label="Enter e-mail address" aria-describedby="button-addon2">
+            <button class="btn btn-primary text-white" type="button" id="button-addon2">{{ site.data.newsletter.submit-btn }}</button>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input text-white" type="checkbox">
+            <label class="form-check-label" f>
+                {{ site.data.newsletter.policy-label }}
+            </label>
+        </div>
+    </div>
+</section>

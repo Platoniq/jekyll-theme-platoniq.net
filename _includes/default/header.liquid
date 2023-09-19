@@ -1,0 +1,21 @@
+{%- include default/header/menu.liquid -%}
+<nav class="navbar navbar-dark navbar-expand" role="navigation">
+  <div class="container-fluid d-flex justify-content-between flex-row ">
+    <div class="fit-content">
+      <ul class="navbar-nav">
+        {%- include default/header/search.liquid -%}
+        {%- include default/header/locale_selector.liquid -%}
+      </ul>
+    </div>
+    {%- include default/header/logo.liquid -%}
+    <div class="fit-content">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <button class="btn btn-outlined-info btn-menu" id="side-menu-btn">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

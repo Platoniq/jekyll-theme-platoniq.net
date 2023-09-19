@@ -1,0 +1,31 @@
+.form-control {
+  border-radius: 0;
+  padding: 10px;
+}
+
+.form-control::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $white;
+  opacity: 1;
+  /* Firefox */
+}
+
+.form-control:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: $white;
+}
+
+.form-control::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: $white;
+}
+
+.form-check-input {
+  outline: 1px solid $white;
+  background-color: $brand;
+}
+
+.form-check-input[type='checkbox']:checked {
+  background-color: $primary;
+  border-color: $primary;
+}

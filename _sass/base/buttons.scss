@@ -1,0 +1,32 @@
+.btn {
+  border-radius: 0;
+}
+
+.btn-circle {
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  border-radius: 25px;
+  border: 1px solid $grey-light;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.42857;
+}
+
+.btn-circle:hover {
+  border: 1px solid $button-cta-background-color;
+  background-color: $button-cta-background-color;
+}
+
+.btn-menu:hover{
+  border-radius: 25px;
+}
+
+.btn-close{
+  margin-left: auto;
+}
+
+.dark-btn:hover{
+  background-color: $brand;
+  border: 1px solid $brand;
+}
