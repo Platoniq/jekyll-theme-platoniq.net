@@ -11,4 +11,18 @@ $(document).ready(function () {
   }
 
   initializeMenu($("#side-menu-btn"), $("#close-side-menu"), $("#side-menu"));
+
+    /*
+   * 
+   * Search
+   * 
+   */
+
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/search.json'
+  })
+
+
 });
