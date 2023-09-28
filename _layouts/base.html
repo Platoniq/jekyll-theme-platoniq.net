@@ -4,16 +4,12 @@ layout: default
 
 {% include default/header.liquid %}
 
-<section class="pj-page">
-  <article class="container-fluid">
-    <div class="container grid">
-      {{ content }}
 
-      {% if page.call_to_action %}
-        {% include default/call_to_action_block.liquid %}
-      {% endif %}
-    </div>
-  </article>
-</section>
+{{ content }}
+
+{% if page.call_to_action %}
+  {% include default/call_to_action_block.liquid %}
+{% endif %}
+
 
 {% include default/footer.liquid %}
