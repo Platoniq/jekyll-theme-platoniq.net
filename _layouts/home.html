@@ -12,11 +12,9 @@ layout: base
       </div>
       <div class="col-5 pb-3 d-flex">
         <h1 class="align-self-end">{{ site.data.homepage.main.title1 }}</h1>
-        <!-- <h1>We design <span id="adjective">{{ page.adjective }}</span> tools for social change</h1> -->
       </div>
       <div class="col-6">
         <img src="/media/happy-faces.png" alt="happy faces" class="img-fluid">
-        <!-- TODO: make this dinamic  -->
       </div>
     </div>
   </section>
@@ -69,8 +67,8 @@ layout: base
   </section>
   
   <section id="our_values" class="pb-5">
-    <div class="container">
-      <div class="row">
+    <div class="container d-flex flex-column">
+      <div class="d-flex flex-row pb-3">
         <div class="col-8">
           <h1>Our values.</h1>
           <p>{{ page.first_description }}</p>
@@ -80,7 +78,7 @@ layout: base
         </div>
       </div>
   
-      <div class="row">
+      <div class="d-flex flex-row">
         <div class="col">
           <p>{{ page.value }}</p>
         </div>
@@ -95,7 +93,7 @@ layout: base
         </div>
       </div>
   
-      <div class="row">
+      <div class="d-flex flex-row">
         <div class="col">
           <p>{{ page.value }}</p>
         </div>
@@ -113,13 +111,10 @@ layout: base
     </div>
   </section>
   
-  <section id="recent_projects" class="pb-5">
-    <div class="row">
+  <section id="recent_projects">
+    <div class="container d-flex flex-column pb-5">
       <h1>Recent projects.</h1>
     </div>
-  
-  
-  
   </section>
 
 
