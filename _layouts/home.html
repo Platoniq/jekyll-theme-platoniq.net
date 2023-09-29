@@ -2,8 +2,8 @@
 layout: base
 ---
 
-<section id="hero">
-    <div class="container d-flex flex-row gap-4">
+<section id="hero" class="pb-5">
+    <div class="container d-flex flex-row pb-5">
   
       <div class="col d-flex p-0">
         <p id="vertical-text" class="align-self-center">
@@ -21,37 +21,43 @@ layout: base
     </div>
   </section>
   
-  <section id="footer_sub_hero">
+  <section id="footer_sub_hero" class="pb-5">
     <div class="container d-flex flex-column">
-      <div class="row w-1/2">
+      <div class="row w-60 align-self-center gap-3">
         <p>{{ site.data.homepage.main.description1 }}</p>
       </div>
-      <div class="row">
+      <div class="d-flex flex-row p-3">
         <!--for loop -> depends on how many come--> 
-        <div class="col">
-          <img src="/media/symbol-1.png" alt="symbol">
-          <h4>Cultura futura</h4>
-          <a href={{ "/_includes/pages/culture.liquid" | relative_url }}>
-            <button type="button" class="btn no-border" >
-              <img src="/media/arrow.png" alt="arrow" class="img-fluid">
-            </button>
-          </a>
+        <div class="col-3">
+          <div class="w-60">
+            <img src="/media/symbol-1.png" alt="symbol">
+          </div>
+          <div>
+            <h4>Cultura futura</h4>
+          </div>
+          <div>
+            <a href={{ "/_includes/pages/culture.liquid" | relative_url }}>
+              <button type="button" class="btn no-border" >
+                <img src="/media/arrow.png" alt="arrow" class="img-fluid">
+              </button>
+            </a>
+          </div>
         </div>
-        <div class="col">
+        <div class="col-3">
           <img src="/media/symbol-2.png" alt="symbol">
           <h4>Innovación Democráctica Inclusiva</h4>
           <button type="button" class="btn no-border" >
             <img src="/media/arrow.png" alt="arrow" class="img-fluid">
           </button>
         </div>
-        <div class="col">
+        <div class="col-3">
           <img src="/media/symbol-3.png" alt="symbol">
           <h4>Economía Cooperativa</h4>
           <button type="button" class="btn no-border" >
             <img src="/media/arrow.png" alt="arrow" class="img-fluid">
           </button>
         </div>
-        <div class="col">
+        <div class="col-3">
           <img src="/media/symbol-4.png" alt="symbol">
           <h4>Empoderament ciutadá</h4>
           <button type="button" class="btn no-border" >
@@ -62,7 +68,7 @@ layout: base
     </div> 
   </section>
   
-  <section id="our_values">
+  <section id="our_values" class="pb-5">
     <div class="container">
       <div class="row">
         <div class="col-8">
@@ -107,7 +113,7 @@ layout: base
     </div>
   </section>
   
-  <section id="recent_projects">
+  <section id="recent_projects" class="pb-5">
     <div class="row">
       <h1>Recent projects.</h1>
     </div>
