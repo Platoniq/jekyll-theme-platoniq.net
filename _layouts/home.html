@@ -2,108 +2,122 @@
 layout: base
 ---
 
-
-
 <section id="hero">
-  <div class="container d-flex flex-row">
-
-    <div class="col">
-      <p id="vertical-text">{{ site.data.homepage.main.title1 }}</p>
+    <div class="container d-flex flex-row gap-4">
+  
+      <div class="col d-flex p-0">
+        <p id="vertical-text" class="align-self-center">
+          {{ site.data.homepage.main.vertical_value }}
+        </p>
+      </div>
+      <div class="col-5 pb-3 d-flex">
+        <h1 class="align-self-end">{{ site.data.homepage.main.title1 }}</h1>
+        <!-- <h1>We design <span id="adjective">{{ page.adjective }}</span> tools for social change</h1> -->
+      </div>
+      <div class="col-6">
+        <img src="/media/happy-faces.png" alt="happy faces" class="img-fluid">
+        <!-- TODO: make this dinamic  -->
+      </div>
     </div>
-    <div class="col-6">
-      <h1>We design <span id="adjective">{{ page.adjective }}</span> tools for social change</h1>
+  </section>
+  
+  <section id="footer_sub_hero">
+    <div class="container d-flex flex-column">
+      <div class="row w-1/2">
+        <p>{{ site.data.homepage.main.description1 }}</p>
+      </div>
+      <div class="row">
+        <!--for loop -> depends on how many come--> 
+        <div class="col">
+          <img src="/media/symbol-1.png" alt="symbol">
+          <h4>Cultura futura</h4>
+          <a href={{ "/_includes/pages/culture.liquid" | relative_url }}>
+            <button type="button" class="btn no-border" >
+              <img src="/media/arrow.png" alt="arrow" class="img-fluid">
+            </button>
+          </a>
+        </div>
+        <div class="col">
+          <img src="/media/symbol-2.png" alt="symbol">
+          <h4>Innovación Democráctica Inclusiva</h4>
+          <button type="button" class="btn no-border" >
+            <img src="/media/arrow.png" alt="arrow" class="img-fluid">
+          </button>
+        </div>
+        <div class="col">
+          <img src="/media/symbol-3.png" alt="symbol">
+          <h4>Economía Cooperativa</h4>
+          <button type="button" class="btn no-border" >
+            <img src="/media/arrow.png" alt="arrow" class="img-fluid">
+          </button>
+        </div>
+        <div class="col">
+          <img src="/media/symbol-4.png" alt="symbol">
+          <h4>Empoderament ciutadá</h4>
+          <button type="button" class="btn no-border" >
+            <img src="/media/arrow.png" alt="arrow" class="img-fluid">
+          </button>
+        </div>
+      </div>
+    </div> 
+  </section>
+  
+  <section id="our_values">
+    <div class="container">
+      <div class="row">
+        <div class="col-8">
+          <h1>Our values.</h1>
+          <p>{{ page.first_description }}</p>
+        </div>
+        <div class="col">
+          <img src="/media/heart.png" alt="heart" class="img-fluid">
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col">
+          <p>{{ page.value }}</p>
+        </div>
+        <div class="col">
+          <p>{{ page.value }}</p>
+        </div>
+        <div class="col">
+          <p>{{ page.value }}</p>
+        </div>
+        <div class="col">
+          <p>{{ page.value }}</p>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col">
+          <p>{{ page.value }}</p>
+        </div>
+        <div class="col">
+          <p>{{ page.value }}</p>
+        </div>
+        <div class="col">
+          <p>{{ page.value }}</p>
+        </div>
+        <div class="col">
+          <p>{{ page.value }}</p>
+        </div>
+      </div>
+  
     </div>
-    <div class="col-5">
-      <img src="/media/happy-faces.png" alt="happy faces" class="img-fluid">
-    </div>
-
-  </div>
-</section>
-
-<section id="footer_sub_hero">
-  <div class="container d-flex flex-column">
-    <div class="row w-1/2">
-      <p>{{ page.first_description }}</p>
-    </div>
+  </section>
+  
+  <section id="recent_projects">
     <div class="row">
-      <!--for loop -> depends on how many come--> 
-      <div class="col">
-        <img src="/media/symbol-1.png" alt="symbol">
-        <h4>Cultura futura</h4>
-        <img src="/media/arrow.png" alt="arrow" class="img-fluid">
-      </div>
-      <div class="col">
-        <img src="/media/symbol-2.png" alt="symbol">
-        <h4>Innovación Democráctica Inclusiva</h4>
-        <img src="/media/arrow.png" alt="arrow" class="img-fluid">
-      </div>
-      <div class="col">
-        <img src="/media/symbol-3.png" alt="symbol">
-        <h4>Economía Cooperativa</h4>
-        <img src="/media/arrow.png" alt="arrow" class="img-fluid">
-      </div>
-      <div class="col">
-        <img src="/media/symbol-4.png" alt="symbol">
-        <h4>Empoderament ciutadá</h4>
-        <img src="/media/arrow.png" alt="arrow" class="img-fluid">
-      </div>
+      <h1>Recent projects.</h1>
     </div>
-  </div> 
-</section>
-
-<section id="our_values">
-  <div class="container">
-    <div class="row">
-      <div class="col-8">
-        <h1>Our values.</h1>
-        <p>{{ page.first_description }}</p>
-      </div>
-      <div class="col">
-        <img src="/media/heart.png" alt="heart" class="img-fluid">
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col">
-        <p>{{ page.value }}</p>
-      </div>
-      <div class="col">
-        <p>{{ page.value }}</p>
-      </div>
-      <div class="col">
-        <p>{{ page.value }}</p>
-      </div>
-      <div class="col">
-        <p>{{ page.value }}</p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col">
-        <p>{{ page.value }}</p>
-      </div>
-      <div class="col">
-        <p>{{ page.value }}</p>
-      </div>
-      <div class="col">
-        <p>{{ page.value }}</p>
-      </div>
-      <div class="col">
-        <p>{{ page.value }}</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section id="recent_projects">
-  <div class="row">
-    <h1>Recent projects.</h1>
-  </div>
+  
+  
+  
+  </section>
 
 
 
-</section>
 
 
 
