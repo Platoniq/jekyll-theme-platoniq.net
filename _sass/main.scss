@@ -1,7 +1,14 @@
+b, strong {
+    color: #e94668;
+}
+
+h1 strong {
+    font-weight: lighter;
+}
+
 @charset "UTF-8";
 
 @import "base/global",
         "base/buttons",
         "base/links",
         "base/inputs"
-

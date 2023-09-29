@@ -1,0 +1,108 @@
+---
+
+layout: base
+
+---
+
+<section id="hero" class="pb-5">
+    <div class="container d-flex flex-row pb-5">
+  
+      <div class="col d-flex p-0">
+        <p id="vertical-text" class="align-self-center">
+          {{ site.data.homepage.main.vertical_value }}
+        </p>
+      </div>
+      <div class="col-5 pb-3 d-flex">
+        <h1 class="align-self-end">{{ site.data.homepage.main.title1 }}</h1>
+      </div>
+      <div class="col-6">
+        <img src="/media/happy-faces.png" alt="happy faces" class="img-fluid">
+      </div>
+    </div>
+  </section>
+  
+  <section id="footer_sub_hero" class="pb-5">
+    <div class="container d-flex flex-column">
+      <div class="row w-60 align-self-center gap-3">
+        <p>{{ site.data.homepage.main.description1 }}</p>
+      </div>
+      <div class="d-flex flex-row p-3">
+        <!--for loop -> depends on how many come--> 
+        <div class="col-3">
+          <div class="w-60">
+            <img src="/media/symbol-1.png" alt="symbol">
+          </div>
+          <div>
+            <h4>Cultura futura</h4>
+          </div>
+          <div>
+            <a href={{ "/_includes/pages/culture.liquid" | relative_url }}>
+              <button type="button" class="btn no-border" >
+                <img src="/media/arrow.png" alt="arrow" class="img-fluid">
+              </button>
+            </a>
+          </div>
+        </div>
+        <div class="col-3">
+          <img src="/media/symbol-2.png" alt="symbol">
+          <h4>Innovación Democráctica Inclusiva</h4>
+          <button type="button" class="btn no-border" >
+            <img src="/media/arrow.png" alt="arrow" class="img-fluid">
+          </button>
+        </div>
+        <div class="col-3">
+          <img src="/media/symbol-3.png" alt="symbol">
+          <h4>Economía Cooperativa</h4>
+          <button type="button" class="btn no-border" >
+            <img src="/media/arrow.png" alt="arrow" class="img-fluid">
+          </button>
+        </div>
+        <div class="col-3">
+          <img src="/media/symbol-4.png" alt="symbol">
+          <h4>Empoderament ciutadá</h4>
+          <button type="button" class="btn no-border" >
+            <img src="/media/arrow.png" alt="arrow" class="img-fluid">
+          </button>
+        </div>
+      </div>
+    </div> 
+  </section>
+  
+  <section id="our_values" class="pb-5">
+    <div class="container d-flex flex-column">
+      <div class="d-flex flex-row pb-3">
+        <div class="col-8">
+          <h1>Our values.</h1>
+          <p>{{ page.first_description }}</p>
+        </div>
+        <div class="col">
+          <img src="/media/heart.png" alt="heart" class="img-fluid">
+        </div>
+      </div>
+  
+      <div class="d-flex flex-row flex-wrap">
+        {% for description in site.data.homepage.value.descriptions %}
+        <div class="flex-column w-25">
+          <p>{{ description }}</p>
+        </div>
+        {% endfor %}
+      </div>
+  
+    </div>
+  </section>
+  
+  <section id="recent_projects">
+    <div class="container d-flex flex-column pb-5">
+      <h1>Recent projects.</h1>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+

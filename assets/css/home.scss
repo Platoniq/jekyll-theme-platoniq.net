@@ -1,0 +1,19 @@
+---
+---
+$body-color: #ffffff;
+$brand: #462949;
+$primary: #e94668;
+$secondary: #99FF99;
+$grey-light: #F3F3EF;
+$blue: #72D8FF;
+$violet:#B792FF;
+$green: #99FFCC;
+$yellow: #FFFF99;
+
+$cta-background-color: $primary;
+$button-cta-background-color: $cta-background-color;
+
+@import "bootstrap/bootstrap";
+@import "main";
+@import "home";
+

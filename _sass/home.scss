@@ -1,0 +1,9 @@
+#adjective {
+  color: $primary;
+}
+
+#vertical-text {
+  writing-mode: vertical-lr; 
+  text-orientation: mixed;
+  transform: rotate(180deg);
+}
