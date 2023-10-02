@@ -26,43 +26,77 @@ layout: base
       <div class="row w-60 align-self-center gap-3">
         <p>{{ site.data.homepage.main.description1 }}</p>
       </div>
+
       <div class="d-flex flex-row p-3">
         <!--for loop -> depends on how many come--> 
-        <div class="col-3">
-          <div class="w-60">
-            <img src="/media/symbol-1.png" alt="symbol">
+        <div class="d-flex flex-row">
+          <div class="vr m-3"></div>
+          <div class="d-flex flex-column justify-content-around">
+            <div class="w-60 flex-fill">
+              <img src="/media/symbol_cultura.png" class="img-thumbnail bg-transparent border-0" alt="symbol">
+            </div>
+            <div class="flex-fill">
+              <h4>Cultura futura</h4>
+            </div>
+            <div class="flex-fill">
+              <a href={{ "/_includes/pages/culture.liquid" | relative_url }}>
+                <button type="button" class="btn no-border" >
+                  <img src="/media/arrow.png" alt="arrow" class="img-fluid">
+                </button>
+              </a>
+            </div>
           </div>
-          <div>
-            <h4>Cultura futura</h4>
+        </div>
+        
+        <div class="d-flex flex-row">
+          <div class="vr m-3"></div>
+          <div class="d-flex flex-column justify-content-around">
+            <div class="w-60">
+              <img src="/media/symbols_innovacio.png" class="img-thumbnail bg-transparent border-0" alt="symbol">
+            </div>
+            <div class="ps-1">
+              <h4>Innovación Democráctica Inclusiva</h4>
+            </div>
+            <div>
+              <button type="button" class="btn no-border ps-0" >
+                <img src="/media/arrow.png" alt="arrow" class="img-fluid">
+              </button>
+            </div>
           </div>
-          <div>
-            <a href={{ "/_includes/pages/culture.liquid" | relative_url }}>
+        </div>
+        
+        <div class="d-flex flex-row">
+          <div class="vr m-3"></div>
+          <div class="d-flex flex-column justify-content-around">
+            <div class="w-60">
+              <img src="/media/symbol_cooperativa.png" class="img-thumbnail bg-transparent border-0" alt="symbol">
+            </div>
+            <div>
+              <h4>Economía Cooperativa</h4>
+            </div>
+            <div>
               <button type="button" class="btn no-border" >
                 <img src="/media/arrow.png" alt="arrow" class="img-fluid">
               </button>
-            </a>
+            </div>
           </div>
         </div>
-        <div class="col-3">
-          <img src="/media/symbol-2.png" alt="symbol">
-          <h4>Innovación Democráctica Inclusiva</h4>
-          <button type="button" class="btn no-border" >
-            <img src="/media/arrow.png" alt="arrow" class="img-fluid">
-          </button>
-        </div>
-        <div class="col-3">
-          <img src="/media/symbol-3.png" alt="symbol">
-          <h4>Economía Cooperativa</h4>
-          <button type="button" class="btn no-border" >
-            <img src="/media/arrow.png" alt="arrow" class="img-fluid">
-          </button>
-        </div>
-        <div class="col-3">
-          <img src="/media/symbol-4.png" alt="symbol">
-          <h4>Empoderament ciutadá</h4>
-          <button type="button" class="btn no-border" >
-            <img src="/media/arrow.png" alt="arrow" class="img-fluid">
-          </button>
+
+        <div class="d-flex flex-row">
+          <div class="vr m-3"></div>
+          <div class="d-flex flex-column justify-content-around">
+            <div class="w-60">
+              <img src="/media/symbol_empoderament.png" class="img-thumbnail bg-transparent border-0" alt="symbol">
+            </div>
+            <div>
+              <h4>Empoderament ciutadá</h4>
+            </div>
+            <div>
+              <button type="button" class="btn no-border" >
+                <img src="/media/arrow.png" alt="arrow" class="img-fluid">
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div> 
