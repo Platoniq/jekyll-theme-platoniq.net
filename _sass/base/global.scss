@@ -1,5 +1,6 @@
 html {
   background-color: $brand;
+  font-size: 1rem;
 }
 
 body {
@@ -31,4 +32,11 @@ body {
 .side-nav-item{
   padding: 0;
 }
+
+/* @include media-breakpoint-down(md) {
+  html {
+    font-size: 2rem;
+  }
+} */
+
 

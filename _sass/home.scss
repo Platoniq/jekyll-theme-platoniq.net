@@ -1,3 +1,5 @@
+/* @import "assets/css/home.scss"; */
+
 #adjective {
   color: $primary;
 }
@@ -7,3 +9,21 @@
   text-orientation: mixed;
   transform: rotate(180deg);
 }
+
+.icon-width{
+  width: 20%;
+}
+
+.value { 
+  width: 100%
+}
+
+/* @include media-breakpoint-up(lg) {
+  .icon-width{ 
+    width: 60%;
+  }
+
+  .value{
+    width: 25%;
+  }
+} */
