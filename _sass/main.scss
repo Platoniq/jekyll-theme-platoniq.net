@@ -10,6 +10,20 @@ h1 strong {
     min-width: 50%;
 }
 
+.form-control {
+    background-color: $violet;
+}
+
+.contact_form {
+    width: 100%
+}
+
+@include media-breakpoint-up(lg) {
+    .contact_form {
+        width: 40%
+    }
+}
+
 @charset "UTF-8";
 
 @import "base/global",
