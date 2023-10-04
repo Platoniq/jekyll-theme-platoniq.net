@@ -2,11 +2,9 @@
   color: $primary;
 }
 
-/* #vertical-text {
-  writing-mode: vertical-lr; 
-  text-orientation: mixed;
-  transform: rotate(180deg);
-} */
+#vertical-text {
+  font-style: italic;
+}
 
 .icon-width{
   width: 20%;
@@ -29,6 +27,7 @@
     writing-mode: vertical-lr; 
     text-orientation: mixed;
     transform: rotate(180deg);
+    font-style: normal;
   }
 }
 

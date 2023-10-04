@@ -32,16 +32,17 @@ layout: base
         <div class="d-flex flex-row">
           <div class="vr m-3"></div>
           <div class="d-flex flex-lg-column flex-row justify-content-around align-items-lg-start align-items-center">
-            <div class="icon-width lex-fill">
+            <div class="icon-width">
               <img src={{ page.img }} class="img-thumbnail bg-transparent border-0" alt="symbol">
             </div>
             <div class="d-flex flex-fill">
               <h4>{{page.title}}</h4>
             </div>
-            <div class="d-flex flex-fill justify-content-lg-start justify-content-end ">
+            <div class="d-flex flex-fill justify-content-lg-start justify-content-end align-items-end">
               <a href={{ page.link | relative_url }}>
-                <button type="button" class="btn no-border" >
-                  <img src="/media/arrow.png" alt="arrow" class="img-fluid">
+                <button type="button" class="btn no-border">
+                  <i class="fa-solid fa-arrow-right"></i>
+                  <!-- <img src="/media/arrow.png" alt="arrow" class="img-fluid"> -->
                 </button>
               </a>
             </div>
@@ -80,6 +81,17 @@ layout: base
     <div class="container-lg d-flex flex-column pb-lg-5">
       <h1>{{ site.data.homepage.main.projects_title }}</h1>
     </div>
+
+    <!-- <div class="container-lg d-flex flex-column">
+      <div class="d-flex flex-lg-row flex-column pb-lg-5">
+        <p>Project 1</p>
+        <p>Image</p>
+      </div>
+      <div class="d-flex flex-lg-row flex-column pb-lg-5">
+        <p class="order-lg-2">Project 2</p>
+        <p class="order-lg-1">Image</p>
+      </div>
+    </div> -->
   </section>
 
   <section id="our_journal" class="pb-lg-5 pb-3">
