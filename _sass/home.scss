@@ -1,14 +1,12 @@
-/* @import "assets/css/home.scss"; */
-
 #adjective {
   color: $primary;
 }
 
-#vertical-text {
+/* #vertical-text {
   writing-mode: vertical-lr; 
   text-orientation: mixed;
   transform: rotate(180deg);
-}
+} */
 
 .icon-width{
   width: 20%;
@@ -18,7 +16,7 @@
   width: 100%
 }
 
-/* @include media-breakpoint-up(lg) {
+@include media-breakpoint-up(lg) {
   .icon-width{ 
     width: 60%;
   }
@@ -26,4 +24,10 @@
   .value{
     width: 25%;
   }
-} */
+
+  #vertical-text {
+    writing-mode: vertical-lr; 
+    text-orientation: mixed;
+    transform: rotate(180deg);
+  }
+}
