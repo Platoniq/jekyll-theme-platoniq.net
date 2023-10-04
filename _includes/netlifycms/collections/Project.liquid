@@ -2,7 +2,7 @@
   - name: projects
     label: Proyectos
     label_singular: Proyecto
-    folder: "_projects/"
+    folder: "_projects"
     i18n:
       structure: multiple_folders
       locales: *locales
@@ -10,9 +10,52 @@
     editor:
       preview: true
     fields:
+
+      - label: Layout
+        name: layout
+        widget: hidden
+        default: project # to use our project html template
+        i18n: duplicate
+
       - label: Título
         name: title
         widget: string
         i18n: translate
+
+      - label: Subtítulo
+        name: subtitle
+        widget: markdown
+        i18n: translate
+
+      - label: Imagen
+        name: image
+        widget: object
+        i18n: true
+        fields:
+          - label: Imagen
+            name: path
+            widget: image
+            choose_url: false
+            default: "/media/heart.png"              # we can use a default image
+            media_library: { config: { multiple: false } }
+            media_folder: "/media/projects/hero"                 # folder for the hero image of a project
+            i18n: duplicate
+          - label: Texto alternativo a la imagen
+            name: alt
+            widget: string
+            i18n: translate
+
+
+      - label: Fecha
+        name: date
+        widget: datetime
+        i18n: duplicate
+
+      - label: Descripción
+        name: description
+        widget: markdown
+        i18n: translate
+
+    
 
   {% endraw %}
