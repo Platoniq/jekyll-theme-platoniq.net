@@ -1,0 +1,31 @@
+{% if jekyll.environment == "development" %}
+local_backend: true
+{% endif %}
+
+{% raw %}
+backend:
+{% endraw %}
+  name: {{ page.backend.name | default: "git-gateway" }}
+  #repo: {{ page.backend.repo | default: "Platoniq/platoniq.net" }}
+  branch: {{ page.backend.branch | default: "pages" }}
+  squash_merges: {{ page.backend.squash_merges | default: true }}
+{% raw %}
+locale: es
+
+media_folder: "media"
+
+# publish_mode: editorial_workflow # Enable drafts
+
+i18n:
+  # Required and can be one of multiple_folders, multiple_files or single_file
+  # multiple_folders - persists files in `<folder>/<locale>/<slug>.<extension>`
+  # multiple_files - persists files in `<folder>/<slug>.<locale>.<extension>`
+  # single_file - persists a single file in `<folder>/<slug>.<extension>`
+  structure: multiple_folders
+{% endraw %}
+  # Required - a list of locales to show in the editor UI
+  locales: &locales [es, en]
+
+  # Optional, defaults to the first item in locales.
+  # The locale to be used for fields validation and as a baseline for the entry.
+  default_locale: {{ page.i18n.default_locale | default: "es" }}

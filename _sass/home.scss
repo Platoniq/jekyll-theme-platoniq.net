@@ -3,7 +3,32 @@
 }
 
 #vertical-text {
-  writing-mode: vertical-lr; 
-  text-orientation: mixed;
-  transform: rotate(180deg);
+  font-style: italic;
 }
+
+.icon-width{
+  width: 20%;
+}
+
+.value { 
+  width: 100%
+}
+
+@include media-breakpoint-up(lg) {
+  .icon-width{ 
+    width: 60%;
+  }
+
+  .value{
+    width: 25%;
+  }
+
+  #vertical-text {
+    writing-mode: vertical-lr; 
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    font-style: normal;
+  }
+}
+
+@import "main"

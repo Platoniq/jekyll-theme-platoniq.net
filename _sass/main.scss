@@ -6,6 +6,24 @@ h1 strong {
     font-weight: lighter;
 }
 
+.email_footer{
+    min-width: 50%;
+}
+
+.form-control {
+    background-color: $input-background;
+}
+
+.contact_form {
+    width: 100%
+}
+
+@include media-breakpoint-up(lg) {
+    .contact_form {
+        width: 40%
+    }
+}
+
 @charset "UTF-8";
 
 @import "base/global",
