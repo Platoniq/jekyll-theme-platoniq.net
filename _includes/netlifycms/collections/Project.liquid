@@ -1,0 +1,18 @@
+{% raw %}
+  - name: projects
+    label: Proyectos
+    label_singular: Proyecto
+    folder: "_projects/"
+    i18n:
+      structure: multiple_folders
+      locales: *locales
+    create: true
+    editor:
+      preview: true
+    fields:
+      - label: Título
+        name: title
+        widget: string
+        i18n: translate
+
+  {% endraw %}
