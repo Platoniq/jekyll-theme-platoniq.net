@@ -85,7 +85,7 @@ layout: base
       {% for proyect in site.data.proyect.proyects limit:2 %}
         {% assign value = forloop.index | modulo:2 %}
         {% if value == 1 %}
-          <div class="d-flex flex-lg-row flex-column  align-items-lg-end justify-content-end pb-lg-5">
+          <div class="d-flex flex-lg-row flex-column align-items-lg-end justify-content-end pb-lg-5">
             <div class="position-relative w-60">
               <img src="/media/img-line.png" alt="image decorator" class="img-fluid project_img_line_preview_odd">
               <img src={{ proyect.img }} alt="project img" class="img-fluid">
