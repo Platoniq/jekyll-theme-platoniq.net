@@ -8,14 +8,14 @@ layout: base
     <div class="container-lg d-flex flex-wrap flex-row pb-lg-5">
   
       <div class="col-lg-5 col-8 pb-3 order-lg-2">
-        <h1 class="align-self-end">{{ site.data.homepage.main.title1 }}</h1>
+        <h1 class="align-self-end">{{ site.data.es.homepage.main.title1 }}</h1>
       </div>
       <div class="col-lg-6 col-4 order-lg-3">
         <img src="/media/happy-faces.png" alt="happy faces" class="img-fluid">
       </div>
       <div class="d-flex col-lg col-12 p-0 order-lg-1">
         <p id="vertical-text" class="align-self-center">
-          {{ site.data.homepage.main.vertical_value }}
+          {{ site.data.es.homepage.main.vertical_value }}
         </p>
       </div>
     </div>
@@ -24,11 +24,11 @@ layout: base
   <section id="footer_sub_hero" class="pb-lg-5 pb-3">
     <div class="container-lg d-flex flex-column pb-lg-5">
       <div class="row w-lg-60 align-self-center gap-3">
-        <p>{{ site.data.homepage.main.description1 }}</p>
+        <p>{{ site.data.es.homepage.main.description1 }}</p>
       </div>
 
       <div class="d-flex flex-lg-row flex-column p-3">
-        {% for page in site.data.homepage.pages.pages %}
+        {% for page in site.data.es.homepage.pages.pages %}
         <div class="d-flex flex-row">
           <div class="vr m-3"></div>
           <div class="d-flex flex-lg-column flex-row justify-content-around align-items-lg-start align-items-center">
@@ -57,8 +57,8 @@ layout: base
     <div class="container-lg d-flex flex-column pb-lg-5">
       <div class="d-flex flex-row pb-3 align-items-center">
         <div class="col-8">
-          <h1>{{ site.data.homepage.main.values_title}}</h1>
-          <p>{{ site.data.homepage.main.values_description }}</p>
+          <h1>{{ site.data.es.homepage.main.values_title}}</h1>
+          <p>{{ site.data.es.homepage.main.values_description }}</p>
         </div>
         <div class="col">
           <img src="/media/heart.png" alt="heart" class="img-fluid">
@@ -66,7 +66,7 @@ layout: base
       </div>
   
       <div class="d-flex flex-row flex-wrap">
-        {% for description in site.data.homepage.value.descriptions %}
+        {% for description in site.data.es.homepage.value.descriptions %}
         <div class="flex-column value">
           <p>{{ description }}</p>
           <hr class="hr me-lg-3"></hr>
@@ -79,7 +79,7 @@ layout: base
   
   <section id="recent_projects" class="pb-lg-5 pb-3">
     <div class="container-lg d-flex flex-column pb-lg-5">
-      <h1>{{ site.data.homepage.main.projects_title }}</h1>
+      <h1>{{ site.data.es.homepage.main.projects_title }}</h1>
     </div>
     <div class="container-lg d-flex flex-column">
       {% for proyect in site.data.proyect.proyects limit:2 %}
@@ -116,13 +116,13 @@ layout: base
 
   <section id="our_journal" class="pb-lg-5 pb-3">
     <div class="container-lg d-flex flex-column pb-lg-5">
-      <h1>{{ site.data.homepage.main.journal_title }}</h1>
+      <h1>{{ site.data.es.homepage.main.journal_title }}</h1>
     </div>
   </section>
 
   <section id="work_with" class="pb-lg-5 pb-3">
     <div class="container-lg d-flex flex-column pb-lg-5">
-      <h1>{{ site.data.homepage.main.who_title }}</h1>
+      <h1>{{ site.data.es.homepage.main.who_title }}</h1>
     </div>
   </section>
 
