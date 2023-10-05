@@ -16,4 +16,19 @@ layout: base
     </div>
 
   </div>
+
+
+  <section id="hero" class="pb-lg-5 pb-3">
+    <div class="container-lg d-flex flex-wrap flex-row pb-lg-5">
+  
+      <div class="col-lg-5 col-8 pb-3 order-lg-2">
+        {% for proyect in site.data.proyect.proyects %}
+          <h1 class="align-self-end">{{ proyect.title }}</h1>
+          {% endfor %}
+      </div>
+      <div class="col-lg-6 col-4 order-lg-3">
+        <img src="{{ project.image.path | relative_url }}" alt="{{ project.image.alt }}" class="img-fluid">
+      </div>
+    </div>
+  </section>
 </section>

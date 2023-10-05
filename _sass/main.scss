@@ -18,11 +18,37 @@ h1 strong {
     width: 100%
 }
 
+.goteo-logo {
+    width: 30%;
+}
+
+
+.project_img_line_preview_odd {
+    position: absolute;
+    left: -5%;
+    top: -5%;
+    width: 20%;
+    transform: rotate(90deg);
+}
+
+.project_img_line_preview_even {
+    position: absolute;
+    right: -5%;
+    top: -5%;
+    width: 20%;
+}
+
 @include media-breakpoint-up(lg) {
     .contact_form {
         width: 40%
     }
+
+    .goteo-logo {
+        width: 15%;
+    }
+    
 }
+
 
 @charset "UTF-8";
 

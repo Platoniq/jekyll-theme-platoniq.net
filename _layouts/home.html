@@ -81,17 +81,37 @@ layout: base
     <div class="container-lg d-flex flex-column pb-lg-5">
       <h1>{{ site.data.homepage.main.projects_title }}</h1>
     </div>
+    <div class="container-lg d-flex flex-column">
+      {% for proyect in site.data.proyect.proyects limit:2 %}
+        {% assign value = forloop.index | modulo:2 %}
+        {% if value == 1 %}
+          <div class="d-flex flex-lg-row flex-column  align-items-lg-end justify-content-end pb-lg-5">
+            <div class="position-relative w-60">
+              <img src="/media/img-line.png" alt="image decorator" class="img-fluid project_img_line_preview_odd">
+              <img src={{ proyect.img }} alt="project img" class="img-fluid">
+            </div>
+            <div class="d-flex flex-column p-5 flex-fill">
+              <p>Open project</p>
+              <h4 >{{ proyect.title }}</h4>
+              <p>Aqui va la descripción del projecto</p>
+            </div>
+          </div>
+        {% else %}
+          <div class="d-flex flex-lg-row-reverse flex-column pb-lg-5">
+            <div class="position-relative w-60">
+              <img src="/media/img-line.png" alt="image decorator" class="img-fluid project_img_line_preview_even">
+              <img src={{ proyect.img }} alt="project img" class="img-fluid">
+            </div>
+            <div class="d-flex flex-column flex-fill">
+              <p>Open project</p>
+              <h4 >{{ proyect.title }}</h4>
+              <p>Aqui va la descripción del projecto</p>
+            </div>
+          </div>
+        {% endif %}
 
-    <!-- <div class="container-lg d-flex flex-column">
-      <div class="d-flex flex-lg-row flex-column pb-lg-5">
-        <p>Project 1</p>
-        <p>Image</p>
-      </div>
-      <div class="d-flex flex-lg-row flex-column pb-lg-5">
-        <p class="order-lg-2">Project 2</p>
-        <p class="order-lg-1">Image</p>
-      </div>
-    </div> -->
+      {% endfor %}
+    </div>
   </section>
 
   <section id="our_journal" class="pb-lg-5 pb-3">
