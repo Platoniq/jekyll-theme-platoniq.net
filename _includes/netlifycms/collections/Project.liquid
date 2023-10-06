@@ -9,12 +9,25 @@
     create: true
     editor:
       preview: true
+    sortable_fields: ["date"]
     fields:
 
       - label: Layout
         name: layout
         widget: hidden
         default: project # to use our project html template
+        i18n: duplicate
+
+      - label: Slug
+        name: slug
+        hint: "Identificador único, compartido entre los distintos idiomas, que se usa para componer la URL"
+        widget: string
+        i18n: duplicate
+
+      - label: Estado
+        name: state
+        widget: select
+        options: ['Open project', 'Closed project']
         i18n: duplicate
 
       - label: Título
@@ -27,8 +40,8 @@
         widget: markdown
         i18n: translate
 
-      - label: Imagen
-        name: image
+      - label: Banner image
+        name: banner_image
         widget: object
         i18n: true
         fields:
@@ -45,7 +58,6 @@
             widget: string
             i18n: translate
 
-
       - label: Fecha
         name: date
         widget: datetime
@@ -56,6 +68,44 @@
         widget: markdown
         i18n: translate
 
-    
+      - label: Presupuesto
+        name: budget
+        widget: string # o number??
+        i18n: duplicate
+
+      - label: Porcentaje privado
+        name: private_percentage
+        widget: string # o number??
+        i18n: duplicate
+
+      - label: Porcentaje público
+        name: public_percentage
+        widget: string # o number??
+        i18n: duplicate
+
+      - label: Porcentaje en busca de financiación
+        name: looking_finance_percentage
+        widget: string # o number??
+        i18n: duplicate
+
+      - name: Servicios
+        label: services
+        widget: relation
+        collection: services
+        searchFields: [title]
+        valueField: title
+        multiple: true
+
+      - name: Categorías
+        label: categories
+        widget: relation
+        collection: categories
+        searchFields: [title]
+        valueField: title
+        multiple: true
+
+        # FALTAN COLABORADORES, Y TEXTO PARA EL CONTENIDO EN SI
 
   {% endraw %}
+
+

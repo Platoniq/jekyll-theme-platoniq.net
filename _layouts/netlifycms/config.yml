@@ -3,6 +3,8 @@ layout: none
 dir_path: netlifycms/collections/
 collections:
   - Project.liquid
+  - Service.liquid
+  - Category.liquid
 ---
 {% assign path = layout.dir_path | append: "Site.yml" %}
 
