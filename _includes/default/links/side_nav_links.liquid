@@ -5,20 +5,21 @@ This component defines the layout of the links in the side menu. It accepts the 
 {%- endcomment -%}
 
 {%- assign links = include.links -%}
+{%- assign locale = page.locale -%}
 
 <div class="pt-5 pb-5">
     <ul class="navbar-nav justify-content-end flex-grow-1">
-        {%- for link in site.data.[links] -%}
+        {%- for link in site.data[locale].[links] -%}
         <li class="nav-item ">
             <a class="nav-link side-nav-item" aria-current="page" href="{{ link.link }}">
                 {% if include.header%}
                     <h4>
                         {{ link.name }}
                     </h4>
-                {% else %}
+               {% comment %}  {% else %}
                     <h5>
                         {{ link.name }}
-                    </h5>
+                    </h5> {% endcomment %}
                 {% endif %}
             </a>
         </li>
