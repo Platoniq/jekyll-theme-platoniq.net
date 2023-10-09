@@ -6,20 +6,16 @@
           {{ page.locale | upcase }}
         </span>
     </a>
-    {% comment %} <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <li><a class="dropdown-item" href="#">Catalan</a></li>
-        <li><a class="dropdown-item" href="#">Castellano</a></li>
-        <li><a class="dropdown-item" href="#">Ingles</a></li>
-    </ul> {% endcomment %}
-    <ul class="pj-language-menu">
-    {% for translation in page_translations %}
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+      {% for translation in page_translations %}
         <li>
-        <a href="{{ translation.url | relative_url }}" class="{% if page.locale == translation.locale %}active{% endif %}">
+        <a href="{{ translation.url | relative_url }}">
             {{ site.data[page.locale].global.locales[translation.locale] }}
         </a>
         </li>
-    {% endfor %}
-    </ul>
+      {% endfor %}
+    </ul> 
+
 </li>
 
 {% comment %} <div class="header__locale-selector">
