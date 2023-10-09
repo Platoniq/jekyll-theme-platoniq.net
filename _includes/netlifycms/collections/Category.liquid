@@ -1,0 +1,70 @@
+{% raw %}
+  - name: categories
+    label: Categories
+    label_singular: Category
+    folder: "_categories"
+    i18n:
+      structure: multiple_folders
+      locales: *locales
+    create: true
+    editor:
+      preview: true
+    fields:
+
+      - label: Layout
+        name: layout
+        widget: hidden
+        default: category
+        i18n: duplicate
+
+      - label: Slug
+        name: slug
+        hint: "Identificador único, compartido entre los distintos idiomas, que se usa para componer la URL"
+        widget: string
+        i18n: duplicate
+
+      - label: Título
+        name: title
+        widget: string
+        i18n: translate
+
+      - label: Subtítulo
+        name: subtitle
+        widget: markdown
+        i18n: translate
+
+      - label: Banner symbol
+        name: symbol
+        widget: object
+        i18n: true
+        fields:
+          - label: Imagen
+            name: path
+            widget: image
+            choose_url: false
+            default: "/media/heart.png"            
+            media_library: { config: { multiple: false } }
+            media_folder: "/media/categories"                 
+            i18n: duplicate
+          - label: Texto alternativo a la imagen
+            name: alt
+            widget: string
+            i18n: translate
+
+      - name: Servicios
+        label: services
+        widget: relation
+        collection: services
+        searchFields: [title]
+        valueField: title
+        multiple: true
+
+      - name: Proyectos
+        label: projects
+        widget: relation
+        collection: projects
+        searchFields: [title]
+        valueField: title
+        multiple: true
+
+{% endraw %}

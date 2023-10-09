@@ -1,0 +1,48 @@
+{% raw %}
+  - name: services
+    label: Services
+    label_singular: Service
+    folder: "_services"
+    i18n:
+      structure: multiple_folders
+      locales: *locales
+    create: true
+    editor:
+      preview: true
+    fields:
+
+      #  NO SE SI ES NECESARIO
+      - label: Slug
+        name: slug
+        hint: "Identificador único, compartido entre los distintos idiomas, que se usa para componer la URL"
+        widget: string
+        i18n: duplicate
+
+      - label: Título
+        name: title
+        widget: string
+        i18n: translate
+
+      - label: Descripción
+        name: description
+        widget: markdown
+        i18n: translate
+
+      - name: Categorías
+        label: categories
+        widget: relation
+        collection: categories
+        searchFields: [title]
+        valueField: title
+        multiple: true
+
+      - name: Proyectos
+        label: projects
+        widget: relation
+        collection: projects
+        searchFields: [title]
+        valueField: title
+        multiple: true
+
+
+{% endraw %}

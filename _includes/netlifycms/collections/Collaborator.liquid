@@ -1,0 +1,46 @@
+{% raw %}
+  - name: collaborators
+    label: Collaborators
+    label_singular: Collaborator
+    folder: "_collaborators"
+    i18n:
+      structure: multiple_folders
+      locales: *locales
+    create: true
+    editor:
+      preview: true
+    sortable_fields: ["date"]
+    fields:
+
+    # NO SE SI ES NECESARIO
+    - label: Slug
+      name: slug
+      hint: "Identificador único, compartido entre los distintos idiomas, que se usa para componer la URL"
+      widget: string          
+      i18n: duplicate
+
+    - label: Nombre
+      name: title
+      widget: string
+      i18n: duplicate
+
+    - label: Logo
+      name: logo
+      widget: object
+      i18n: true
+      fields:
+        - label: Imagen
+          name: path
+          widget: image
+          choose_url: false
+          default: "/media/heart.png"            
+          media_library: { config: { multiple: false } }
+          media_folder: "/media/collaborators"                 
+          i18n: duplicate
+        - label: Texto alternativo a la imagen
+          name: alt
+          widget: string
+          i18n: translate
+
+
+{% endraw %}

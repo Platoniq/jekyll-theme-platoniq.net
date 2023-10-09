@@ -9,12 +9,25 @@
     create: true
     editor:
       preview: true
+    sortable_fields: ["date"]
     fields:
 
       - label: Layout
         name: layout
         widget: hidden
         default: project # to use our project html template
+        i18n: duplicate
+
+      - label: Slug
+        name: slug
+        hint: "Identificador único, compartido entre los distintos idiomas, que se usa para componer la URL"
+        widget: string
+        i18n: duplicate
+
+      - label: Estado
+        name: state
+        widget: select
+        options: ['Open project', 'Closed project']
         i18n: duplicate
 
       - label: Título
@@ -27,8 +40,8 @@
         widget: markdown
         i18n: translate
 
-      - label: Imagen
-        name: image
+      - label: Banner image
+        name: banner_image
         widget: object
         i18n: true
         fields:
@@ -45,7 +58,6 @@
             widget: string
             i18n: translate
 
-
       - label: Fecha
         name: date
         widget: datetime
@@ -56,6 +68,63 @@
         widget: markdown
         i18n: translate
 
-    
+      - label: Presupuesto
+        name: budget
+        widget: string # o number??
+        i18n: duplicate
 
-  {% endraw %}
+      - label: Porcentaje privado
+        name: private_percentage
+        widget: string # o number??
+        i18n: duplicate
+
+      - label: Porcentaje público
+        name: public_percentage
+        widget: string # o number??
+        i18n: duplicate
+
+      - label: Porcentaje en busca de financiación
+        name: looking_finance_percentage
+        widget: string # o number??
+        i18n: duplicate
+
+      - label: Servicios
+        name: services
+        widget: relation
+        collection: services
+        search_fields: [title]
+        value_field: title
+        multiple: true
+
+      - label: Categorías
+        name: categories
+        widget: relation
+        collection: categories
+        search_fields: [title]
+        value_field: title
+        multiple: true
+
+      - label: Miembros
+        name: members
+        widget: relation
+        collection: members
+        search_fields: [title]
+        value_field: title
+        multiple: true
+
+      - label: Colaboradores
+        name: collaborators
+        widget: relation
+        collection: collaborators
+        search_fields: [title]
+        value_field: title
+        multiple: true
+
+      - label: Contenido de la página
+        name: body
+        widget: markdown
+        i18n: true
+
+{% endraw %}
+
+
