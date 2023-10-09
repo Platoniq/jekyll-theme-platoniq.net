@@ -49,7 +49,7 @@ h1 strong {
 .project_header_icon {
     z-index: 101;
     width: 50%;
-    top: 0px;
+    top: 10%;
     right: 0px;
 }
 
@@ -65,6 +65,15 @@ h1 strong {
 
 .project-page-title {
     font-size: 4rem;
+}
+
+.quote_icon_front {
+    width: 15%;
+}
+
+.quote_icon_back {
+    width: 10%;
+    transform: rotate(180deg);
 }
 
 @include media-breakpoint-up(lg) {

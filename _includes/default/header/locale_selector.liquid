@@ -2,7 +2,9 @@
 <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
         aria-expanded="false">
-        Cat
+        <span class="burger__label">
+          {{ page.locale | upcase }}
+        </span>
     </a>
     {% comment %} <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
         <li><a class="dropdown-item" href="#">Catalan</a></li>
@@ -13,14 +15,14 @@
     {% for translation in page_translations %}
         <li>
         <a href="{{ translation.url | relative_url }}" class="{% if page.locale == translation.locale %}active{% endif %}">
-            {{ site.data.i18n[page.locale].global.locales[translation.locale] }}
+            {{ site.data[page.locale].global.locales[translation.locale] }}
         </a>
         </li>
     {% endfor %}
     </ul>
 </li>
 
-<div class="header__locale-selector">
+{% comment %} <div class="header__locale-selector">
     <button type="button" class="burger">
       <span class="burger__label">
         {{ page.locale | upcase }}
@@ -44,4 +46,4 @@
         </li>
       {% endfor %}
     </ul>
-  </div>
+  </div> {% endcomment %}
