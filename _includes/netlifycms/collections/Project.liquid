@@ -88,24 +88,43 @@
         widget: string # o number??
         i18n: duplicate
 
-      - name: Servicios
-        label: services
+      - label: Servicios
+        name: services
         widget: relation
         collection: services
-        searchFields: [title]
-        valueField: title
+        search_fields: [title]
+        value_field: title
         multiple: true
 
-      - name: Categorías
-        label: categories
+      - label: Categorías
+        name: categories
         widget: relation
         collection: categories
-        searchFields: [title]
-        valueField: title
+        search_fields: [title]
+        value_field: title
         multiple: true
 
-        # FALTAN COLABORADORES, Y TEXTO PARA EL CONTENIDO EN SI
+      - label: Miembros
+        name: members
+        widget: relation
+        collection: members
+        search_fields: [title]
+        value_field: title
+        multiple: true
 
-  {% endraw %}
+      - label: Colaboradores
+        name: collaborators
+        widget: relation
+        collection: collaborators
+        search_fields: [title]
+        value_field: title
+        multiple: true
+
+      - label: Contenido de la página
+        name: body
+        widget: markdown
+        i18n: true
+
+{% endraw %}
 
 

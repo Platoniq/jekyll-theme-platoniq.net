@@ -1,0 +1,78 @@
+{% raw %}
+  - name: members
+    label: Member
+    label_singular: Member
+    folder: "_members"
+    i18n:
+      structure: multiple_folders
+      locales: *locales
+    create: true
+    editor:
+      preview: true
+    fields:
+
+      #  NO SE SI ES NECESARIO
+      - label: Slug
+        name: slug
+        hint: "Identificador único, compartido entre los distintos idiomas, que se usa para componer la URL"
+        widget: string
+        i18n: duplicate
+
+      - label: Nombre
+        name: title
+        widget: string
+        i18n: duplicate
+
+      - label: Image
+        name: image
+        widget: object
+        i18n: true
+        fields:
+          - label: Imagen
+            name: path
+            widget: image
+            choose_url: false
+            default: "/media/heart.png"            
+            media_library: { config: { multiple: false } }
+            media_folder: "/media/members"                 
+            i18n: duplicate
+          - label: Texto alternativo a la imagen
+            name: alt
+            widget: string
+            i18n: translate
+
+      - label: Cargo
+        name: position
+        widget: markdown
+        i18n: translate
+
+      - label: Descripción
+        name: description
+        widget: markdown
+        i18n: translate
+
+      - label: Email
+        name: email
+        widget: string
+        i18n: duplicate
+
+      - label: Facebook
+        name: facebook
+        widget: string
+        i18n: duplicate
+        required: false
+      
+      - label: X (Twitter)
+        name: x_twitter
+        widget: string
+        i18n: duplicate
+        required: false
+
+      - label: LinkedIn
+        name: linkedin
+        widget: string
+        i18n: duplicate
+        required: false
+
+
+{% endraw %}
