@@ -96,7 +96,9 @@ layout: base
             </div>
             <div class="d-flex flex-column p-5 flex-fill">
               <p>Open project</p>
-              <h4 >{{ proyect.title }}</h4>
+              <h4>
+                <a href={{ project | relative_url }}>{{ proyect.title }}</a>
+              </h4>
               <p>Aqui va la descripción del projecto</p>
             </div>
           </div>

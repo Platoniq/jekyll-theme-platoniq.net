@@ -38,6 +38,35 @@ h1 strong {
     width: 20%;
 }
 
+.project_img_background {
+    top: 20%;
+    right: 0px;
+    opacity: 50%;
+    z-index: 0;
+    width: 50%;
+}
+
+.project_header_icon {
+    z-index: 101;
+    width: 50%;
+    top: 0px;
+    right: 0px;
+}
+
+.project_content {
+    width: 75%;
+    opacity: 100%;
+    z-index: 100;
+    display: flex;
+    position: relative;
+    background-color: $grey-light;
+    color: $black;
+}
+
+.project-page-title {
+    font-size: 4rem;
+}
+
 @include media-breakpoint-up(lg) {
     .contact_form {
         width: 40%
