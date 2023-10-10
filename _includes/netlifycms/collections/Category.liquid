@@ -51,20 +51,20 @@
             widget: string
             i18n: translate
 
-      - name: Servicios
-        label: services
+      - Label: Servicios
+        name: services
         widget: relation
         collection: services
-        searchFields: [title]
-        valueField: title
+        search_fields: [title]
+        value_field: slug
         multiple: true
 
-      - name: Proyectos
-        label: projects
+      - label: Proyectos
+        name: projects
         widget: relation
         collection: projects
-        searchFields: [title]
-        valueField: title
+        search_fields: [title]
+        value_field: slug
         multiple: true
 
 {% endraw %}

@@ -3,33 +3,39 @@ layout: base
 ---
 
 <section id="hero">
-    <div class="col-lg-5 col-8 pb-3 order-lg-2">
+    <div class="container d-flex flex-row">
         <h1 class="align-self-end">{{ page.title }}</h1>
     </div>
+
     <div class="container d-flex flex-row">
+        
 
         <div class="col-6">
-        <h1>Sobre Platoniq</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet dolores consectetur voluptate eos cupiditate ea alias, distinctio corporis quis aspernatur consequuntur velit aliquam quae facere, dolorem ab aperiam animi doloribus?</p>
+        <h4>{{ page.subtitle }}</h4>
         </div>
         <div class="col-5">
-        <img src="/media/gotas.png" alt="happy faces" style="width: 50%; height: auto;">
+        <img src="{{ page.symbol.path }}" alt="{{ page.symbol.alt }}" style="width: 50%; height: auto;">
         </div>
 
     </div>
 
-
-    <section id="hero" class="pb-lg-5 pb-3">
+    <section id="projects" class="pb-lg-5 pb-3">
+        
         <div class="container-lg d-flex flex-wrap flex-row pb-lg-5">
-    
-        <div class="col-lg-5 col-8 pb-3 order-lg-2">
-            {% for proyect in site.data.proyect.proyects %}
-            <h1 class="align-self-end">{{ proyect.title }}</h1>
-            {% endfor %}
-        </div>
-        <div class="col-lg-6 col-4 order-lg-3">
-            <img src="{{ project.image.path | relative_url }}" alt="{{ project.image.alt }}" class="img-fluid">
-        </div>
+            <h1 class="align-self-end">Related projects</h1>
+        
+            <div class="row">
+                {% for project in page.projects %}                                          <!-- Para cada uno de los proyectos que tiene esta categoría-->
+                    {% assign current_project = site.projects | where: "slug", project | where: "locale", page.locale | first %}   <!-- Buscar proyecto concreto (solo se puede guardar el project slug al crear una categoría por CMS)-->
+                        <h4 class="align-self-end">{{ current_project.title}}</h4> 
+                        <p>{{ current_project.subtitle }}</p>
+                    {% endfor %}
+
+                           
+            </div>
+            <div class="col-lg-6 col-4 order-lg-3">
+                <img src="{{ project.image.path | relative_url }}" alt="{{ project.image.alt }}" class="img-fluid">
+            </div>
         </div>
     </section>
 </section>
