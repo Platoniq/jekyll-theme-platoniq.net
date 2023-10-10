@@ -1,0 +1,15 @@
+<div class="pj-numbers">
+  {% for item in numbers.items %}
+    <dl class="pj-numbers-item">
+      <dt>
+        <span class="pj-numbers-icon">
+          {% include svg/icon-arrow_leftup.liquid %}
+        </span>
+        {{ item.label }}
+      </dt>
+      <dd>
+        {{ item.number }}
+      </dd>
+    </dl>
+  {% endfor %}
+</div>

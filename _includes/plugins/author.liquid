@@ -1,0 +1,14 @@
+<section class="pj-author pj-author__plugin">
+    <div class="pj-author__img">
+        <img src="{{ author.image.path | relative_url }}" alt="{{ author.image.alt }}" />
+    </div>
+
+    <div class="pj-author__text">
+        <h3 class="pj-author__text__name">{{ author.name }}</h3>
+        {% if author.position and author.position != "" %}
+            <h4 class="pj-author__text__position">{{ author.position }}</h4>
+        {% endif %}
+
+        <div class="pj-author__text__bio">{{ author.description | markdownify }}</div>
+    </div>
+</section>
