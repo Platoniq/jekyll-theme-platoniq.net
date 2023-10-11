@@ -3,16 +3,24 @@ layout: base
 ---
 
 <section id="hero" class="pb-lg-5 pb-3">
-  <div class="container-lg pb-lg-5 position-relative">
-
-    <div class="p-3 order-lg-2 w-60">
-      <div class="d-flex flex-row">
-        <i class="fa-solid fa-square"></i>
-        <p> {{ page.state }} </p>
+  <div class="container-lg position-relative">
+    <div class="d-flex flex-column">
+      <div class="p-3 order-lg-2 w-60">
+        <div class="d-flex flex-row">
+          <div class="pe-2">
+            <i class="fa-solid fa-square"></i>
+          </div>
+          <div class="">
+            <p> {{ page.state }} </p>
+          </div>
+        </div>
+        <h1 class="project-page-title align-self-end">{{ page.title }}</h1>
+        <h4>{{ page.subtitle }}</h4>
       </div>
-      <h1 class="project-page-title align-self-end">{{ page.title }}</h1>
-      <h4>{{ page.subtitle }}</h4>
-      <p>{{ page.date }}</p>
+      <span class="p-5 order-lg-2"></span>
+      <div class="p-3 p-bottom-0 order-lg-2 w-60">
+        <p>{{ page.date }}</p>
+      </div>
     </div>
   </div>
   <div class="project_header_icon position-absolute">

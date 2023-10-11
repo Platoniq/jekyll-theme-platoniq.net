@@ -40,8 +40,39 @@ section {
 
 /* --- HEADER --- */
 .search-link {
-    color: black;
+    color: $black;
     text-decoration: none;
+}
+
+.search-div {
+    position: absolute;
+    top: 1rem;
+    left: 3rem;
+    right: auto;
+    width: 88% !important;
+    z-index: 100;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem;
+    background-color: #5f4263;
+    border-color: #5f4263;
+    color: $grey-light;
+}
+
+.search-input::placeholder {
+    font-weight: normal;
+    opacity: 1;
+    color: $grey-light;
+}
+
+@include media-breakpoint-up(lg) {
+    .search-div {
+        right: 1rem;
+        left: auto;
+        width: 94% !important;
+    } 
 }
 
 /* --- HOME --- */

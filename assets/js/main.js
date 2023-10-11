@@ -25,5 +25,13 @@ $(document).ready(function () {
     searchResultTemplate: '<li class="list-group-item"><a href="{url}" class="search-link">{title}</a></li>'
   })
 
+  function showHideSearchBar($openBtn, $search_div) {
+    $openBtn.click(function (e) {
+      $search_div.toggleClass("d-none");
+    });
+  }
+
+  showHideSearchBar($("#searchBtn"), $("#searchDiv"));
+
 
 });
