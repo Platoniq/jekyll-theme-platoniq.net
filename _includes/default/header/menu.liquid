@@ -4,10 +4,22 @@
             <button type="button" class="btn-close btn-close-white" id="close-side-menu" aria-label="Close"></button>
         </div>
 
-        {%- comment -%} TODO: Replace footer_links with the name of the collection in netlify cms {%- endcomment -%}
-        {% include default/links/side_nav_links.liquid links="footer_links" header="true" %} 
+        {% assign categories = site.categories | where: "locale", page.locale %}
+        <div class="pt-5 pb-5">
+            <ul class="navbar-nav justify-content-end flex-grow-1">
+                {% for category in categories %}
+                    <li class="nav-item ">
+                        <a class="nav-link side-nav-item" aria-current="page" href="{{ category | relative_url }}">
+                            <h4>
+                                {{ category.title }}
+                            </h4>
+                        </a>
+                    </li>
+                {%- endfor -%}
+            </ul>
+        </div>        
 
-        {% include default/links/side_nav_links.liquid links="footer_links" %}
+        {% include default/links/side_nav_links.liquid links="footer_links" header="true" %} 
         
         <div class="mt-3">
             {% include default/socials.liquid class="dark-btn" %}
