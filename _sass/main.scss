@@ -6,6 +6,8 @@ h1 strong {
     font-weight: lighter;
 }
 
+
+/* --- FOTTER --- */
 .email_footer{
     min-width: 50%;
 }
@@ -22,6 +24,60 @@ h1 strong {
     width: 30%;
 }
 
+@include media-breakpoint-up(lg) {
+    .contact_form {
+        width: 40%
+    }
+
+    .goteo-logo {
+        width: 15%;
+    }
+}
+
+/* --- HEADER --- */
+.search-link {
+    color: black;
+    text-decoration: none;
+}
+
+/* --- HOME --- */
+
+#adjective {
+color: $primary;
+}
+
+.vertical-text {
+font-style: italic;
+}
+
+.icon-width{
+width: 20%;
+}
+
+.value { 
+width: 100%
+}
+
+@include media-breakpoint-up(lg) {
+    .icon-width{ 
+        width: 60%;
+    }
+    
+    .value{
+        width: 25%;
+    }
+    
+    .vertical-text {
+        writing-mode: vertical-lr; 
+        text-orientation: mixed;
+        transform: rotate(180deg);
+        font-style: normal;
+    }
+}
+
+/* --- CATEGORIES --- */
+
+/* --- PROJECTS --- */
 
 .project_img_line_preview_odd {
     position: absolute;
@@ -74,23 +130,6 @@ h1 strong {
 .quote_icon_back {
     width: 10%;
     transform: rotate(180deg);
-}
-
-/* search results link style */
-.search-link {
-    color: black;
-    text-decoration: none;
-}
-
-@include media-breakpoint-up(lg) {
-    .contact_form {
-        width: 40%
-    }
-
-    .goteo-logo {
-        width: 15%;
-    }
-    
 }
 
 
