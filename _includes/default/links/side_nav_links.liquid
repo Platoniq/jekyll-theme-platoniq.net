@@ -13,13 +13,9 @@ This component defines the layout of the links in the side menu. It accepts the 
         <li class="nav-item ">
             <a class="nav-link side-nav-item" aria-current="page" href="{{ link.link }}">
                 {% if include.header%}
-                    <h4>
-                        {{ link.name }}
-                    </h4>
-               {% comment %}  {% else %}
                     <h5>
                         {{ link.name }}
-                    </h5> {% endcomment %}
+                    </h5>
                 {% endif %}
             </a>
         </li>
