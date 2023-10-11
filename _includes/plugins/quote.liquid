@@ -1,0 +1,15 @@
+<figure class="pj-quote d-block m-0">
+    <blockquote>
+        {% include svg/icon-quote-front.liquid %}
+
+        {{ quote.content }}
+
+        {% include svg/icon-quote-back.liquid %}
+    </blockquote>
+
+    {% if quote.author and quote.author != "" and quote.author != "undefined" %}
+        <figcaption class="pj-quote-author">
+        {{ quote.author }}
+        </figcaption>
+    {% endif %}
+</figure>

@@ -1,0 +1,19 @@
+{% if stickers.layout != "layout-none" %}
+  {% if stickers.sticker_one != "" or stickers.sticker_two != "" %}
+  <div class="pj-stickers {{ stickers.layout | prepend: 'pj-stickers-' }}">
+      {% if stickers.sticker_one != "" %}
+        <span class="pj-sticker pj-sticker-one {{ stickers.sticker_one_animation }}">
+          <img src="{{ stickers.sticker_one | relative_url }}"
+          alt="Wilder Journal by Platoniq - Sticker pack">
+        </span>
+      {% endif %}
+      
+      {% if stickers.sticker_two != "" %}
+        <span class="pj-sticker pj-sticker-two {{ stickers.sticker_two_animation }}">
+          <img src="{{ stickers.sticker_two | relative_url }}"
+          alt="Wilder Journal by Platoniq - Sticker pack">
+        </span>
+      {% endif %}
+    </div>
+  {% endif %}
+  {% endif %}

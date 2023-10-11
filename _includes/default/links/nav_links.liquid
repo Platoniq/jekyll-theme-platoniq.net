@@ -8,12 +8,12 @@ This component defines the layout of link lists that is common to all the websit
 {%- assign links = include.links -%}
 {%- assign fw = include.fw -%}
 {%- assign url = page.url | remove: '.html' -%}
+{%- assign locale = page.locale -%}
 
 <div>
-    {%- for link in site.data.[links] -%}
+    {%- for link in site.data[locale].[links] -%}
     <a href="{{ link.link }}" class="me-2 no-underline text-link {{ fw }} {% unless url contains link.link %} not-current-link {% endunless %}">
         {{ link.name }}
-
     </a>
 
     {% if include.divider%}

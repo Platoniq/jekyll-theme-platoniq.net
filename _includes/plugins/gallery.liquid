@@ -1,0 +1,63 @@
+{% assign multiple = false %}
+{% assign image_class = "pj-gallery-image__single" %}
+{% assign gallery_class = "pj-gallery__full" %}
+
+{% if gallery.images.size > 1 %}
+  {% assign multiple = true %}
+  {% assign image_class = "pj-gallery-image__multiple" %}
+{% endif %}
+
+{% if gallery.simple %}
+  {% assign gallery_class = "pj-gallery__simple" %}
+{% endif %}
+
+<section class="pj-gallery {{gallery_class}}">
+  {% if multiple %}
+    <button class="pj-gallery-button pj-gallery-button-previous">
+      {% include svg/icon-arrow_left.liquid
+        class="pj-gallery-icon pj-gallery-icon-left"
+        alt=t_gallery_previous %}
+    </button>
+      
+    <button class="pj-gallery-button pj-gallery-button-next">
+      {% include svg/icon-arrow_right.liquid
+        class="pj-gallery-icon pj-gallery-icon-right"
+        alt=t_gallery_next %}
+    </button>
+  {% endif %}
+
+  <div class="pj-gallery-images">
+    {% for image in gallery.images %}
+      <div class="pj-gallery-image-container">
+        <figure class="pj-gallery-image {{image_class}}">
+          <!-- if image.bw -->
+            {% assign image_bw_class = "bw" %}
+            <!-- endif -->
+            
+          {% assign image_title =  %}
+
+          <img loading="eager" src="{{ image.path | relative_url }}"
+              title="{{ image.alt }}"
+              alt="{{ image.alt }}"
+              class="{{ image_bw_class }}">
+          
+          {% unless gallery.simple %}
+            <figcaption>
+              <span class="pj-gallery-image__caption">
+                {{ image.caption | markdownify }}
+              </span>
+
+              <span class="pj-gallery-image__credits">
+                {% if image.credits && image.credits != "" %}
+                  {{ image.credits | markdownify }}
+                {% else %}
+                  {% include default/credits.liquid %}
+                {% endif %}
+              </span>
+            </figcaption>
+          {% endunless %}
+        </figure>
+      </div>
+    {% endfor %}
+  </div>
+</section>

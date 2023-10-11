@@ -6,6 +6,12 @@ h1 strong {
     font-weight: lighter;
 }
 
+section {
+    padding: 1rem;
+    padding-left: 2rem;
+}
+
+/* --- FOTTER --- */
 .email_footer{
     min-width: 50%;
 }
@@ -18,11 +24,172 @@ h1 strong {
     width: 100%
 }
 
+.goteo-logo {
+    width: 30%;
+}
+
 @include media-breakpoint-up(lg) {
     .contact_form {
         width: 40%
     }
+
+    .goteo-logo {
+        width: 15%;
+    }
 }
+
+/* --- HEADER --- */
+.search-link {
+    color: $black;
+    text-decoration: none;
+}
+
+.search-div {
+    position: absolute;
+    top: 1rem;
+    left: 3rem;
+    right: auto;
+    width: 88% !important;
+    z-index: 100;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem;
+    background-color: #5f4263;
+    border-color: #5f4263;
+    color: $grey-light;
+}
+
+.search-input::placeholder {
+    font-weight: normal;
+    opacity: 1;
+    color: $grey-light;
+}
+
+@include media-breakpoint-up(lg) {
+    .search-div {
+        right: 1rem;
+        left: auto;
+        width: 94% !important;
+    } 
+}
+
+/* --- HOME --- */
+
+#adjective {
+color: $primary;
+}
+
+.vertical-text {
+font-style: italic;
+}
+
+.icon-width{
+width: 20%;
+}
+
+.value { 
+width: 100%
+}
+
+.project-preview-img{
+    position: relative;
+    width: 100%;
+}
+
+@include media-breakpoint-up(lg) {
+    .icon-width{ 
+        width: 60%;
+    }
+    
+    .value{
+        width: 25%;
+    }
+    
+    .vertical-text {
+        writing-mode: vertical-lr; 
+        text-orientation: mixed;
+        transform: rotate(180deg);
+        font-style: normal;
+    }
+
+    .project-preview-img{
+        width: 60%;
+    }
+}
+
+/* --- CATEGORIES --- */
+
+/* --- PROJECTS --- */
+.project_preview{
+    flex-direction: column !important;
+}
+
+.project_img_line_preview:nth-child(odd)  {
+    position: absolute;
+    left: -5%;
+    top: -5%;
+    width: 20%;
+    transform: rotate(90deg);
+}
+
+.project_img_line_preview_even:nth-child(even) {
+    position: absolute;
+    right: -5%;
+    top: -5%;
+    width: 20%;
+}
+
+.project_img_background {
+    top: 20%;
+    right: 0px;
+    opacity: 50%;
+    z-index: 0;
+    width: 50%;
+}
+
+.project_header_icon {
+    z-index: 101;
+    width: 50%;
+    top: 10%;
+    right: 0px;
+}
+
+.project_content {
+    width: 75%;
+    opacity: 100%;
+    z-index: 100;
+    display: flex;
+    position: relative;
+    background-color: $grey-light;
+    color: $black;
+}
+
+.project-page-title {
+    font-size: 4rem;
+}
+
+.quote_icon_front {
+    width: 15%;
+}
+
+.quote_icon_back {
+    width: 10%;
+    transform: rotate(180deg);
+}
+
+@include media-breakpoint-up(lg) {
+
+    .project_preview:nth-child(odd){
+        flex-direction: row !important;
+    }
+    
+    .project_preview:nth-child(even){
+        flex-direction: row-reverse !important;
+    }
+}
+
 
 @charset "UTF-8";
 

@@ -3,13 +3,70 @@ layout: base
 ---
 
 <section id="hero" class="pb-lg-5 pb-3">
-  <div class="container-lg d-flex flex-wrap flex-row pb-lg-5">
-
-    <div class="col-lg-5 col-8 pb-3 order-lg-2">
-      <h1 class="align-self-end">{{ project.title }}</h1>
-    </div>
-    <div class="col-lg-6 col-4 order-lg-3">
-      <img src="{{ project.image.path | relative_url }}" alt="{{ project.image.alt }}" class="img-fluid">
+  <div class="container-lg position-relative">
+    <div class="d-flex flex-column">
+      <div class="p-3 order-lg-2 w-60">
+        <div class="d-flex flex-row">
+          <div class="pe-2">
+            <i class="fa-solid fa-square"></i>
+          </div>
+          <div class="">
+            <p> {{ page.state }} </p>
+          </div>
+        </div>
+        <h1 class="project-page-title align-self-end">{{ page.title }}</h1>
+        <h4>{{ page.subtitle }}</h4>
+      </div>
+      <span class="p-5 order-lg-2"></span>
+      <div class="p-3 p-bottom-0 order-lg-2 w-60">
+        <p>{{ page.date }}</p>
+      </div>
     </div>
   </div>
+  <div class="project_header_icon position-absolute">
+    <img src="/media/project-symbol.png" alt="symbol_project_png" class="img-fluid">
+  </div>
+  <div class="project_img_background position-absolute">
+    <img src="{{ page.banner_image.path }}" alt="{{ page.slug }}" class="img-fluid">
+  </div>
 </section>
+
+<section id="project_content">
+  <div class="project_content d-flex flex-column p-5">
+    <div>
+      {{ page.content }}
+    </div>
+    <hr class="hr"></hr>
+    <div>
+      {{page.services}}
+    </div>
+    <hr class="hr"></hr>
+    <div>
+      {{ page.members }}
+    </div>
+    <hr class="hr"></hr>
+    <div>
+    <p>Share buttons</p>
+    </div>
+    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec condimentum eros. Fusce vitae maximus sapien, ut iaculis ligula. Suspendisse viverra libero at lectus lobortis sollicitudin. Curabitur molestie metus a sagittis feugiat. Aenean convallis ullamcorper placerat. Nulla dictum rhoncus sapien sed volutpat. Etiam nec sollicitudin ligula. Etiam rutrum blandit porttitor. Nulla facilisi. Vestibulum mauris dolor, pellentesque eget nibh vel, interdum rutrum urna. Integer iaculis fermentum tempor. Vestibulum bibendum nulla vel volutpat mollis. Sed rhoncus ultricies auctor. Ut consectetur feugiat turpis, eget aliquam mi commodo nec. Ut maximus massa non ante suscipit, vel facilisis tellus semper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus egestas placerat nibh, ut ultrices enim. In a tincidunt massa. Integer laoreet euismod elit in pharetra. Aenean aliquam tempor ipsum, eget elementum arcu finibus et. Quisque fringilla tortor non urna convallis, nec ullamcorper erat tristique. Phasellus at tortor sapien. In enim elit, fermentum quis congue quis, pellentesque non nibh. Quisque finibus sagittis magna eu ullamcorper. Integer eu pharetra nisl. Proin dictum volutpat ultrices. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+  
+    <h3> Cajitas con procentajes</h3>
+    <img src="{{ page.banner_image.path }}" alt="{{ page.slug }}" class="img-fluid">
+    
+    <h3>consectetur adipiscing elit</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec condimentum eros. Fusce vitae maximus sapien, ut iaculis ligula. Suspendisse viverra libero at lectus lobortis sollicitudin. Curabitur molestie metus a sagittis feugiat. Aenean convallis ullamcorper placerat. Nulla dictum rhoncus sapien sed volutpat. Etiam nec sollicitudin ligula. Etiam rutrum blandit porttitor. Nulla facilisi. Vestibulum mauris dolor, pellentesque eget nibh vel, interdum rutrum urna. Integer iaculis fermentum tempor. Vestibulum bibendum nulla vel volutpat mollis. Sed rhoncus ultricies auctor. Ut consectetur feugiat turpis, eget aliquam mi commodo nec. Ut maximus massa non ante suscipit, vel facilisis tellus semper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus egestas placerat nibh, ut ultrices enim. In a tincidunt massa. Integer laoreet euismod elit in pharetra. Aenean aliquam tempor ipsum, eget elementum arcu finibus et. Quisque fringilla tortor non urna convallis, nec ullamcorper erat tristique. Phasellus at tortor sapien. In enim elit, fermentum quis congue quis, pellentesque non nibh. Quisque finibus sagittis magna eu ullamcorper. Integer eu pharetra nisl. Proin dictum volutpat ultrices. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+    
+    <h3>CUOTA</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec condimentum eros. Fusce vitae maximus sapien, ut iaculis ligula. Suspendisse viverra libero at lectus lobortis sollicitudin. Curabitur molestie metus a sagittis feugiat. Aenean convallis ullamcorper placerat. Nulla dictum rhoncus sapien sed volutpat. Etiam nec sollicitudin ligula. Etiam rutrum blandit porttitor. Nulla facilisi. Vestibulum mauris dolor, pellentesque eget nibh vel, interdum rutrum urna. Integer iaculis fermentum tempor. Vestibulum bibendum nulla vel volutpat mollis. Sed rhoncus ultricies auctor. Ut consectetur feugiat turpis, eget aliquam mi commodo nec. Ut maximus massa non ante suscipit, vel facilisis tellus semper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus egestas placerat nibh, ut ultrices enim. In a tincidunt massa. Integer laoreet euismod elit in pharetra. Aenean aliquam tempor ipsum, eget elementum arcu finibus et. Quisque fringilla tortor non urna convallis, nec ullamcorper erat tristique. Phasellus at tortor sapien. In enim elit, fermentum quis congue quis, pellentesque non nibh. Quisque finibus sagittis magna eu ullamcorper. Integer eu pharetra nisl. Proin dictum volutpat ultrices. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+
+    <h3>VIDEO</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec condimentum eros. Fusce vitae maximus sapien, ut iaculis ligula. Suspendisse viverra libero at lectus lobortis sollicitudin. Curabitur molestie metus a sagittis feugiat. Aenean convallis ullamcorper placerat. Nulla dictum rhoncus sapien sed volutpat. Etiam nec sollicitudin ligula. Etiam rutrum blandit porttitor. Nulla facilisi. Vestibulum mauris dolor, pellentesque eget nibh vel, interdum rutrum urna. Integer iaculis fermentum tempor. Vestibulum bibendum nulla vel volutpat mollis. Sed rhoncus ultricies auctor. Ut consectetur feugiat turpis, eget aliquam mi commodo nec. Ut maximus massa non ante suscipit, vel facilisis tellus semper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus egestas placerat nibh, ut ultrices enim. In a tincidunt massa. Integer laoreet euismod elit in pharetra. Aenean aliquam tempor ipsum, eget elementum arcu finibus et. Quisque fringilla tortor non urna convallis, nec ullamcorper erat tristique. Phasellus at tortor sapien. In enim elit, fermentum quis congue quis, pellentesque non nibh. Quisque finibus sagittis magna eu ullamcorper. Integer eu pharetra nisl. Proin dictum volutpat ultrices. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+
+    <h3>COSA VERDE</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec condimentum eros. Fusce vitae maximus sapien, ut iaculis ligula. Suspendisse viverra libero at lectus lobortis sollicitudin. Curabitur molestie metus a sagittis feugiat. Aenean convallis ullamcorper placerat. Nulla dictum rhoncus sapien sed volutpat. Etiam nec sollicitudin ligula. Etiam rutrum blandit porttitor. Nulla facilisi. Vestibulum mauris dolor, pellentesque eget nibh vel, interdum rutrum urna. Integer iaculis fermentum tempor. Vestibulum bibendum nulla vel volutpat mollis. Sed rhoncus ultricies auctor. Ut consectetur feugiat turpis, eget aliquam mi commodo nec. Ut maximus massa non ante suscipit, vel facilisis tellus semper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus egestas placerat nibh, ut ultrices enim. In a tincidunt massa. Integer laoreet euismod elit in pharetra. Aenean aliquam tempor ipsum, eget elementum arcu finibus et. Quisque fringilla tortor non urna convallis, nec ullamcorper erat tristique. Phasellus at tortor sapien. In enim elit, fermentum quis congue quis, pellentesque non nibh. Quisque finibus sagittis magna eu ullamcorper. Integer eu pharetra nisl. Proin dictum volutpat ultrices. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+
+    <h3>INFO PINK BOX</h3> -->
+  </div>
+</section>
+
+<section id="budget"></section>

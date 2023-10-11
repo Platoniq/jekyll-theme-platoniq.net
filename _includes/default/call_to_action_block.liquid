@@ -1,0 +1,15 @@
+{% assign call_to_action_page = site.call_to_actions | where: "uid", page.call_to_action | first %}
+{% assign call_to_action = call_to_action_page[page.locale] %}
+
+{% capture cta_params %}
+  {
+    "url": "{{ call_to_action.button.link | default: '#nolink' }}",
+    "label": "{{ call_to_action.button.label | default: 'no label'}}"
+  }
+{% endcapture %}
+
+{% call_to_action {{cta_params}} %}
+  {{ call_to_action.title }}
+  {{ call_to_action.content }}
+  {{ call_to_action.form_fields }}
+{% endcall_to_action %}

@@ -1,0 +1,66 @@
+{% capture call_to_action_name %}{{ page.call_to_action | remove: "cta-"}}{% endcapture %}
+
+  {% if call_to_action.form_fields %}
+    {% assign is_form = true %}
+  {% else %}
+    {% assign is_form = false %}
+  {% endif %}
+  
+  {% if is_form %}
+    <form name="{{ call_to_action_name }}" netlify class="pj-cta {{ call_to_action_name | prepend: 'cta__' }}">
+  {% else %}
+    <div class="pj-cta {{ call_to_action_name | prepend: 'cta__' }}">
+  {% endif %}
+  
+    <div class="pj-cta__img">
+      <img src="{{ call_to_action.image.path | relative_url }}"
+           alt="{{ call_to_action.image.alt }}">
+    </div>
+    
+    <div class="pj-cta__text">
+      <h3>{{ call_to_action.title }}</h3>
+    
+      {{ call_to_action.content }}
+    
+      {{ call_to_action.form_fields }}
+    
+      {% if is_form %}
+        <input type="hidden" name="form-name" value="{{ call_to_action_name }}" />
+        <input type="hidden" name="lang" value="{{ page.locale }}">
+        <input type="hidden" name="page_uid" value="{{ page.uid }}">
+        <input type="hidden" name="site_url" value="{{ site.url }}">
+      {% endif %}
+    </div>
+    
+    <div class="pj-cta__button">
+      {% if is_form %}
+        <button type="submit" name="button" class="btn btn-negative">
+          <span class="btn__label">{{ call_to_action.button.label }}</span>
+        </button>
+      {% else %}
+        <a href="{{ call_to_action.button.link }}" target="_blank" class="btn btn-negative">
+          <span class="btn__label">
+            {{ call_to_action.button.label }}
+          </span>
+        </a>
+      {% endif %}
+    </div>
+  
+    <div class="cta__filled" style="display: none;">
+      <div class="pj-cta__img">
+        <img src="{{ call_to_action.image.path | relative_url }}"
+            alt="{{ call_to_action.image.alt }}">
+      </div>
+  
+      <div class="pj-cta__text">
+        <h3>{{ call_to_action.filled.title }}</h3>
+        
+        {{ call_to_action.filled.content | markdownify }}
+      </div>
+    </div>
+  
+  {% if is_form %}
+    </form>
+  {% else %}
+    </div>
+  {% endif %}

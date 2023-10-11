@@ -2,7 +2,7 @@
   color: $primary;
 }
 
-#vertical-text {
+.vertical-text {
   font-style: italic;
 }
 
@@ -23,7 +23,7 @@
     width: 25%;
   }
 
-  #vertical-text {
+  .vertical-text {
     writing-mode: vertical-lr; 
     text-orientation: mixed;
     transform: rotate(180deg);
