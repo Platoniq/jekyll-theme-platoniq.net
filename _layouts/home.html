@@ -89,14 +89,14 @@ layout: base
         {% assign value = forloop.index | modulo:2 %}
         {% if value == 1 %}
           <div class="d-flex flex-lg-row flex-column align-items-lg-end justify-content-end pb-lg-5">
-            <div class="position-relative w-60">
+            <div class="position-relative w-60 img-fluid">
               <img src="/media/img-line.png" alt="image decorator" class="img-fluid project_img_line_preview_odd">
-              <img src={{ proyect.img }} alt="project img" class="img-fluid">
+              <img src={{ proyect.banner_image.path }} alt="{{ proyect.banner_image.url }}" class="img-fluid">
             </div>
             <div class="d-flex flex-column p-5 flex-fill">
               <p>Open project</p>
               <h4>
-                <a href={{ project | relative_url }}>{{ proyect.title }}</a>
+                <a href={{ proyect | relative_url }}>{{ proyect.title }}</a>
               </h4>
               <p>Aqui va la descripción del projecto</p>
             </div>
@@ -105,7 +105,7 @@ layout: base
           <div class="d-flex flex-lg-row-reverse flex-column pb-lg-5">
             <div class="position-relative w-60">
               <img src="/media/img-line.png" alt="image decorator" class="img-fluid project_img_line_preview_even">
-              <img src={{ proyect.img }} alt="project img" class="img-fluid">
+              <img src={{ proyect.banner_image.path }} alt="{{ proyect.banner_image.url }}" class="img-fluid">
             </div>
             <div class="d-flex flex-column flex-fill">
               <p>Open project</p>
