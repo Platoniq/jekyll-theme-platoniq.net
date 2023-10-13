@@ -1,6 +1,8 @@
 ---
 layout: base
 ---
+{% assign state = site.states | where: "slug", page.state | where: "locale", page.locale | first %}
+
 
 <section id="hero" class="pb-lg-5 pb-3">
   <div class="container-lg position-relative">
@@ -8,10 +10,10 @@ layout: base
       <div class="p-3 order-lg-2 w-60">
         <div class="d-flex flex-row">
           <div class="pe-2">
-            <i class="fa-solid fa-square"></i>
+            <i class="fa-solid fa-square {{state.color}}"></i>
           </div>
-          <div class="">
-            <p> {{ page.state }} </p>
+          <div class="{{state.color}}">
+            <p> {{ state.title }} </p>
           </div>
         </div>
         <h1 class="project-page-title align-self-end">{{ page.title }}</h1>

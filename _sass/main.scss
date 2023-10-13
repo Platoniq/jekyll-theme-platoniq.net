@@ -179,6 +179,14 @@ width: 100%
     transform: rotate(180deg);
 }
 
+.green{
+    color: $secondary;
+}
+
+.red{
+    color: $primary;
+}
+
 @include media-breakpoint-up(lg) {
 
     .project_preview:nth-child(odd){
