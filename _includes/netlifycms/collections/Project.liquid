@@ -20,15 +20,16 @@
 
       - label: Slug
         name: slug
-        hint: "Identificador único, compartido entre los distintos idiomas, que se usa para componer la URL"
+        hint: "Identificador único, compartido entre los distintos idiomas"
         widget: string
         i18n: duplicate
 
       - label: Estado
         name: state
-        widget: select
-        options: ['Open project', 'Closed project']
-        i18n: duplicate
+        widget: relation
+        collection: states
+        search_fields: [title]
+        value_field: slug
 
       - label: Título
         name: title
