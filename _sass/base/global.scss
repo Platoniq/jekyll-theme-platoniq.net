@@ -24,9 +24,10 @@ body {
     width: 40%;
     height: 100vh;
     position: absolute;
-    z-index: 3;
+    z-index: 999;
     top: 0;
     right: 0;
+    position: fixed;
 }
 
 .side-nav-item{

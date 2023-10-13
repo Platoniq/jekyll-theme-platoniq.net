@@ -37,8 +37,10 @@ layout: base
       {{ page.content }}
     </div>
     <hr class="hr"></hr>
-    <div class="d-flex flex-row">
-      <p>Servicios: </p>
+    <div class="d-flex flex-row align-items-center">
+      <div class="pe-2">
+        <b>Servicios: </b>
+      </div>
       {% for service in page.services %}
         {% assign current_service = site.services | where: "slug", service | where: "locale", page.locale | first %}
         <div class="d-flex flex-row align-items-center">
@@ -48,8 +50,10 @@ layout: base
       {% endfor %}
     </div>
     <hr class="hr"></hr>
-    <div>
-      <p>Miembros: </p>
+    <div class="d-flex flex-row align-items-center">
+      <div class="pe-2">
+        <b>Miembros: </b>
+      </div>
       {% for member in page.members %}
         {% assign current_member = site.members | where: "slug", member | where: "locale", page.locale | first %}
         <div class="d-flex flex-row align-items-center">
@@ -59,8 +63,10 @@ layout: base
       {% endfor %}
     </div>
     <hr class="hr"></hr>
-    <div>
-      <p>Compartir:</p>
+    <div class="d-flex flex-row align-items-center">
+      <div class="pe-2">
+        <b>Compartir:</b>
+      </div>
       <div class="">
         {% include default/socials.liquid %}
       </div>
