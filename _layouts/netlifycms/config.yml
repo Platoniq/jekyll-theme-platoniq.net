@@ -7,6 +7,7 @@ collections:
   - Category.liquid
   - Member.liquid
   - Collaborator.liquid
+  - State.liquid
 ---
 {% assign path = layout.dir_path | append: "Site.yml" %}
 
