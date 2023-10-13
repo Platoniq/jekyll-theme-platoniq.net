@@ -18,6 +18,8 @@ $(document).ready(function () {
    * 
    */
 
+    
+/*
   SimpleJekyllSearch({
     searchInput: document.getElementById('search-input'),
     resultsContainer: document.getElementById('results-container'),
@@ -25,10 +27,10 @@ $(document).ready(function () {
     searchResultTemplate: templateMiddleware,
     noResultsText: 'No results found',
     templateMiddleware: function(prop, value, template){
-      /* console.log(prop, value, template) */
+
       arr_locale = value.split('/')
       arr_href = window.location.href.split("/")
-      /* console.log(arr_locale[], arr_href[3]) */
+
       if (prop === 'url' && value.split('/')[1] != arr_href[3]) {
         return value.replace('/', ' ')
       } else if (prop === 'url' && value.split('/')[1] == arr_href[3]) {
@@ -37,6 +39,9 @@ $(document).ready(function () {
       return template
     }
   })
+*/
+
+
 
   function showHideSearchBar($openBtn, $search_div) {
     $openBtn.click(function (e) {
