@@ -3,7 +3,7 @@
     | sort: "volume-number", "last" %} {% endcomment %}
 {% comment %} {% assign current_volume = volumes | find: "uid", page.volume-uid %} {% endcomment %}
 {% if page.collection == "categories" %}
-  {% assign current_category = category | find: "uid", page.uid %}
+  {% assign current_category = category | find: "slug", page.slug %}
 {% endif %}
 
 {% comment %} {% assign prev_volume_number = page.volume-number %}
