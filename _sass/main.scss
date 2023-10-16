@@ -188,6 +188,7 @@ width: 100%
 
 #project-content {
     width: 100%;
+    padding: 0px !important;
 }
 
 #budget {
@@ -197,23 +198,37 @@ width: 100%
 
 .project-budget-bottom{
     display: none !important;
+    padding-bottom: 1rem;
 }
 
-hr {
+.project-budget-top{
+    padding-top: 1rem;
+}
+
+.hr-budget {
     opacity: 1;
     border-top: 3px solid;
 }
 
-.private_line_percentage {
+.private-line-percentage {
     color: $blue;
 }
 
-.public_line_percentage{
+.public-line-percentage{
     color: $violet;
 }
 
-.looking_line_percentage{
+.looking-line-percentage{
     color: $pink;
+}
+
+.btn-contact-budget{
+    color: $grey-light;
+}
+
+.percentages-budget{
+    font-size: 0.8rem;
+    font-weight: lighter;
 }
 
 
@@ -229,6 +244,8 @@ hr {
 
     #project-content { 
         width: 80%;
+        padding-left: 2rem !important;
+        padding: 1rem !important;
     }
 
     #budget {
@@ -241,6 +258,11 @@ hr {
 
     .project-budget-bottom{
         display: flex !important;
+        padding-bottom: 5rem;
+    }
+
+    .project-budget-top{
+        padding-top: 5rem;
     }
 
 }
