@@ -157,7 +157,6 @@ width: 100%
 }
 
 .project_content {
-    width: 75%;
     opacity: 100%;
     z-index: 100;
     display: flex;
@@ -187,6 +186,37 @@ width: 100%
     color: $primary;
 }
 
+#project-content {
+    width: 100%;
+}
+
+#budget {
+    width: 100%;
+    padding: 1rem;
+}
+
+.project-budget-bottom{
+    display: none !important;
+}
+
+hr {
+    opacity: 1;
+    border-top: 3px solid;
+}
+
+.private_line_percentage {
+    color: $blue;
+}
+
+.public_line_percentage{
+    color: $violet;
+}
+
+.looking_line_percentage{
+    color: $pink;
+}
+
+
 @include media-breakpoint-up(lg) {
 
     .project_preview:nth-child(odd){
@@ -196,6 +226,23 @@ width: 100%
     .project_preview:nth-child(even){
         flex-direction: row-reverse !important;
     }
+
+    #project-content { 
+        width: 80%;
+    }
+
+    #budget {
+        width: 20%;
+        padding-top: 3rem;
+        padding: 1rem;
+        padding-left: 0rem;
+        padding-top: 3rem;
+    }
+
+    .project-budget-bottom{
+        display: flex !important;
+    }
+
 }
 
 
