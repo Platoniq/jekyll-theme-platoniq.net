@@ -285,6 +285,16 @@ width: 100%
 
 }
 
+/* --- ABOUT US --- */
+.about-us-content{
+    width: 100%;
+} 
+
+@include media-breakpoint-up(lg) {
+    .about-us-content{
+        width: 70%
+    }
+}
 
 @charset "UTF-8";
 
