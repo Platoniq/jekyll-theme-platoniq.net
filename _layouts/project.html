@@ -6,21 +6,21 @@ layout: base
 
 
 <section id="hero" class="pb-lg-5 pb-3">
-  <div class="container-lg position-relative">
+  <div class="container-lg position-relative project-header">
     <div class="d-flex flex-column">
-      <div class="p-3 order-lg-2 w-60">
+      <div class="p-3 order-lg-2 pt-lg-5 w-60">
         <div class="d-flex flex-row">
           <div class="pe-2">
-            <i class="fa-solid fa-square {{state.color}}"></i>
+            <i class="fa-solid fa-square {{ state.color }}"></i>
           </div>
-          <div class="{{state.color}}">
+          <div class="{{ state.color }}">
             <p> {{ state.title }} </p>
           </div>
         </div>
         <h1 class="project-page-title align-self-end">{{ page.title }}</h1>
         <h4>{{ page.subtitle }}</h4>
       </div>
-      <span class="p-5 order-lg-2"></span>
+      <span class="p-lg-3 d-lg-inline d-none order-lg-2"></span>
       <div class="p-3 p-bottom-0 order-lg-2 w-60">
         <p>{{ page.date }}</p>
       </div>
@@ -36,7 +36,7 @@ layout: base
 
 <div class="d-flex flex-lg-row flex-column">
   <section id="project-content">
-    <div class="project_content d-flex flex-column p-5">
+    <div class="project_content d-flex flex-column p-lg-5 p-3">
       <div>
         {{ page.content }}
       </div>
@@ -48,7 +48,7 @@ layout: base
         {% for service in page.services %}
           {% assign current_service = site.services | where: "slug", service | where: "locale", page.locale | first %}
           <div class="d-flex flex-row align-items-center">
-            <p>{{ current_service.title }}</p>
+            <spam>{{ current_service.title }}</spam>
             <div class="vr m-3"></div>
           </div>
         {% endfor %}
@@ -61,7 +61,7 @@ layout: base
         {% for member in page.members %}
           {% assign current_member = site.members | where: "slug", member | where: "locale", page.locale | first %}
           <div class="d-flex flex-row align-items-center">
-            <p>{{ current_author.title }}</p>
+            <spam>{{ current_author.title }}</spam>
             <div class="vr m-3"></div>
           </div>
         {% endfor %}
@@ -84,24 +84,24 @@ layout: base
     <div class="d-flex flex-column project-budget-top">
       <div class="d-flex flex-column">
         <p>{{ site.data[locale].project.budget }}</p>
-        <h1>{{page.budget}}€</h1>
+        <h1>{{ page.budget }}€</h1>
         <div class="d-flex flex-row">
           <hr class="hr hr-budget public-line-percentage" style="width: {{ page.private_percentage }}%;"/>
           <hr class="hr hr-budget private-line-percentage" style="width: {{ page.public_percentage }}%;"/>
-          <hr class="hr hr-budget looking-line-percentage" style="width: {{ page.looking_finance_percentage}}%;"/>
+          <hr class="hr hr-budget looking-line-percentage" style="width: {{ page.looking_finance_percentage }}%;"/>
         </div>
         <div class="d-flex flex-column pt-2 pb-4 percentages-budget">
           <div class="d-flex flex-row">
             <i class="d-flex align-self-center fa-solid fa-square pe-2 private-line-percentage"></i>
-            <spam>{{page.private_percentage}}% {{ site.data[locale].project.private }}</spam>
+            <spam>{{ page.private_percentage }}% {{ site.data[locale].project.private }}</spam>
           </div>
           <div class="d-flex flex-row">
             <i class=" d-flex align-self-center fa-solid fa-square pe-2 public-line-percentage"></i>
-            <spam>{{page.public_percentage}}% {{ site.data[locale].project.public }}</spam>
+            <spam>{{ page.public_percentage }}% {{ site.data[locale].project.public }}</spam>
           </div>
           <div class="d-flex flex-row">
             <i class=" d-flex align-self-center fa-solid fa-square pe-2 looking-line-percentage"></i>
-            <spam>{{page.looking_finance_percentage}}% {{ site.data[locale].project.looking }}</sp>
+            <spam>{{ page.looking_finance_percentage }}% {{ site.data[locale].project.looking }}</sp>
           </div>
         </div>
       </div>
@@ -120,24 +120,24 @@ layout: base
     <div class="d-flex flex-column project-budget-bottom">
       <div class="d-flex flex-column">
         <p>{{ site.data[locale].project.budget }}</p>
-        <h1>{{page.budget}}€</h1>
+        <h1>{{ page.budget }}€</h1>
         <div class="d-flex flex-row">
           <hr class="hr hr-budget public-line-percentage" style="width: {{ page.private_percentage }}%;"/>
           <hr class="hr hr-budget private-line-percentage" style="width: {{ page.public_percentage }}%;"/>
-          <hr class="hr hr-budget looking-line-percentage" style="width: {{ page.looking_finance_percentage}}%;"/>
+          <hr class="hr hr-budget looking-line-percentage" style="width: {{ page.looking_finance_percentage }}%;"/>
         </div>
         <div class="d-flex flex-column pt-2 pb-4 percentages-budget">
           <div class="d-flex flex-row">
             <i class="d-flex align-self-center fa-solid fa-square pe-2 private-line-percentage"></i>
-            <spam>{{page.private_percentage}}% {{ site.data[locale].project.private }}</spam>
+            <spam>{{ page.private_percentage }}% {{ site.data[locale].project.private }}</spam>
           </div>
           <div class="d-flex flex-row">
             <i class=" d-flex align-self-center fa-solid fa-square pe-2 public-line-percentage"></i>
-            <spam>{{page.public_percentage}}% {{ site.data[locale].project.public }}</spam>
+            <spam>{{ page.public_percentage }}% {{ site.data[locale].project.public }}</spam>
           </div>
           <div class="d-flex flex-row">
             <i class=" d-flex align-self-center fa-solid fa-square pe-2 looking-line-percentage"></i>
-            <spam>{{page.looking_finance_percentage}}% {{ site.data[locale].project.looking }}</sp>
+            <spam>{{ page.looking_finance_percentage }}% {{ site.data[locale].project.looking }}</sp>
           </div>
         </div>
       </div>

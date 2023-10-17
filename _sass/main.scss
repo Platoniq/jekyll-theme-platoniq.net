@@ -142,18 +142,15 @@ width: 100%
 }
 
 .project_img_background {
-    top: 20%;
-    right: 0px;
-    opacity: 50%;
+    top: 12%;
+    left: 0px;
+    opacity: 35%;
     z-index: 0;
-    width: 50%;
+    width: 100%;
 }
 
 .project_header_icon {
-    z-index: 101;
-    width: 50%;
-    top: 10%;
-    right: 0px;
+    display: none;
 }
 
 .project_content {
@@ -231,6 +228,10 @@ width: 100%
     font-weight: lighter;
 }
 
+.project-header { 
+    z-index: 1;
+}
+
 
 @include media-breakpoint-up(lg) {
 
@@ -253,7 +254,7 @@ width: 100%
         padding-top: 3rem;
         padding: 1rem;
         padding-left: 0rem;
-        padding-top: 3rem;
+        padding-top: 5rem;
     }
 
     .project-budget-bottom{
@@ -263,6 +264,23 @@ width: 100%
 
     .project-budget-top{
         padding-top: 5rem;
+    }
+
+    .project_header_icon {
+        z-index: 101;
+        width: 50%;
+        top: 5%;
+        right: 0px;
+        display: block;
+    }
+
+    .project_img_background {
+        top: 5%;
+        right: 0px;
+        opacity: 50%;
+        z-index: 0;
+        width: 50%;
+        left: auto;
     }
 
 }
