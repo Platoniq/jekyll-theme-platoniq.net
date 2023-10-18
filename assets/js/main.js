@@ -14,34 +14,37 @@ $(document).ready(function () {
 
     /*
    * 
-   * Search
+   * Modals
    * 
    */
 
-    
-/*
-  SimpleJekyllSearch({
-    searchInput: document.getElementById('search-input'),
-    resultsContainer: document.getElementById('results-container'),
-    json: '/search.json',
-    searchResultTemplate: templateMiddleware,
-    noResultsText: 'No results found',
-    templateMiddleware: function(prop, value, template){
+  var $modal = $(".modal");
+  var $btn = $(".modalBtn");
+  var $span = $(".closeModal")
 
-      arr_locale = value.split('/')
-      arr_href = window.location.href.split("/")
-
-      if (prop === 'url' && value.split('/')[1] != arr_href[3]) {
-        return value.replace('/', ' ')
-      } else if (prop === 'url' && value.split('/')[1] == arr_href[3]) {
-        template= '<li class="list-group-item"><a href="{url}" class="search-link">{title}</a></li>'
-      }
-      return template
+  // When the user clicks the button, open the modal 
+  $btn.click(function (e) {
+    $modal.css("display", "block");
+  });
+  
+  // When the user clicks on <span> (x), close the modal
+  $span.click(function (e) {
+    $modal.css("display", "none");
+  });
+  
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == $modal) {
+      $modal.css("display", "none");
     }
-  })
-*/
+  }
 
 
+    /*
+   * 
+   * Search
+   * 
+   */
 
   function showHideSearchBar($openBtn, $search_div) {
     $openBtn.click(function (e) {

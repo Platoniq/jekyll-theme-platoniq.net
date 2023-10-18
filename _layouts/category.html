@@ -4,6 +4,13 @@ layout: base
 {% assign related_projects = site.projects | where: "categories", page.slug | where: "locale", page.locale %}   <!--coge aquellos proyectos (en el idioma actual) cuyo array categories contenga el slug de esta category --> 
 {% assign locale = page.locale %}
 
+<div class="modal">
+    <div class="modal-content">
+      <span class="closeModal">&times;</span>
+      {% include default/call_to_action_block.liquid %}
+    </div>
+</div>
+
 <section id="hero" class="pb-lg-5 pb-3">
     <div class="container-lg d-flex justify-content-lg-between  flex-row pb-lg-5">
 
@@ -35,7 +42,7 @@ layout: base
                     </div>
                     <div class="d-flex pt-2 w-100">
                         <a href=# class="w-100">
-                            <button type="button" class="btn btn-danger rounded-1 w-100"> {{ site.data[locale].global.contact_btn }} </button>
+                            <button type="button" class="modalBtn btn btn-danger rounded-1 w-100"> {{ site.data[locale].global.contact_btn }} </button>
                         </a>
                     </div>
                 </div>
