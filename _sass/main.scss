@@ -340,6 +340,19 @@ width: 100%
     color: black;
   }
 
+  .who-position-label{
+    color: $secondary
+  }
+
+  .author-img-decorator{
+    position: absolute;
+    width: 50%;
+    transform: rotate(90deg);
+    left: -10%;
+    top: -5%;
+  }
+
+/* --- WHO PAGE --- */
   
 @charset "UTF-8";
 
