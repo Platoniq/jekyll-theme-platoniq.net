@@ -1,0 +1,55 @@
+{% raw %}
+  - name: offers
+    label: Offers
+    label_singular: Offer
+    folder: "_offers"
+    i18n:
+      structure: multiple_folders
+      locales: *locales
+    create: true
+    editor:
+      preview: false
+    fields:
+
+      - label: Offer
+        name: layout
+        widget: hidden
+        default: offer
+        i18n: duplicate
+
+      - label: Call to action
+        name: call_to_action
+        widget: hidden
+        default: cta-contact-offer
+        i18n: duplicate
+
+      - label: Slug
+        name: slug
+        hint: "Identificador único, compartido entre los distintos idiomas"
+        widget: string
+        i18n: duplicate
+
+      - label: Título
+        name: title
+        widget: string
+        i18n: translate
+
+      - label: Subtítulo
+        name: subtitle
+        widget: string
+        i18n: translate
+
+      - label: Descripción
+        name: description
+        widget: string
+        i18n: translate
+
+      - label: "PDF oferta"
+        name: pdf
+        widget: "file"
+        media_folder: "/media/offers"
+        i18n: duplicate
+
+
+
+{% endraw %}

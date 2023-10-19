@@ -8,6 +8,7 @@ collections:
   - Member.liquid
   - Collaborator.liquid
   - State.liquid
+  - Offer.liquid
 ---
 {% assign path = layout.dir_path | append: "Site.yml" %}
 

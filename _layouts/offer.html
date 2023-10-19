@@ -1,0 +1,32 @@
+---
+layout: base
+---
+
+<div class="modal">
+  <div class="modal-content">
+    <span class="closeModal">&times;</span>
+    {% include default/call_to_action_block.liquid %}
+  </div>
+</div>
+
+<section id="hero">
+  <div class="container-lg d-flex flex-row">
+    <div class="w-70">
+      <h1>{{ page.title }}</h1>
+      <span>{{ page.subtitle }}</span>
+    </div>
+
+  </div>
+</section>
+
+<section id="footer_sub_hero" class="pb-lg-5 pb-3">
+    <div class="d-flex flex-fill">
+      <span>{{ page.description }}</span>
+    </div>
+</section>
+
+<section class="pb-lg-5 pb-3">
+  <div class="container-lg d-flex flex-column pb-lg-5">
+    <button type="button" class="modalBtn btn btn-danger rounded-1 w-100"> Optar a la oferta de trabajo </button>
+  </div>
+</section>

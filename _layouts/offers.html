@@ -1,6 +1,9 @@
 ---
 layout: base
 ---
+{% assign locale = page.locale %}
+{% assign offers = site.offers | where: "locale", page.locale %}
+
 <section id="hero">
   <div class="container-lg d-flex flex-row">
     <div class="w-70">
@@ -14,10 +17,12 @@ layout: base
   </div>
 </section>
 
-<section id="hero" class= pb-3">
-  <div class="container-lg d-flex about-us-content">
+<section id="footer_sub_hero" class="pb-lg-5 pb-3">
+  {% for offer in offers %}
+    <div class="d-flex flex-fill">
+      <h4>{{ offer.title }}</h4>
+      <a href={{ offer |  relative_url }}>LINK</a>
+    </div>
+  {% endfor %}
 
-    <span>{{ page.content }}</span>
-    
-  </div>
 </section>
