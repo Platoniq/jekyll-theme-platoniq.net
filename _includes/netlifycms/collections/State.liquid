@@ -1,17 +1,16 @@
 {% raw %}
-  - name: services
-    label: Services
-    label_singular: Service
-    folder: "_services"
+  - name: states
+    label: States
+    label_singular: State
+    folder: "_states"
     i18n:
       structure: multiple_folders
       locales: *locales
     create: true
     editor:
-      preview: true
+      preview: false
     fields:
 
-      #  NO SE SI ES NECESARIO
       - label: Slug
         name: slug
         hint: "Identificador único, compartido entre los distintos idiomas"
@@ -23,9 +22,9 @@
         widget: string
         i18n: translate
 
-      - label: Descripción
-        name: description
-        widget: markdown
-        i18n: translate
+      - label: Color
+        name: color
+        widget: string
+        i18n: duplicate
 
 {% endraw %}

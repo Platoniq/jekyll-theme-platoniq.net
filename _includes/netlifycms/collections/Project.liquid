@@ -20,14 +20,16 @@
 
       - label: Slug
         name: slug
-        hint: "Identificador único, compartido entre los distintos idiomas, que se usa para componer la URL"
+        hint: "Identificador único, compartido entre los distintos idiomas"
         widget: string
         i18n: duplicate
 
       - label: Estado
         name: state
-        widget: select
-        options: ['Open project', 'Closed project']
+        widget: relation
+        collection: states
+        search_fields: [title]
+        value_field: slug
         i18n: duplicate
 
       - label: Título
@@ -51,7 +53,7 @@
             choose_url: false
             default: "/media/heart.png"              # we can use a default image
             media_library: { config: { multiple: false } }
-            media_folder: "/media/projects/hero"                 # folder for the hero image of a project
+            media_folder: "/media/projects"                
             i18n: duplicate
           - label: Texto alternativo a la imagen
             name: alt
@@ -95,6 +97,7 @@
         search_fields: [title]
         value_field: slug
         multiple: true
+        i18n: duplicate
 
       - label: Categorías
         name: categories
@@ -103,6 +106,7 @@
         search_fields: [title]
         value_field: slug
         multiple: true
+        i18n: duplicate
 
       - label: Miembros
         name: members
@@ -111,6 +115,7 @@
         search_fields: [title]
         value_field: slug
         multiple: true
+        i18n: duplicate
 
       - label: Colaboradores
         name: collaborators
@@ -119,6 +124,7 @@
         search_fields: [title]
         value_field: slug
         multiple: true
+        i18n: duplicate
 
       - label: Contenido de la página
         name: body

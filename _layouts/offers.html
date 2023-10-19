@@ -1,17 +1,28 @@
 ---
 layout: base
 ---
-
-
+{% assign locale = page.locale %}
+{% assign offers = site.offers | where: "locale", page.locale %}
 
 <section id="hero">
-  <div class="container d-flex flex-row">
-
-    <div class="col-6">
-      <h1>Ofertas</h1>
+  <div class="container-lg d-flex flex-row">
+    <div class="w-70">
+      <h1>{{ page.title }}</h1>
+      <span>{{ page.description }}</span>
     </div>
-    <div class="col-5">
+    <div class="">
+      <img src={{ page.img.source }} alt={{ page.img.alt }} class="w-100">
     </div>
 
   </div>
+</section>
+
+<section id="footer_sub_hero" class="pb-lg-5 pb-3">
+  {% for offer in offers %}
+    <div class="d-flex flex-fill">
+      <h4>{{ offer.title }}</h4>
+      <a href={{ offer |  relative_url }}>LINK</a>
+    </div>
+  {% endfor %}
+
 </section>

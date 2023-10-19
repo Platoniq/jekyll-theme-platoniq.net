@@ -1,0 +1,35 @@
+---
+layout: base
+---
+{% assign locale = page.locale %}
+{% assign members = site.members | where: "locale", page.locale  %}
+
+<section id="hero">
+  <div class="container-lg d-flex flex-row">
+    <div class="w-70">
+      <h1>{{ page.title }}</h1>
+      <span>{{ page.description }}</span>
+    </div>
+    <div class="">
+      <img src={{ page.img.source }} alt={{ page.img.alt }} class="w-100">
+    </div>
+
+  </div>
+</section>
+
+
+<section id="main-members" class="pb-3">
+  <div class="container-lg d-flex about-us-content">
+
+    <span>{{ members | jsonify }}</span>
+    
+  </div>
+</section>
+
+<section id="colaborators" class="pb-3">
+    <div class="container-lg d-flex about-us-content">
+  
+      <span>{{ page.content }}</span>
+      
+    </div>
+  </section>

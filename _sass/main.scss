@@ -142,22 +142,18 @@ width: 100%
 }
 
 .project_img_background {
-    top: 20%;
-    right: 0px;
-    opacity: 50%;
+    top: 12%;
+    left: 0px;
+    opacity: 35%;
     z-index: 0;
-    width: 50%;
+    width: 100%;
 }
 
 .project_header_icon {
-    z-index: 101;
-    width: 50%;
-    top: 10%;
-    right: 0px;
+    display: none;
 }
 
 .project_content {
-    width: 75%;
     opacity: 100%;
     z-index: 100;
     display: flex;
@@ -179,6 +175,64 @@ width: 100%
     transform: rotate(180deg);
 }
 
+.green{
+    color: $secondary;
+}
+
+.red{
+    color: $primary;
+}
+
+#project-content {
+    width: 100%;
+    padding: 0px !important;
+}
+
+#budget {
+    width: 100%;
+    padding: 1rem;
+}
+
+.project-budget-bottom{
+    display: none !important;
+    padding-bottom: 1rem;
+}
+
+.project-budget-top{
+    padding-top: 1rem;
+}
+
+.hr-budget {
+    opacity: 1;
+    border-top: 3px solid;
+}
+
+.private-line-percentage {
+    color: $blue;
+}
+
+.public-line-percentage{
+    color: $violet;
+}
+
+.looking-line-percentage{
+    color: $pink;
+}
+
+.btn-contact-budget{
+    color: $grey-light;
+}
+
+.percentages-budget{
+    font-size: 0.8rem;
+    font-weight: lighter;
+}
+
+.project-header { 
+    z-index: 1;
+}
+
+
 @include media-breakpoint-up(lg) {
 
     .project_preview:nth-child(odd){
@@ -188,9 +242,105 @@ width: 100%
     .project_preview:nth-child(even){
         flex-direction: row-reverse !important;
     }
+
+    #project-content { 
+        width: 80%;
+        padding-left: 2rem !important;
+        padding: 1rem !important;
+    }
+
+    #budget {
+        width: 20%;
+        padding-top: 3rem;
+        padding: 1rem;
+        padding-left: 0rem;
+        padding-top: 5rem;
+    }
+
+    .project-budget-bottom{
+        display: flex !important;
+        padding-bottom: 5rem;
+    }
+
+    .project-budget-top{
+        padding-top: 5rem;
+    }
+
+    .project_header_icon {
+        z-index: 101;
+        width: 50%;
+        top: 5%;
+        right: 0px;
+        display: block;
+    }
+
+    .project_img_background {
+        top: 5%;
+        right: 0px;
+        opacity: 50%;
+        z-index: 0;
+        width: 50%;
+        left: auto;
+    }
+
 }
 
+/* --- ABOUT US --- */
+.about-us-content{
+    width: 100%;
+} 
 
+@include media-breakpoint-up(lg) {
+    .about-us-content{
+        width: 70%
+    }
+}
+
+/* --- MODAL --- */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: $grey-light;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  /* The Close Button */
+  .closeModal {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .closeModal:hover,
+  .closeModal:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .modal label {
+    color: black;
+  }
+
+  
 @charset "UTF-8";
 
 @import "base/global",

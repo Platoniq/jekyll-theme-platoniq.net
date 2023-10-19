@@ -2,33 +2,24 @@
 layout: base
 ---
 
-
-
 <section id="hero">
-  <div class="container d-flex flex-row">
-
-    <div class="col-6">
-      <h1>Sobre Platoniq</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet dolores consectetur voluptate eos cupiditate ea alias, distinctio corporis quis aspernatur consequuntur velit aliquam quae facere, dolorem ab aperiam animi doloribus?</p>
+  <div class="container-lg d-flex flex-row">
+    <div class="w-70">
+      <h1>{{ page.title }}</h1>
+      <span>{{ page.description }}</span>
     </div>
-    <div class="col-5">
-      <img src="/media/gotas.png" alt="happy faces" style="width: 50%; height: auto;">
+    <div class="">
+      <img src={{ page.img.source }} alt={{ page.img.alt }} class="w-100">
     </div>
 
   </div>
+</section>
 
 
-  <section id="hero" class="pb-lg-5 pb-3">
-    <div class="container-lg d-flex flex-wrap flex-row pb-lg-5">
-  
-      <div class="col-lg-5 col-8 pb-3 order-lg-2">
-        {% for proyect in site.data.proyect.proyects %}
-          <h1 class="align-self-end">{{ proyect.title }}</h1>
-          {% endfor %}
-      </div>
-      <div class="col-lg-6 col-4 order-lg-3">
-        <img src="{{ project.image.path | relative_url }}" alt="{{ project.image.alt }}" class="img-fluid">
-      </div>
-    </div>
-  </section>
+<section id="hero" class= pb-3">
+  <div class="container-lg d-flex about-us-content">
+
+    <span>{{ page.content }}</span>
+    
+  </div>
 </section>

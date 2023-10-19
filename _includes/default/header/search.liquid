@@ -1,13 +1,16 @@
 <li class="nav-item">
-    <button id="searchBtn" class="btn" href="#" >
-      <i class="fa-solid fa-magnifying-glass"></i>
-    </button>
-    <div id="searchDiv" class="d-none search-div">
-      <input type="text" id="search-input" class="rounded-3 search-input" placeholder="Search..">
-      <ul class="list-group list-group-flush" id="results-container"></ul>
-    </div>
+  <button id="searchBtn" class="btn" href="#" >
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+  <div id="searchDiv" class="d-none search-div">
+    <input type="text" id="search-input" class="rounded-3 search-input" placeholder="Search..">
+    <ul class="list-group list-group-flush" id="results-container">
+    </ul>
+  </div>
     
-  </li>
-  <li class="nav-item">
-   <span class="nav-link disabled">|</span>
-  </li>
+</li>
+<li class="nav-item">
+  <span class="nav-link disabled">|</span>
+</li>
+
+<span id="language" class="d-none" value="{{page.locale}}"></span>

@@ -3,7 +3,7 @@
     | sort: "volume-number", "last" %} {% endcomment %}
 {% comment %} {% assign current_volume = volumes | find: "uid", page.volume-uid %} {% endcomment %}
 {% if page.collection == "categories" %}
-  {% assign current_category = category | find: "uid", page.uid %}
+  {% assign current_category = category | find: "slug", page.slug %}
 {% endif %}
 
 {% comment %} {% assign prev_volume_number = page.volume-number %}
@@ -11,10 +11,10 @@
 {% assign next_volume_number = page.volume-number %}
 {% assign next_volume = volumes | find: "volume-number", next_volume_uid %} {% endcomment %}
 
-{% assign page_translations = site.pages | where: "uid", page.uid %}
+{% assign page_translations = site.pages | where: "slug", page.slug %}
 {% if page.collection %}
   {% capture the_collection %}{{ page.collection }}{% endcapture %}
-  {% assign page_translations = site[the_collection] | where: "uid", page.uid %}
+  {% assign page_translations = site[the_collection] | where: "slug", page.slug %}
 {% endif %}
 
 {% comment %} ENRUTAMIENTO PARA EL MENU HAMBURGUESA {% endcomment %}
