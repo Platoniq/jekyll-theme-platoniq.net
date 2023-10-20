@@ -6,9 +6,24 @@ h1 strong {
     font-weight: lighter;
 }
 
+h1 {
+    font-size: 7vw;
+}
+
 section {
-    padding: 1rem;
-    padding-left: 2rem;
+    padding: 0;
+    padding-left: 0;
+}
+
+@include media-breakpoint-up(lg) {
+    h1 {
+        font-size: 3vw;
+    }
+
+    section {
+        padding: 1rem;
+        padding-left: 2rem;
+    }
 }
 
 /* --- FOTTER --- */
@@ -132,8 +147,14 @@ width: 100%
     flex-direction: column !important;
 }
 
-.img-project-previe-inside{
+.img-project-preview-inside{
     width: 100%;
+}
+
+.project_header_img{
+    width: 100%;
+    position: absolute;
+    top: 0;
 }
 
 .project_img_line_preview:nth-child(odd)  {
@@ -169,7 +190,7 @@ width: 100%
     display: flex;
     position: relative;
     background-color: $grey-light;
-    color: $black;
+    color: $brand;
 }
 
 .project-page-title {
@@ -208,10 +229,6 @@ width: 100%
     padding-bottom: 1rem;
 }
 
-.project-budget-top{
-    padding-top: 1rem;
-}
-
 .hr-budget {
     opacity: 1;
     border-top: 3px solid;
@@ -240,8 +257,13 @@ width: 100%
 
 .project-header { 
     z-index: 1;
+    max-width: 100%;
 }
 
+.thumbnail-portrail{
+    border-radius: 50%;
+    width: 15%;
+}
 
 @include media-breakpoint-up(lg) {
 
@@ -253,22 +275,27 @@ width: 100%
         flex-direction: row-reverse !important;
     }
 
-    .img-project-previe-inside{
+    .img-project-preview-inside{
         width: 95%;
+    }
+
+    .project_header_img{
+        width: 50%;
+        position: absolute;
+        right: -2%;
+        top: 0;
     }
 
     #project-content { 
         width: 80%;
-        padding-left: 2rem !important;
-        padding: 1rem !important;
     }
 
     #budget {
         width: 20%;
-        padding-top: 3rem;
         padding: 1rem;
-        padding-left: 0rem;
-        padding-top: 5rem;
+        z-index: 100;
+        background-color: $brand;
+        margin-top: 10%;
     }
 
     .project-budget-bottom{
@@ -276,14 +303,10 @@ width: 100%
         padding-bottom: 5rem;
     }
 
-    .project-budget-top{
-        padding-top: 5rem;
-    }
-
     .project_header_icon {
         z-index: 101;
         width: 50%;
-        top: 5%;
+        top: 0%;
         right: 0px;
         display: block;
     }
@@ -297,6 +320,9 @@ width: 100%
         left: auto;
     }
 
+    .project-header{
+        max-width: 60%;
+    }
 }
 
 /* --- ABOUT US --- */

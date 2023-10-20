@@ -11,7 +11,7 @@ layout: base
 <section id="hero" class="pb-lg-5 pb-3">
     <div class="container-lg d-flex flex-wrap flex-row pb-lg-5">
   
-      <div class="col-lg-5 col-8 pb-3 order-lg-2">
+      <div class="d-flex col-lg-5 col-8 pb-3 order-lg-2">
         <h1 class="align-self-end">{{ site.data[locale].homepage.main.main_title }}</h1>
       </div>
       <div class="col-lg-6 col-4 order-lg-3">
@@ -87,7 +87,6 @@ layout: base
     <div class="container-lg d-flex flex-column">
       {% for project in projects limit:2 %}
         {% assign state = site.states | where: "slug", project.state | where: "locale", page.locale | first %}
-        {% assign value = forloop.index | modulo:2 %}
           <div class="d-flex align-items-lg-center justify-content-end pb-lg-5 project_preview">
             <div class="img-fluid project-preview-img">
               <img src={{ site.data[locale].global.project_img_decorator.path }} alt="{{ site.data[locale].global.project_img_decorator.alt }}" class="img-fluid project_img_line_preview">

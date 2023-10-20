@@ -58,7 +58,7 @@ layout: base
         <h1>{{ site.data[locale].global.recent_projects }}</h1>
     </div>
     <div class="container-lg d-flex flex-column">
-        {% for project in related_projects %}
+        {% for project in related_projects limit:2 %}
             {% assign state = site.states | where: "slug", project.state | where: "locale", page.locale | first %}
             {% assign value = forloop.index | modulo:2 %}
             <div class="d-flex align-items-lg-center justify-content-end pb-lg-5 project_preview">
