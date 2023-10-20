@@ -1,0 +1,29 @@
+{% assign previousProject = nil %}
+{% assign nextProject = nil %}
+{% assign foundCurrentProject = false %}
+{% assign projects = site.projects | where: "locale", page.locale %}
+
+{% for project in projects %}
+  {% if foundCurrentProject %}
+    {% assign nextProject = project %}
+    {% break %}
+  {% endif %}
+
+  {% if project.title == page.title %}
+    {% assign foundCurrentProject = true %}
+  {% else %}
+    {% assign previousProject = project %}
+  {% endif %}
+{% endfor %}
+
+{% if assigns.previousProject %}
+    <h2>Previous Project: {{ previousProject.title }}</h2>
+  {% else %}
+    <!-- No previous project found -->
+  {% endif %}
+
+  {% if assigns.nextProject %}
+    <h2>Next Project: {{ nextProject.title }}</h2>
+  {% else %}
+    <!-- No next project found -->
+  {% endif %}

@@ -6,73 +6,24 @@ h1 strong {
     font-weight: lighter;
 }
 
+h1 {
+    font-size: 7vw;
+}
+
 section {
-    padding: 1rem;
-    padding-left: 2rem;
-}
-
-/* --- FOTTER --- */
-.email_footer{
-    min-width: 50%;
-}
-
-.form-control {
-    background-color: $input-background;
-}
-
-.contact_form {
-    width: 100%
-}
-
-.goteo-logo {
-    width: 30%;
+    padding: 0;
+    padding-left: 0;
 }
 
 @include media-breakpoint-up(lg) {
-    .contact_form {
-        width: 40%
+    h1 {
+        font-size: 3vw;
     }
 
-    .goteo-logo {
-        width: 15%;
+    section {
+        padding: 1rem;
+        padding-left: 2rem;
     }
-}
-
-/* --- HEADER --- */
-.search-link {
-    color: $black;
-    text-decoration: none;
-}
-
-.search-div {
-    position: absolute;
-    top: 1rem;
-    left: 3rem;
-    right: auto;
-    width: 88% !important;
-    z-index: 100;
-}
-
-.search-input {
-    width: 100%;
-    padding: 1rem;
-    background-color: #5f4263;
-    border-color: #5f4263;
-    color: $grey-light;
-}
-
-.search-input::placeholder {
-    font-weight: normal;
-    opacity: 1;
-    color: $grey-light;
-}
-
-@include media-breakpoint-up(lg) {
-    .search-div {
-        right: 1rem;
-        left: auto;
-        width: 94% !important;
-    } 
 }
 
 /* --- HOME --- */
@@ -126,6 +77,16 @@ width: 100%
     flex-direction: column !important;
 }
 
+.img-project-preview-inside{
+    width: 100%;
+}
+
+.project_header_img{
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
 .project_img_line_preview:nth-child(odd)  {
     position: absolute;
     left: -5%;
@@ -159,20 +120,11 @@ width: 100%
     display: flex;
     position: relative;
     background-color: $grey-light;
-    color: $black;
+    color: $brand;
 }
 
 .project-page-title {
     font-size: 4rem;
-}
-
-.quote_icon_front {
-    width: 15%;
-}
-
-.quote_icon_back {
-    width: 10%;
-    transform: rotate(180deg);
 }
 
 .green{
@@ -196,10 +148,6 @@ width: 100%
 .project-budget-bottom{
     display: none !important;
     padding-bottom: 1rem;
-}
-
-.project-budget-top{
-    padding-top: 1rem;
 }
 
 .hr-budget {
@@ -230,8 +178,14 @@ width: 100%
 
 .project-header { 
     z-index: 1;
+    max-width: 100%;
 }
 
+.thumbnail-portrail{
+    border-radius: 50%;
+    width: 10%;
+    padding: 0 1rem 0 1rem;
+}
 
 @include media-breakpoint-up(lg) {
 
@@ -243,18 +197,27 @@ width: 100%
         flex-direction: row-reverse !important;
     }
 
+    .img-project-preview-inside{
+        width: 95%;
+    }
+
+    .project_header_img{
+        width: 50%;
+        position: absolute;
+        right: -2%;
+        top: 0;
+    }
+
     #project-content { 
         width: 80%;
-        padding-left: 2rem !important;
-        padding: 1rem !important;
     }
 
     #budget {
         width: 20%;
-        padding-top: 3rem;
         padding: 1rem;
-        padding-left: 0rem;
-        padding-top: 5rem;
+        z-index: 100;
+        background-color: $brand;
+        margin-top: 10%;
     }
 
     .project-budget-bottom{
@@ -262,14 +225,10 @@ width: 100%
         padding-bottom: 5rem;
     }
 
-    .project-budget-top{
-        padding-top: 5rem;
-    }
-
     .project_header_icon {
         z-index: 101;
         width: 50%;
-        top: 5%;
+        top: 0%;
         right: 0px;
         display: block;
     }
@@ -283,6 +242,9 @@ width: 100%
         left: auto;
     }
 
+    .project-header{
+        max-width: 60%;
+    }
 }
 
 /* --- ABOUT US --- */
@@ -340,12 +302,16 @@ width: 100%
     color: black;
   }
 
-  .modal .pj-cta__text {
-    color: black;
+  .who-position-label{
+    color: $secondary
   }
 
-  .form-modal {
-    background-color: white;
+  .author-img-decorator{
+    position: absolute;
+    width: 50%;
+    transform: rotate(90deg);
+    left: -10%;
+    top: -5%;
   }
 
   
@@ -354,4 +320,9 @@ width: 100%
 @import "base/global",
         "base/buttons",
         "base/links",
-        "base/inputs"
+        "base/inputs",
+        "base/footer",
+        "base/header",
+        "plugin/quote",
+        "plugin/image",
+        "plugin/video"

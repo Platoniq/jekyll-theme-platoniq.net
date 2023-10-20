@@ -2,7 +2,9 @@
 layout: base
 ---
 {% assign locale = page.locale %}
-{% assign members = site.members | where: "locale", page.locale  %}
+{% assign colaborators = site.members | where: "locale", page.locale | where: "type", "colaborator" %}
+{% assign authors = site.members | where: "locale", page.locale | where: "type", "author" %}
+
 
 <section id="hero">
   <div class="container-lg d-flex flex-row">
@@ -10,26 +12,64 @@ layout: base
       <h1>{{ page.title }}</h1>
       <span>{{ page.description }}</span>
     </div>
-    <div class="">
+    <div class="d-lg-inline d-none">
       <img src={{ page.img.source }} alt={{ page.img.alt }} class="w-100">
     </div>
-
   </div>
 </section>
 
 
-<section id="main-members" class="pb-3">
-  <div class="container-lg d-flex about-us-content">
+<section id="main-members" class="pb-5">
+  <div class="container-lg d-flex flex-lg-row flex-column flex-wrap">
+    
+    {% for person in authors %}
+      <div class="d-flex flex-column pe-4 ps-4 author-img col-lg-4">
+        <div class="position-relative">
+          <img src={{ person.image.path }} alt={{ person.image.alt }} class="w-100">
+          <img src={{ site.data[locale].global.project_img_decorator.path }} 
+               alt={{ site.data[locale].global.project_img_decorator.path }}
+               class="author-img-decorator" >
+        </div>
+        <div class="d-flex flex-column pt-2">
+          <h3>{{ person.title }}</h3>
+          <span class="who-position-label">{{ person.position }}</span>
+          <span>{{ person.description }}</span>
+          <span class="pt-2">{{ person.email }}</span>
+        </div>
+        <div> <!-- hide of no social media -->
+          <hr class="hr me-lg-3"></hr>
+          <div>
+            <span>social media</span>
+          </div>
+        </div>
 
-    <span>{{ members | jsonify }}</span>
+      </div>
+    {% endfor %}
     
   </div>
 </section>
 
-<section id="colaborators" class="pb-3">
-    <div class="container-lg d-flex about-us-content">
+<section id="colaborators" class="pb-5">
+    <div class="container-lg d-flex flex-column">
   
-      <span>{{ page.content }}</span>
+      <div class="pb-4">
+        <h3>Colaborators.</h3>
+      </div>
+      <div class="d-flex flex-row flex-wrap">
+        {% for person in colaborators %}
+        <div class="d-flex flex-column pe-3 ps-3 author-img col-lg-3 col-6">
+          <div class="">
+            <img src={{ person.image.path }} alt={{ person.image.alt }} class="w-100">
+        </div>
+          <div class="d-flex flex-column pt-2">
+            <span>{{ person.title }}</span>
+          </div>
+          <div>
+            <span>social media</span>
+          </div>      
+        </div>
+      {% endfor %}
+      </div>
       
     </div>
   </section>

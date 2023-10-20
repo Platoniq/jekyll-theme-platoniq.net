@@ -6,10 +6,10 @@
   {% assign current_category = category | find: "slug", page.slug %}
 {% endif %}
 
-{% comment %} {% assign prev_volume_number = page.volume-number %}
-{% assign prev_volume = volumes | find: "volume-number", prev_volume_uid %}
-{% assign next_volume_number = page.volume-number %}
-{% assign next_volume = volumes | find: "volume-number", next_volume_uid %} {% endcomment %}
+{% assign prev_project_number = page.volume-number %}
+{% assign prev_project = volumes | find: "volume-number", prev_volume_uid %}
+{% assign next_project_number = page.volume-number %}
+{% assign next_project = volumes | find: "volume-number", next_volume_uid %}
 
 {% assign page_translations = site.pages | where: "slug", page.slug %}
 {% if page.collection %}

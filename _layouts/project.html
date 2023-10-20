@@ -4,39 +4,42 @@ layout: base
 {% assign state = site.states | where: "slug", page.state | where: "locale", page.locale | first %}
 {% assign locale = page.locale %}
 
-<section id="hero" class="pb-lg-5 pb-3">
-  <div class="container-lg position-relative project-header">
-    <div class="d-flex flex-column">
-      <div class="p-3 order-lg-2 pt-lg-5 w-60">
-        <div class="d-flex flex-row">
-          <div class="pe-2">
-            <i class="fa-solid fa-square {{ state.color }}"></i>
+<section id="hero">
+  <div class="position-relative">
+    <div class="position-relative project-header ps-lg-5">
+      <div class="d-flex flex-column">
+        <div class="p-3 order-lg-2 pt-lg-5">
+          <div class="d-flex flex-row">
+            <div class="pe-2">
+              <i class="fa-solid fa-square {{ state.color }}"></i>
+            </div>
+            <div class="{{ state.color }}">
+              <p> {{ state.title }} </p>
+            </div>
           </div>
-          <div class="{{ state.color }}">
-            <p> {{ state.title }} </p>
-          </div>
+          <h1 class="project-page-title align-self-end">{{ page.title }}</h1>
+          <h4>{{ page.subtitle }}</h4>
         </div>
-        <h1 class="project-page-title align-self-end">{{ page.title }}</h1>
-        <h4>{{ page.subtitle }}</h4>
-      </div>
-      <span class="p-lg-3 d-lg-inline d-none order-lg-2"></span>
-      <div class="p-3 p-bottom-0 order-lg-2 w-60">
-        <p>{{ page.date }}</p>
+        <span class="p-lg-3 d-lg-inline d-none order-lg-2"></span>
+        <div class="p-3 p-bottom-0 order-lg-2 w-60">
+          <p>{{ page.date | date: "%B %e, %Y"}}</p>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="project_header_icon position-absolute">
-    <img src="/media/project-symbol.png" alt="symbol_project_png" class="img-fluid">
-  </div>
-  <div class="project_img_background position-absolute">
-    <img src="{{ page.banner_image.path }}" alt="{{ page.slug }}" class="img-fluid">
+    <div class="project_header_icon position-absolute">
+      <img src={{ site.data[locale].project.header_symbol.path }} alt={{ site.data[locale].project.header_symbol.alt }} class="img-fluid">
+    </div>
+    <div class="project_img_background">
+      <img src="{{ page.banner_image.path }}" alt="{{ page.slug }}" class="project_header_img">
+    </div>
   </div>
 </section>
+
 
 <div class="d-flex flex-lg-row flex-column">
   <section id="project-content">
     <div class="project_content d-flex flex-column p-lg-5 p-3">
-      <div>
+      <div class="ps-lg-5 pe-lg-3">
         {{ page.content }}
       </div>
       <hr class="hr"></hr>
@@ -47,7 +50,9 @@ layout: base
         {% for service in page.services %}
           {% assign current_service = site.services | where: "slug", service | where: "locale", page.locale | first %}
           <div class="d-flex flex-row align-items-center">
-            <spam>{{ current_service.title }}</spam>
+            <a href="#" class="project-link">
+              <spam>{{ current_service.title }}</spam>
+            </a>
             <div class="vr m-3"></div>
           </div>
         {% endfor %}
@@ -57,13 +62,16 @@ layout: base
         <div class="pe-2">
           <b>{{ site.data[locale].project.team }}</b>
         </div>
-        {% for member in page.members %}
+        <div class="d-flex flex-row">
+          {% for member in page.members %}
           {% assign current_member = site.members | where: "slug", member | where: "locale", page.locale | first %}
-          <div class="d-flex flex-row align-items-center">
-            <spam>{{ current_author.title }}</spam>
-            <div class="vr m-3"></div>
-          </div>
-        {% endfor %}
+          
+          <img src={{ current_member.image.path }} 
+                alt={{ current_member.image.alt }}
+                class="thumbnail-portrail">
+          
+          {% endfor %}
+        </div>
       </div>
       <hr class="hr"></hr>
       <div class="d-flex flex-row align-items-center">
@@ -80,7 +88,7 @@ layout: base
   
   <section id="budget" class="d-flex flex-column justify-content-between">
   
-    <div class="d-flex flex-column project-budget-top">
+    <div class="d-flex flex-column">
       <div class="d-flex flex-column">
         <p>{{ site.data[locale].project.budget }}</p>
         <h1>{{ page.budget }}€</h1>
@@ -154,3 +162,9 @@ layout: base
     </div>
   </section>
 </div>
+
+<section id="next_previous">
+  <div class="d-flex flex-row">
+    {% include default/artlicle_next_previous.liquid %}
+  </div>
+</section>
