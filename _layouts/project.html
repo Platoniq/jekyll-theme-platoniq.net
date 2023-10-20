@@ -62,7 +62,7 @@ layout: base
         <div class="pe-2">
           <b>{{ site.data[locale].project.team }}</b>
         </div>
-        < class="d-flex flex-row">
+        <div class="d-flex flex-row">
           {% for member in page.members %}
           {% assign current_member = site.members | where: "slug", member | where: "locale", page.locale | first %}
           
@@ -70,7 +70,7 @@ layout: base
                 alt={{ current_member.image.alt }}
                 class="thumbnail-portrail">
           
-        {% endfor %}
+          {% endfor %}
         </div>
       </div>
       <hr class="hr"></hr>

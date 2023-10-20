@@ -253,7 +253,8 @@ width: 100%
 
 .thumbnail-portrail{
     border-radius: 50%;
-    width: 15%;
+    width: 10%;
+    padding: 0 1rem 0 1rem;
 }
 
 @include media-breakpoint-up(lg) {
