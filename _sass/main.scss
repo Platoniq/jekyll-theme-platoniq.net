@@ -26,76 +26,6 @@ section {
     }
 }
 
-/* --- FOTTER --- */
-.email_footer{
-    min-width: 50%;
-}
-
-.form-control {
-    background-color: $input-background;
-}
-
-.form-control:focus {
-    background-color: #5f4263;
-    opacity: 45%;
-}
-
-
-.contact_form {
-    width: 100%
-}
-
-.goteo-logo {
-    width: 30%;
-}
-
-@include media-breakpoint-up(lg) {
-    .contact_form {
-        width: 40%
-    }
-
-    .goteo-logo {
-        width: 15%;
-    }
-}
-
-/* --- HEADER --- */
-.search-link {
-    color: $black;
-    text-decoration: none;
-}
-
-.search-div {
-    position: absolute;
-    top: 1rem;
-    left: 3rem;
-    right: auto;
-    width: 88% !important;
-    z-index: 100;
-}
-
-.search-input {
-    width: 100%;
-    padding: 1rem;
-    background-color: #5f4263;
-    border-color: #5f4263;
-    color: $grey-light;
-}
-
-.search-input::placeholder {
-    font-weight: normal;
-    opacity: 1;
-    color: $grey-light;
-}
-
-@include media-breakpoint-up(lg) {
-    .search-div {
-        right: 1rem;
-        left: auto;
-        width: 94% !important;
-    } 
-}
-
 /* --- HOME --- */
 
 #adjective {
@@ -384,29 +314,15 @@ width: 100%
     top: -5%;
   }
 
-/* --- PLUGINS --- */
-.blockquote-text{
-    color: $primary;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.quote_icon_front {
-    width: 20%;
-    fill: $primary;
-}
-
-.quote_icon_back {
-    width: 15%;
-    transform: rotate(180deg);
-    fill: $primary;
-}
-
   
 @charset "UTF-8";
 
 @import "base/global",
         "base/buttons",
         "base/links",
-        "base/inputs"
+        "base/inputs",
+        "base/footer",
+        "base/header",
+        "plugin/quote",
+        "plugin/image",
+        "plugin/video"
