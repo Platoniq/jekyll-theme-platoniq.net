@@ -54,7 +54,7 @@ layout: base
 </section>
 
 <section id="recent_projects" class="pb-lg-5 pb-3">
-    <div class="container-lg d-flex flex-column pb-lg-5">
+    <div class="container-lg d-flex flex-column pb-lg-5  pb-3">
         <h1>{{ site.data[locale].global.recent_projects }}</h1>
     </div>
     <div class="container-lg d-flex flex-column">
@@ -63,11 +63,15 @@ layout: base
             {% assign value = forloop.index | modulo:2 %}
             <div class="d-flex align-items-lg-center justify-content-end pb-lg-5 project_preview">
                 <div class="img-fluid project-preview-img">
-                    <img src={{ site.data[locale].global.project_img_decorator.path }} alt={{ site.data[locale].global.project_img_decorator.alt }} class="img-fluid project_img_line_preview">
-                    <img src={{ project.banner_image.path }} alt="{{ project.banner_image.url }}" class="img-fluid">
+                    <img src={{ site.data[locale].global.project_img_decorator.path }} 
+                         alt={{ site.data[locale].global.project_img_decorator.alt }} 
+                         class="img-fluid project_img_line_preview">
+                    <img src={{ project.banner_image.path }} 
+                         alt="{{ project.banner_image.url }}" 
+                         class="img-fluid img-project-previe-inside">
                 </div>
-                <div class="d-flex flex-column col-lg-7  p-5 flex-fill">
-                    <div class="d-flex flex-row">
+                <div class="d-flex flex-column col-lg-7 p-lg-5 p-2 flex-fill">
+                    <div class="d-flex flex-row justify-content-lg-start justify-content-end">
                         <div class="pe-2">
                             <i class="fa-solid fa-square {{state.color}}"></i>
                         </div>

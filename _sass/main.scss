@@ -126,6 +126,10 @@ width: 100%
     flex-direction: column !important;
 }
 
+.img-project-previe-inside{
+    width: 100%;
+}
+
 .project_img_line_preview:nth-child(odd)  {
     position: absolute;
     left: -5%;
@@ -241,6 +245,10 @@ width: 100%
     
     .project_preview:nth-child(even){
         flex-direction: row-reverse !important;
+    }
+
+    .img-project-previe-inside{
+        width: 95%;
     }
 
     #project-content { 
