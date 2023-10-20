@@ -20,6 +20,12 @@ section {
     background-color: $input-background;
 }
 
+.form-control:focus {
+    background-color: #5f4263;
+    opacity: 45%;
+}
+
+
 .contact_form {
     width: 100%
 }
