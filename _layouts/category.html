@@ -61,12 +61,12 @@ layout: base
         {% for project in related_projects %}
             {% assign state = site.states | where: "slug", project.state | where: "locale", page.locale | first %}
             {% assign value = forloop.index | modulo:2 %}
-            <div class="d-flex align-items-lg-end justify-content-end pb-lg-5 project_preview">
+            <div class="d-flex align-items-lg-center justify-content-end pb-lg-5 project_preview">
                 <div class="img-fluid project-preview-img">
                     <img src={{ site.data[locale].global.project_img_decorator.path }} alt={{ site.data[locale].global.project_img_decorator.alt }} class="img-fluid project_img_line_preview">
                     <img src={{ project.banner_image.path }} alt="{{ project.banner_image.url }}" class="img-fluid">
                 </div>
-                <div class="d-flex flex-column p-5 flex-fill">
+                <div class="d-flex flex-column col-lg-7  p-5 flex-fill">
                     <div class="d-flex flex-row">
                         <div class="pe-2">
                             <i class="fa-solid fa-square {{state.color}}"></i>

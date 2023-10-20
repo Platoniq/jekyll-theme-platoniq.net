@@ -1,6 +1,10 @@
 ---
 layout: base
 ---
+{% assign locale = page.locale %}
+{% assign projects = site.projects | where: "locale", page.locale %}
+
+
 <section id="hero">
   <div class="container-lg d-flex flex-row">
     <div class="w-70">
@@ -17,7 +21,13 @@ layout: base
 <section id="hero" class= pb-3">
   <div class="container-lg d-flex about-us-content">
 
-    <span>{{ page.content }}</span>
+    <div class="d-flex flex-column">
+      {% for project in projects %}
+        <div class="d-felx flex-lg-row flex-col">
+          <span>{{ project.title }}</span>
+        </div>
+      {% endfor %}
     
+    </div>
   </div>
 </section>
