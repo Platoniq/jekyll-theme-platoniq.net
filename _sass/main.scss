@@ -197,15 +197,6 @@ width: 100%
     font-size: 4rem;
 }
 
-.quote_icon_front {
-    width: 15%;
-}
-
-.quote_icon_back {
-    width: 10%;
-    transform: rotate(180deg);
-}
-
 .green{
     color: $secondary;
 }
@@ -392,7 +383,25 @@ width: 100%
     top: -5%;
   }
 
-/* --- WHO PAGE --- */
+/* --- PLUGINS --- */
+.blockquote-text{
+    color: $primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quote_icon_front {
+    width: 20%;
+    fill: $primary;
+}
+
+.quote_icon_back {
+    width: 15%;
+    transform: rotate(180deg);
+    fill: $primary;
+}
+
   
 @charset "UTF-8";
 
