@@ -50,7 +50,7 @@ layout: base
         {% for service in page.services %}
           {% assign current_service = site.services | where: "slug", service | where: "locale", page.locale | first %}
           <div class="d-flex flex-row align-items-center">
-            <a href="#">
+            <a href="#" class="project-link">
               <spam>{{ current_service.title }}</spam>
             </a>
             <div class="vr m-3"></div>

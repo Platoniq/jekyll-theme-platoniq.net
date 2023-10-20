@@ -6,6 +6,10 @@ a {
   color: $white;
 }
 
+.project-link {
+  color: $brand !important;
+}
+
 a:hover {
   color: $primary;
 }
