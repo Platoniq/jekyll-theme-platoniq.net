@@ -18,7 +18,7 @@
   <div class="pj-file__button">
     <a href="{{ file.file | relative_url }}" class="btn btn-negative">
       {% unless file.button_icon == "" %}
-        {% include svg/{{ file.button_icon | default: "icon-download" }}.liquid class="btn__icon btn__icon-left" %}
+        <i class="fa-solid fa-download"></i>
       {% endunless %}
       
       <span class="btn__label">{{ file.button_text | default: site.data.i18n[page.locale].global.download }}</span>
