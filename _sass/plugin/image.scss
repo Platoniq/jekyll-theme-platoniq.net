@@ -1,0 +1,11 @@
+.img__plugin {
+    width: 100%;
+
+    img {
+        width: 100%;
+
+        @media (min-width: $bp-desktop) {
+            width: 60%;
+        }
+    }
+}
