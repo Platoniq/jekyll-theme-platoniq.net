@@ -5,7 +5,6 @@ A collection of plugins for Jekyll:
 - Author Tag
 - Call To Action Block
 - Documents Tag
-- File Tag
 - Gallery Tag
 - Links Tag
 - Numbers Tag
@@ -13,7 +12,6 @@ A collection of plugins for Jekyll:
 - Quote Block
 - Stickers Tag
 - Video Tag
-
 
 ## Author Tag
 
@@ -57,22 +55,6 @@ A collection of plugins for Jekyll:
 ```
 {% documents { "title": "Our documents", "items": [ { "file": "https://platoniq.net", "title": "Beginner's Guide to Platocracy"}, { "file": "/media/the_book_of_platoniq.pdf", "title": "The Book of Platoniq"} ] } %}
 ```
-
-## File Tag
-
-| Option | Type | Description | Example | Default |
-|---|---|---|---|---|
-| **title** | `string` | Title of the section | `"Listen to our podcast"` | `""` |
-| **info** | `string` | Information | `"1h 30'"` | `""` |
-| **file** | `string` | File path | `"/media/the_book_of_platoniq.pdf"` | `""` |
-| **image** | `string` | File's thumbnail image path | `"/media/book_cover.png"` | `""` |
-| **button_text** | `string` | Text for the section button | `"Listen now"` | `"Download"`  |
-| **button_icon** | `string`  | Icon for the section button (inside theme's `_includes/svg`) | `"icon-link"` | `"icon-download"` |
-
-```
-{% file { "title": "A very cool file", "info": "4kB PDF", "file": "/media/the_book_of_platoniq.pdf", "image": "/media/book_cover.png", "button_text": "Download", "button_icon": "icon-download" } %}
-```
-
 
 ## Gallery Tag
 
