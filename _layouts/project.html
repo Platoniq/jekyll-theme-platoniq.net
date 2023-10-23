@@ -45,6 +45,18 @@ layout: base
     <div class="project_content d-flex flex-column p-lg-5 p-3">
       <div class="ps-lg-5 pe-lg-3">
         {{ page.content }}
+
+        <div class="info__box mt-5">
+          <div class="p-3 col-lg-2 col-3" >
+            <img src={{ site.data[locale].project.info_box.image.path }} alt={{ site.data[locale].project.info_box.image.alt }}>
+          </div>
+          <div class="info__text col-lg-8 col-9">
+            <h4>{{ site.data[locale].project.info_box.text }}</h4>
+          </div>
+          <div class="p-lg-5 p-2 col-lg-2 col-12">
+            <button class="btn info__btn w-100">{{ site.data[locale].project.info_box.contact }}</button>
+          </div>
+        </div>
       </div>
       <hr class="hr"></hr>
       <div class="d-flex flex-row align-items-center">
