@@ -1,13 +1,5 @@
-<section class="pj-video" title="{{ video.title }}" data-src="{{ video.url }}">
-  <div class="pj-video__overlay">
-    
-    <div class="pj-video__text">
-      {% if video.title != "" %}
-        <div class="d-flex justify-content-center video__play">
-          <iframe src="{{ video.url }}" frameborder="0" allowfullscreen></iframe>
-        </div>
-      {% endif %}
-
+<section class="pj-video">
+    <div class="d-flex justify-content-center video__play">
+      <iframe src="{{ video.url }}" frameborder="0" allowfullscreen></iframe>
     </div>
-  </div>
 </section>

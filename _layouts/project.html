@@ -21,8 +21,12 @@ layout: base
           <h4>{{ page.subtitle }}</h4>
         </div>
         <span class="p-lg-3 d-lg-inline d-none order-lg-2"></span>
-        <div class="p-3 p-bottom-0 order-lg-2 w-60">
-          <p>{{ page.date | date: "%B %e, %Y"}}</p>
+        <div class="p-3 p-bottom-0 order-lg-2 w-60"> 
+          {% if locale == "es" or locale == "cat" %}
+            <p>{{ page.date | date: "%D"}}</p>
+          {% elsif locale == "en" %}
+            <p>{{ page.date | date: "%m/%d/%y"}}</p>
+          {% endif %}
         </div>
       </div>
     </div>
