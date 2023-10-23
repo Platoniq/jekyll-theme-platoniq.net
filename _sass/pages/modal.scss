@@ -17,7 +17,7 @@
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 33%;
 }
 
 .closeModal {
@@ -34,6 +34,8 @@
   cursor: pointer;
 }
 
-.modal label {
-  color: black;
+.modal h3, .modal p, .modal label, .modal input {
+  color: $brand;
+  font-weight: 600;
 }
+
