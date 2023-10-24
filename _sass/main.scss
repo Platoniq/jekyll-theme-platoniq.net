@@ -258,6 +258,18 @@ width: 100%
     }
 }
 
+/* --- OFFER --- */
+
+.about-us-content{
+    width: 100%;
+} 
+
+@include media-breakpoint-up(lg) {
+    .about-us-content{
+        width: 70%
+    }
+}
+
 
 
 .who-position-label{
