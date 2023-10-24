@@ -16,3 +16,18 @@
         font-weight: bold;
     }
 }
+
+.project-content-box {
+    p{
+        display: flex;
+        justify-content: center;
+        
+        img {
+            width: 100%;
+        
+            @media (min-width: $bp-desktop) {
+                width: 60%;
+            } 
+        }
+    }   
+}
