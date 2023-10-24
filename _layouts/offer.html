@@ -12,23 +12,28 @@ layout: base
 </div>
 
 <section id="hero">
-  <div class="container-lg d-flex flex-row">
+  <div class="container-lg d-flex flex-row offer-content">
     <div class="w-70">
       <h1>{{ page.title }}</h1>
-      <span>{{ page.subtitle }}</span>
+      <br><span>{{ page.subtitle }}</span>
     </div>
-
   </div>
 </section>
 
-<section id="footer_sub_hero" class="pb-lg-5 pb-3">
-    <div class="d-flex flex-fill">
-      <span>{{ page.description }}</span>
+<section id="offer_content" class="pb-lg-5 pb-3">
+    <div class="container-lg d-flex offer-content">
+      <span>{{ page.content }}</span>
     </div>
 </section>
 
 <section class="pb-lg-5 pb-3">
-  <div class="container-lg d-flex flex-column pb-lg-5">
-    <button type="button" class="modalBtn btn btn-danger rounded-1 w-100"> Optar a la oferta de trabajo </button>
+  <div class="container-lg d-flex justify-content-end offer-content offer-content">
+    <div class="align-self-end">
+      <button type="button" class="modalBtn btn btn-danger rounded-1"> Optar a la oferta de trabajo </button>
+    </div>
   </div>
 </section>
+
+<hr class="hr me-lg-3">
+
+{% include default/social-media-share.html %}

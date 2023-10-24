@@ -1,0 +1,11 @@
+.offer-content{
+  width: 100%;
+
+  @media (min-width: $bp-desktop) {
+      width: 65%;
+  }
+} 
+
+#offer_content {
+  padding-top: 5%;
+}
