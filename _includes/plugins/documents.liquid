@@ -1,7 +1,10 @@
 <section class="pj-documents">
   <h3>{{ documents.title }}</h3>
   
-  <hr class="hr me-lg-3">
+  {% if documents.items.size > 1 %}
+    <hr class="hr me-lg-3">
+  {% endif %}
+
     {% for item in documents.items %}
     
         <a href="{{ item.file}}" class="link link-external" target="_blank">
@@ -12,7 +15,10 @@
             {{ item.title }}
           </span>
         </a>
-        <hr class="hr me-lg-3">
+
+        {% if documents.items.size > 1 %}
+          <hr class="hr me-lg-3">
+        {% endif %}
       
     {% endfor %}
 </section>
