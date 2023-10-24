@@ -12,7 +12,7 @@ layout: base
 </div>
 
 <section id="hero">
-  <div class="container-lg d-flex flex-row">
+  <div class="container-lg d-flex flex-row offer-content">
     <div class="w-70">
       <h1>{{ page.title }}</h1>
       <span>{{ page.subtitle }}</span>
@@ -22,13 +22,13 @@ layout: base
 </section>
 
 <section id="offer_content" class="pb-lg-5 pb-3">
-    <div class="container-lg d-flex">
+    <div class="container-lg d-flex offer-content">
       <span>{{ page.content }}</span>
     </div>
 </section>
 
 <section class="pb-lg-5 pb-3">
-  <div class="container-lg d-flex flex-column pb-lg-5">
+  <div class="container-lg d-flex flex-column pb-lg-5 offer-content">
     <button type="button" class="modalBtn btn btn-danger rounded-1 w-100"> Optar a la oferta de trabajo </button>
     <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}">PRUEBA </a>
   </div>

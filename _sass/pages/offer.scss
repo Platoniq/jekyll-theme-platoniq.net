@@ -1,0 +1,7 @@
+.offer-content{
+  width: 100%;
+
+  @media (min-width: $bp-desktop) {
+      width: 65%;
+  }
+} 
