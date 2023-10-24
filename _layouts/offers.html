@@ -23,11 +23,11 @@ layout: base
     {% for offer in offers %}
       <div class="d-flex flex-fill">
         <h4>{{ offer.title }}</h4>
-        <div class="d-flex flex-fill justify-content-lg-start justify-content-end align-items-end">
+        <div class="d-flex flex-fill justify-content-end">
           <a href={{ offer |  relative_url }}>
-            <button type="button" class="btn no-border">
-              <i class="fa-solid fa-arrow-right"></i>
-            </button>
+              <button type="button" class="btn no-border">
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
           </a>
         </div>
       </div>
