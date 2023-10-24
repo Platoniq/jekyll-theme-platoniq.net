@@ -73,9 +73,30 @@ width: 100%
 /* --- CATEGORIES --- */
 
 /* --- PROJECTS --- */
-.project_preview{
+.project_preview:nth-child(odd){
     flex-direction: column !important;
+
+    .project_img_line_preview {
+        position: absolute;
+        left: -5%;
+        top: -5%;
+        width: 20%;
+        transform: rotate(90deg);
+    }
 }
+
+.project_preview:nth-child(even){
+    flex-direction: column !important;
+
+    .project_img_line_preview {
+        position: absolute;
+        right: -5%;
+        top: -5%;
+        width: 20%;
+        transform: rotate(0deg);
+    }
+} 
+
 
 .img-project-preview-inside{
     width: 100%;
@@ -85,21 +106,6 @@ width: 100%
     width: 100%;
     position: absolute;
     top: 0;
-}
-
-.project_img_line_preview:nth-child(odd)  {
-    position: absolute;
-    left: -5%;
-    top: -5%;
-    width: 20%;
-    transform: rotate(90deg);
-}
-
-.project_img_line_preview_even:nth-child(even) {
-    position: absolute;
-    right: -5%;
-    top: -5%;
-    width: 20%;
 }
 
 .project_img_background {
