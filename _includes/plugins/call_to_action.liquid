@@ -7,7 +7,11 @@
   {% endif %}
   
   {% if is_form %}
-    <form name="{{ call_to_action_name }}" netlify class="container-lg p-3 d-flex flex-column contact_form pj-cta {{ call_to_action_name | prepend: 'cta__' }}">
+    {% if  call_to_action_name == "contact-simple" %}
+      <form name="{{ call_to_action_name }}" netlify class="container-lg p-3 d-flex flex-column contact_form pj-cta {{ call_to_action_name | prepend: 'cta__' }}">
+    {% else %}
+      <form name="{{ call_to_action_name }}" netlify class="container-lg p-3 d-flex flex-column contact_modal pj-cta {{ call_to_action_name | prepend: 'cta__' }}">
+    {% endif %}
   {% else %}
     <div class="pj-cta {{ call_to_action_name | prepend: 'cta__' }}">
   {% endif %}
