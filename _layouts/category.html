@@ -4,7 +4,7 @@ layout: base
 {% assign related_projects = site.projects | where: "categories", page.slug | where: "locale", page.locale | reverse %}   <!--coge aquellos proyectos (en el idioma actual) cuyo array categories contenga el slug de esta category --> 
 {% assign locale = page.locale %}
 
-<div class="modal">
+<div class="modal modal-lg-dialog modal-fullscreen-lg-down">
     <div class="modal-content">
         <div class="d-flex justify-content-end">
             <div class="align-self-end"><span class="closeModal">&times;</span></div>
@@ -56,7 +56,7 @@ layout: base
 </section>
 
 <section id="recent_projects" class="pb-lg-5 pb-3">
-    
+
     {% include partials/recent_projects.liquid %}
 
     <div class="d-flex justify-content-center">
