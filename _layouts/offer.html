@@ -2,6 +2,8 @@
 layout: base
 ---
 
+{% assign locale = page.locale %}
+
 <div class="modal">
   <div class="modal-content">
       <div class="d-flex justify-content-end">
@@ -38,7 +40,7 @@ layout: base
   <div class="container-lg offer-content">
     <hr class="hr me-lg-3">
     <div class="container-lg d-flex justify-content-start ">
-      <span class="share-text">Share:</span>
+      <span class="share-text">{{ site.data[locale].project.share }}</span>
       {% include default/social-media-share.liquid %}
     </div>
   </div>
