@@ -3,6 +3,7 @@ layout: base
 ---
 {% assign state = site.states | where: "slug", page.state | where: "locale", page.locale | first %}
 {% assign locale = page.locale %}
+{% assign contact_page = site.pages | where: "slug", "contact" | where: "locale", page.locale | first %}
 
 <section id="hero">
   <div class="position-relative">
@@ -56,7 +57,7 @@ layout: base
             <h4>{{ site.data[locale].project.info_box.text }}</h4>
           </div>
           <div class="p-lg-5 p-2 col-lg-2 col-12">
-            <button class="btn info__btn w-100">{{ site.data[locale].project.info_box.contact }}</button>
+            <a href="{{ contact_page | relative_url }}"><button class="btn info__btn w-100">{{ site.data[locale].project.info_box.contact }}</button></a>
           </div>
         </div>
       </div>
@@ -131,7 +132,7 @@ layout: base
         </div>
       </div>
       <div class="pb-5">
-        <button class="btn btn-primary rounded-1 w-100 btn-contact-budget">{{ site.data[locale].project.colab_btn }}</button>
+        <a href="{{ contact_page | relative_url }}"><button class="btn btn-primary rounded-1 w-100 btn-contact-budget">{{ site.data[locale].project.colab_btn }}</button></a>
       </div>
       <div class="d-flex flex-column">
         <h4>{{ site.data[locale].project.colaborators }}</h4>
@@ -167,7 +168,7 @@ layout: base
         </div>
       </div>
       <div class="pb-5">
-        <button class="btn btn-primary rounded-1 w-100 btn-contact-budget">{{ site.data[locale].project.colab_btn }}</button>
+        <a href="{{ contact_page | relative_url }}"><button class="btn btn-primary rounded-1 w-100 btn-contact-budget">{{ site.data[locale].project.colab_btn }}</button></a>
       </div>
       <div class="d-flex flex-column">
         <h4>{{ site.data[locale].project.colaborators }}</h4>

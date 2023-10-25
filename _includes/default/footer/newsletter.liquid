@@ -10,15 +10,19 @@
     
         <div class="email_footer">
             <div class="input-group mb-3 ">
-                <input type="text" class="form-control bg-transparent text-white" placeholder="{{ site.data[locale].newsletter.email-label }}"
-                    aria-label="Enter e-mail address" aria-describedby="button-addon2">
-                <button class="btn btn-primary text-white" type="button" id="button-addon2">{{ site.data[locale].newsletter.submit-btn }}</button>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input text-white" type="checkbox">
-                <label class="form-check-label" f>
-                    {{ site.data[locale].newsletter.policy-label }}
-                </label>
+                <form name="newsletter-form" class="newsletter-form" netlify>
+                    <div class="d-flex">
+                        <input type="email" class="form-control bg-transparent text-white" required placeholder="{{ site.data[locale].newsletter.email-label }}"
+                            aria-label="Enter e-mail address" aria-describedby="button-addon2">
+                        <button class="btn btn-primary text-white" type="submit" id="button-addon2">{{ site.data[locale].newsletter.submit-btn }}</button>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input text-white" type="checkbox" required>
+                        <label class="form-check-label" f>
+                            {{ site.data[locale].newsletter.policy-label }}
+                        </label>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
