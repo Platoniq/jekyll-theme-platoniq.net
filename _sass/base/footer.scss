@@ -20,6 +20,10 @@
     width: 30%;
 }
 
+.newsletter-form {
+    width: 100%;
+}
+
 @include media-breakpoint-up(lg) {
     .contact_form {
         width: 40%
