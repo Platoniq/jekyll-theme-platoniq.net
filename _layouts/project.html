@@ -76,17 +76,18 @@ layout: base
         {% endfor %}
       </div>
       <hr class="hr"></hr>
-      <div class="d-flex flex-row align-items-center">
+      <div class="d-flex flex-lg-row flex-column align-items-lg-center">
         <div class="pe-2">
           <b>{{ site.data[locale].project.team }}</b>
         </div>
         <div class="d-flex flex-row">
           {% for member in page.members %}
           {% assign current_member = site.members | where: "slug", member | where: "locale", page.locale | first %}
-          
-          <img src={{ current_member.image.path }} 
+          <div class="img__portrail">
+            <img src={{ current_member.image.path }} 
                 alt={{ current_member.image.alt }}
-                class="thumbnail-portrail">
+                class="">
+          </div>
           
           {% endfor %}
         </div>
@@ -182,7 +183,7 @@ layout: base
 </div>
 
 <section id="next_previous">
-  <div class="d-flex flex-row">
+  <div class="">
     {% include default/artlicle_next_previous.liquid %}
   </div>
 </section>

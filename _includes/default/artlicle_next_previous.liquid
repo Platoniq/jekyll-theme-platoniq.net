@@ -16,14 +16,59 @@
   {% endif %}
 {% endfor %}
 
-{% if assigns.previousProject %}
+{% comment %} {% if previousProject %}
     <h2>Previous Project: {{ previousProject.title }}</h2>
   {% else %}
-    <!-- No previous project found -->
+    <h2>THIS IS THE FIRST PROJECT</h2>
   {% endif %}
 
-  {% if assigns.nextProject %}
+  {% if nextProject %}
     <h2>Next Project: {{ nextProject.title }}</h2>
   {% else %}
-    <!-- No next project found -->
-  {% endif %}
+    <h2>THIS IS THE LAST PROJECT</h2>
+  {% endif %} {% endcomment %}
+
+ 
+  <div class="d-flex flex-row justify-content-between">
+    <div id="previous" class="d-flex flex-row p-5">
+      {% if previousProject %}
+        <a href="{{ previousProject | relative_url }}" class="d-flex flex-row">
+
+          <span class="link__icon link__icon-left p-2">
+            <i class="fa-solid fa-arrow-left"></i>
+          </span>
+
+          <span>
+            <h3>{{ previousProject.title }}</h3>
+          </span>
+
+          {% comment %} <span class="link__label">
+            {% if previous_post.interviewee && previous_post.interviewee != "" %}
+              {{ t_interviewing | append: " " | append: previous_post.interviewee }}: 
+            {% elsif previous_post.category == "stories" %}
+              {{ t_stories }}: 
+            {% endif %}
+            
+            {{ previous_post.title }}
+          </span> {% endcomment %}
+        </a>
+      {% endif %}
+    </div>
+
+    <div class="vr project__divisor"></div>
+
+    <div id="next" class="d-flex flex-row">
+      {% if nextProject %}
+        <a class="link link-right d-flex flex-row" href="{{ nextProject | relative_url }}">
+
+          <span class="link__label ">
+            <h3>{{ nextProject.title }}</h3>
+          </span>
+
+          <span class="link__icon link__icon-right p-2">
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
+        </a>
+      {% endif %}
+    </div>
+  </div>
