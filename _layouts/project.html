@@ -3,6 +3,7 @@ layout: base
 ---
 {% assign state = site.states | where: "slug", page.state | where: "locale", page.locale | first %}
 {% assign locale = page.locale %}
+{% assign contact_page = site.pages | where: "slug", "contact" | where: "locale", page.locale | first %}
 
 <section id="hero">
   <div class="position-relative">
@@ -21,8 +22,12 @@ layout: base
           <h4>{{ page.subtitle }}</h4>
         </div>
         <span class="p-lg-3 d-lg-inline d-none order-lg-2"></span>
-        <div class="p-3 p-bottom-0 order-lg-2 w-60">
-          <p>{{ page.date | date: "%B %e, %Y"}}</p>
+        <div class="p-3 p-bottom-0 order-lg-2 w-60"> 
+          {% if locale == "es" or locale == "cat" %}
+            <p>{{ page.date | date: "%D"}}</p>
+          {% elsif locale == "en" %}
+            <p>{{ page.date | date: "%m/%d/%y"}}</p>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -40,7 +45,21 @@ layout: base
   <section id="project-content">
     <div class="project_content d-flex flex-column p-lg-5 p-3">
       <div class="ps-lg-5 pe-lg-3">
-        {{ page.content }}
+        <div class="project-content-box">
+          {{ page.content }}
+        </div>
+
+        <div class="info__box mt-5">
+          <div class="p-3 col-lg-2 col-3" >
+            <img src={{ site.data[locale].project.info_box.image.path }} alt={{ site.data[locale].project.info_box.image.alt }}>
+          </div>
+          <div class="info__text col-lg-8 col-9">
+            <h4>{{ site.data[locale].project.info_box.text }}</h4>
+          </div>
+          <div class="p-lg-5 p-2 col-lg-2 col-12">
+            <a href="{{ contact_page | relative_url }}"><button class="btn info__btn w-100">{{ site.data[locale].project.info_box.contact }}</button></a>
+          </div>
+        </div>
       </div>
       <hr class="hr"></hr>
       <div class="d-flex flex-row align-items-center">
@@ -79,7 +98,7 @@ layout: base
           <b>{{ site.data[locale].project.share }}</b>
         </div>
         <div class="">
-          {% include default/socials.liquid %}
+          {% include default/social-media-share.liquid %}
         </div>
       </div>
     </div>
@@ -113,7 +132,7 @@ layout: base
         </div>
       </div>
       <div class="pb-5">
-        <button class="btn btn-primary rounded-1 w-100 btn-contact-budget">{{ site.data[locale].project.colab_btn }}</button>
+        <a href="{{ contact_page | relative_url }}"><button class="btn btn-primary rounded-1 w-100 btn-contact-budget">{{ site.data[locale].project.colab_btn }}</button></a>
       </div>
       <div class="d-flex flex-column">
         <h4>{{ site.data[locale].project.colaborators }}</h4>
@@ -149,7 +168,7 @@ layout: base
         </div>
       </div>
       <div class="pb-5">
-        <button class="btn btn-primary rounded-1 w-100 btn-contact-budget">{{ site.data[locale].project.colab_btn }}</button>
+        <a href="{{ contact_page | relative_url }}"><button class="btn btn-primary rounded-1 w-100 btn-contact-budget">{{ site.data[locale].project.colab_btn }}</button></a>
       </div>
       <div class="d-flex flex-column">
         <h4>{{ site.data[locale].project.colaborators }}</h4>

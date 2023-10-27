@@ -1,18 +1,24 @@
 <section class="pj-documents">
   <h3>{{ documents.title }}</h3>
   
-  <ul>
+  {% if documents.items.size > 1 %}
+    <hr class="hr me-lg-3">
+  {% endif %}
+
     {% for item in documents.items %}
-      <li>
-        <a href="{{ item.url}}" class="link link-external" target="_blank">
-          <span class="link__icon link__icon-left">
-            {% include svg/icon-document.liquid %}
+    
+        <a href="{{ item.file}}" class="link link-external" target="_blank">
+          <span class="link__icon link__icon-left pe-1">
+            <i class="fa-solid fa-file-arrow-down"></i>
           </span>
-          <span class="link__label">
+          <span class="link__label {% if documents.items.size == 1 %} link__label__simple {% endif %}">
             {{ item.title }}
           </span>
         </a>
-      </li>
+
+        {% if documents.items.size > 1 %}
+          <hr class="hr me-lg-3">
+        {% endif %}
+      
     {% endfor %}
-  </ul>
 </section>

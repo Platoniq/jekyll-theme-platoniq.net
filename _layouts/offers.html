@@ -18,11 +18,21 @@ layout: base
 </section>
 
 <section id="footer_sub_hero" class="pb-lg-5 pb-3">
-  {% for offer in offers %}
-    <div class="d-flex flex-fill">
-      <h4>{{ offer.title }}</h4>
-      <a href={{ offer |  relative_url }}>LINK</a>
-    </div>
-  {% endfor %}
+  <div class="container-lg d-flex flex-column offer-content">
+    <hr class="hr me-lg-3">
+    {% for offer in offers %}
+      <div class="d-flex flex-fill">
+        <h4>{{ offer.title }}</h4>
+        <div class="d-flex flex-fill justify-content-end">
+          <a href={{ offer |  relative_url }}>
+              <button type="button" class="btn no-border">
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+          </a>
+        </div>
+      </div>
+      <hr class="hr me-lg-3">
+    {% endfor %}
+  </div>
 
 </section>

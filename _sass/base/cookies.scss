@@ -1,0 +1,35 @@
+#cookie-notice {
+    z-index: 999;
+    padding: 3rem; 
+    display: none; 
+    text-align: center; 
+    position: fixed; 
+    bottom: 0; 
+    width: 100%; 
+    background: $black; 
+    color: $grey-light;
+}
+
+#cookie-notice a {
+    display: inline-block; 
+    cursor: pointer; 
+    margin-left: 0.5rem;
+
+}
+
+@media (max-width: 767px) {
+    #cookie-notice span {
+        display: block; 
+        padding-top: 3px; 
+        margin-bottom: 1rem;
+    }
+
+    #cookie-notice a {
+        position: relative; 
+        bottom: 4px;
+    }
+}
+
+.cookie__btn {
+    height: max-content;
+}

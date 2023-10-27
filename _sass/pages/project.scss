@@ -1,0 +1,33 @@
+.info__box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $primary;
+    flex-wrap: wrap;
+
+    .info__text {
+        color: $grey-light;
+    }
+
+    .info__btn {
+        background-color: $grey-light;
+        color: $primary;
+        font-weight: bold;
+    }
+}
+
+.project-content-box {
+    p{
+        display: flex;
+        justify-content: center;
+        
+        img {
+            width: 100%;
+        
+            @media (min-width: $bp-desktop) {
+                width: 60%;
+            } 
+        }
+    }   
+}

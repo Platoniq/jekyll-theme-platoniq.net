@@ -2,6 +2,10 @@
   border-radius: 0;
 }
 
+.btn-primary { 
+  color: $grey-light;
+}
+
 .btn-circle {
   width: 40px;
   height: 40px;
@@ -13,7 +17,18 @@
   line-height: 1.42857;
 }
 
-.btn-circle:hover {
+.btn-circle-white {
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  border-radius: 25px;
+  border: 1px solid $brand;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.42857;
+}
+
+.btn-circle:hover, .btn-circle-white:hover {
   border: 1px solid $button-cta-background-color;
   background-color: $button-cta-background-color;
 }
@@ -30,3 +45,5 @@
   background-color: $brand;
   border: 1px solid $brand;
 }
+
+/* #TODO arrow-btn */

@@ -1,0 +1,20 @@
+.img__plugin {
+    width: 100%;
+    position: relative;
+
+    img {
+        width: 100%;
+
+        @media (min-width: $bp-desktop) {
+            width: 60%;
+        }
+    }
+
+    .img__plugin__decorator{
+        position: absolute;
+        transform: rotate(90deg);
+        top: -8%;
+        left: 15%;
+        width: 20%;
+    }
+}

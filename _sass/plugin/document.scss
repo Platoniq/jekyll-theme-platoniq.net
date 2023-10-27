@@ -1,0 +1,36 @@
+.link-external:link {
+    color: $grey-light;
+    text-decoration: none;
+
+    .link__label__simple{
+        text-decoration:underline;
+    }
+}
+
+.link-external:hover {
+    color: $grey-light;
+    text-decoration: none;
+
+    .link__label__simple{
+        text-decoration:underline;
+    }
+}
+
+.link-external:visited {
+    color: $grey-light;
+    text-decoration: none;
+
+    .link__label__simple{
+        text-decoration:underline;
+    }
+}
+
+.link-external:active {
+    color: $grey-light;
+    text-decoration: none;
+
+    .link__label__simple{
+        text-decoration:underline;
+    }
+}
+
