@@ -3,7 +3,6 @@
 <section class="d-flex justify-content-center p-5 border-bottom border-top hr-light">
     <div class="d-flex flex-lg-row flex-column">
         <div class="me-lg-5 d-block pb-3">
-            {%- comment -%} TODO: Replace this with netlify newsletter info {%- endcomment -%}
             <h6 class="fw-bold">{{site.data[locale].newsletter.title}}</h6>
             <h4 class="fw-normal">{{site.data[locale].newsletter.description}}</h4>
         </div>
@@ -12,8 +11,9 @@
             <div class="input-group mb-3 ">
                 <form name="newsletter-form" class="newsletter-form" netlify>
                     <div class="d-flex">
-                        <input type="email" class="form-control bg-transparent text-white" required placeholder="{{ site.data[locale].newsletter.email-label }}"
+                        <input type="email" name="email" class="form-control bg-transparent text-white" required placeholder="{{ site.data[locale].newsletter.email-label }}"
                             aria-label="Enter e-mail address" aria-describedby="button-addon2">
+                        <input type="hidden" name="current_date" id="current_date" value="">
                         <button class="btn btn-primary text-white" type="submit" id="button-addon2">{{ site.data[locale].newsletter.submit-btn }}</button>
                     </div>
                     <div class="form-check">
@@ -27,3 +27,12 @@
         </div>
     </div>
 </section>
+
+<script>
+    // JavaScript para establecer la fecha actual en el campo oculto
+    document.addEventListener("DOMContentLoaded", function () {
+        var element = document.getElementById("current_date");
+        var fechaActual = new Date();
+        element.value = fechaActual.toISOString(); 
+    });
+</script>
