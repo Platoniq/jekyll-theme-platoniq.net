@@ -39,7 +39,9 @@ layout: base
         <div> <!-- hide of no social media -->
           <hr class="hr me-lg-3"></hr>
           <div>
-            <span>social media</span>
+            <span>
+              {% include default/member-socials.liquid %}
+            </span> 
           </div>
         </div>
 
@@ -65,7 +67,9 @@ layout: base
             <span>{{ person.title }}</span>
           </div>
           <div>
-            <span>social media</span>
+            <span>
+              {% include default/member-socials.liquid %}
+            </span>
           </div>      
         </div>
       {% endfor %}
