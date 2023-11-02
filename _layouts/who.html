@@ -5,6 +5,11 @@ layout: base
 {% assign colaborators = site.members | where: "locale", page.locale | where: "type", "colaborator" %}
 {% assign authors = site.members | where: "locale", page.locale | where: "type", "author" %}
 
+<section id="breadcrumb">
+  <div class="container-lg d-lg-flex d-none flex-row">
+    {% include default/links/breadcrum_links.liquid links='footer_links' fw='fw-bold' %}  
+  </div>
+</section>
 
 <section id="hero">
   <div class="container-lg d-flex flex-row">

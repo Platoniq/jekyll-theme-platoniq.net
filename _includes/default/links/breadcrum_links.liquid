@@ -1,0 +1,15 @@
+{%- assign fw = include.fw -%}
+{%- assign url = page.url | remove: '.html' -%}
+{%- assign locale = page.locale -%}
+
+<div>
+    {%- for link in site.data[locale].breadcrum -%}
+    <a href="{{ link.link }}" class="me-2 no-underline text-link {{ fw }} {% unless url contains link.link %} not-current-link {% endunless %}">
+        {{ link.name }}
+    </a>
+
+
+    {% unless forloop.last %}<span class="me-2 vr-light opacity-50"> | </span>{% endunless %}
+
+    {%- endfor -%}
+</div>

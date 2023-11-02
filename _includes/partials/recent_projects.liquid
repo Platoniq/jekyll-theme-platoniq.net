@@ -4,8 +4,10 @@
     {% else %}
         {% assign limit =  2 %}
     {%endif%}
+    {{ paginator.projects | jsonify }} 
+
     {% for project in related_projects %}
-        {% if forloop.index <= limit %}
+    
             {% assign state = site.states | where: "slug", project.state | where: "locale", page.locale | first %}
             <div class="d-flex align-items-lg-center justify-content-end pb-lg-5 project_preview">
                 <div class="img-fluid project-preview-img">
@@ -31,7 +33,6 @@
                     <p>{{ project.description }}</p>
                 </div>
             </div>
-        {% endif %}
     {% endfor %}
 
 </div>
