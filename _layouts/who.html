@@ -23,10 +23,8 @@ layout: base
   </div>
 </section>
 
-
 <section id="main-members" class="pb-5">
   <div class="container-lg d-flex flex-lg-row flex-column flex-wrap">
-    
     {% for person in authors %}
       <div class="d-flex flex-column pe-4 ps-4 author-img col-lg-4">
         <div class="position-relative">
@@ -49,25 +47,22 @@ layout: base
             </span> 
           </div>
         </div>
-
       </div>
-    {% endfor %}
-    
+    {% endfor %}  
   </div>
 </section>
 
 <section id="colaborators" class="pb-5">
-    <div class="container-lg d-flex flex-column">
-  
-      <div class="pb-4">
-        <h3>Colaborators.</h3>
-      </div>
-      <div class="d-flex flex-row flex-wrap">
-        {% for person in colaborators %}
+  <div class="container-lg d-flex flex-column">
+    <div class="pb-4">
+      <h3>Colaborators.</h3>
+    </div>
+    <div class="d-flex flex-row flex-wrap">
+      {% for person in colaborators %}
         <div class="d-flex flex-column pe-3 ps-3 author-img col-lg-3 col-6">
           <div class="">
             <img src={{ person.image.path }} alt={{ person.image.alt }} class="w-100">
-        </div>
+          </div>
           <div class="d-flex flex-column pt-2">
             <span>{{ person.title }}</span>
           </div>
@@ -78,7 +73,6 @@ layout: base
           </div>      
         </div>
       {% endfor %}
-      </div>
-      
     </div>
-  </section>
+  </div>
+</section>

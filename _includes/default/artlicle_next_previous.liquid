@@ -15,19 +15,6 @@
     {% assign previousProject = project %}
   {% endif %}
 {% endfor %}
-
-{% comment %} {% if previousProject %}
-    <h2>Previous Project: {{ previousProject.title }}</h2>
-  {% else %}
-    <h2>THIS IS THE FIRST PROJECT</h2>
-  {% endif %}
-
-  {% if nextProject %}
-    <h2>Next Project: {{ nextProject.title }}</h2>
-  {% else %}
-    <h2>THIS IS THE LAST PROJECT</h2>
-  {% endif %} {% endcomment %}
-
  
   <div class="d-flex flex-row justify-content-between align-items-center">
     <div id="previous" class="d-flex flex-row align-items-center p-4">

@@ -1,12 +1,11 @@
-{%- comment -%} TODO: Replace with data from site {%- endcomment -%}
 <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
         aria-expanded="false">
         <span class="burger__label">
-          {% comment %} <span class="fi fi-{{page.locale}}"></span> {% endcomment %}
           {{ page.locale | upcase }}
         </span>
-    </a>
+      </a>
+
 
     <ul class="pj-language-menu dropdown-menu" aria-labelledby="navbarDropdown">
     {% for translation in page_translations %}
@@ -14,7 +13,18 @@
           <a href="{{ translation.url | relative_url }}" class="dropdown-item {% if page.locale == translation.locale %}active rounded-2{% endif %}">
             <div class="flex-row p-1">
               {{ site.data[page.locale].global.locales[translation.locale] }}
-              {% comment %} <span class="fi fi-{{page.locale}}"></span> {% endcomment %}
+            </div>
+          </a>
+        </li>
+      {% endfor %}
+    </ul> 
+
+    <ul class="pj-language-menu dropdown-menu" aria-labelledby="navbarDropdown">
+      {% for translation in not_found_translations %}
+        <li class="p-1">
+          <a href="{{ translation.url | relative_url }}" class="dropdown-item {% if page.locale == translation.locale %}active rounded-2{% endif %}">
+            <div class="flex-row p-1">
+              {{ site.data[page.locale].global.locales[translation.locale] }}
             </div>
           </a>
         </li>
