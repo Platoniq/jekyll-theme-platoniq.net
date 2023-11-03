@@ -1,7 +1,7 @@
 ---
 layout: base
 ---
-{% assign related_projects = site.projects | where: "categories", page.slug | where: "locale", page.locale | reverse %}   <!--coge aquellos proyectos (en el idioma actual) cuyo array categories contenga el slug de esta category --> 
+{% assign related_projects = site.projects | where: "categories", page.sugl | where: "locale", page.locale | reverse %}   <!--coge aquellos proyectos (en el idioma actual) cuyo array categories contenga el slug de esta category --> 
 {% assign locale = page.locale %}
 
 <div class="modal modal-lg-dialog modal-fullscreen-lg-down">
@@ -31,8 +31,8 @@ layout: base
     <div class="container-lg d-flex flex-column pb-lg-5">
 
         <div class="d-flex flex-lg-row flex-column p-lg-3">
-        {% for service in page.services %}                      <!-- para cada uno de los servicios en el array service de esta category-->
-            {% assign current_service = site.services | where: "slug", service | where: "locale", page.locale | first %} <!-- obtener sus valores -->
+        {% for service in page.services %}                 
+            {% assign current_service = site.services | where: "slug", service | where: "locale", page.locale | first %}
             <div class="d-flex flex-lg-row flex-column pe-lg-4">
                 <div class="vr h-100 d-none d-lg-inline me-4"></div>
                 <div class="d-flex flex-column justify-content-around align-items-lg-start">
@@ -56,7 +56,10 @@ layout: base
 </section>
 
 <section id="recent_projects" class="pb-lg-5 pb-3">
-
+    <div class="container-lg d-flex flex-column pb-lg-5  pb-3">
+        <h1>{{ site.data[locale].global.recent_projects }}</h1>
+    </div>
+    {% assign related_projects = site.projects | where: "categories", page.slug | where: "locale", page.locale | reverse %} 
     {% include partials/recent_projects.liquid %}
 
     <div class="d-flex justify-content-center">

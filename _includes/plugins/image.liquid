@@ -2,11 +2,17 @@
 
 <section class="pj-img p-4">
     <div class="d-flex justify-content-center img__plugin">
-        <img src="{{ image.path }}"
-            alt="{{ image.alt }}"
-            class="">
-        <img src="{{ site.data[locale].global.project_img_decorator.path }}" 
-            alt="{{ site.data[locale].global.project_img_decorator.alt }}"
-            class="img-fluid img__plugin__decorator">
+        <img src="{{ image.img.path }}"
+            alt="{{ image.img.alt }}"
+            class="">`
+        {% if image.decorator.path %}
+            <img src="{{ image.decorator.path }}" 
+                alt="{{ image.decorator.alt }}"
+                class="img-fluid img__plugin__decorator">
+        {% else %}
+            <img src="{{ site.data[locale].global.project_img_decorator.path }}" 
+                alt="{{ site.data[locale].global.project_img_decorator.alt }}"
+                class="img-fluid img__plugin__decorator">
+        {% endif %}
     </div>
 </section>

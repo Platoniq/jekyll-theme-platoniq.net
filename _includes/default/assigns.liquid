@@ -1,7 +1,3 @@
-{% comment %} {% assign volumes = site.volumes
-    | where: "locale", page.locale
-    | sort: "volume-number", "last" %} {% endcomment %}
-{% comment %} {% assign current_volume = volumes | find: "uid", page.volume-uid %} {% endcomment %}
 {% if page.collection == "categories" %}
   {% assign current_category = category | find: "slug", page.slug %}
 {% endif %}
@@ -12,28 +8,9 @@
 {% assign next_project = volumes | find: "volume-number", next_volume_uid %}
 
 {% assign page_translations = site.pages | where: "slug", page.slug %}
+{% assign not_found_translations = site.not_found %}
+
 {% if page.collection %}
   {% capture the_collection %}{{ page.collection }}{% endcapture %}
   {% assign page_translations = site[the_collection] | where: "slug", page.slug %}
 {% endif %}
-
-{% comment %} ENRUTAMIENTO PARA EL MENU HAMBURGUESA {% endcomment %}
-{% comment %} {% assign about_page = site.pages | where: "uid", "about" | where: "locale", page.locale | first %}
-{% assign together_page = site.pages | where: "uid", "together" | where: "locale", page.locale | first %}
-{% assign terms_page = site.pages | where: "uid", "terms" | where: "locale", page.locale | first %}
-{% assign privacy_page = site.pages | where: "uid", "privacy" | where: "locale", page.locale | first %}
-{% assign services_page = site.pages | where: "uid", "services" | where: "locale", page.locale | first %} {% endcomment %}
-
-{% comment %} 
-{% capture t_authored_by %}
- {{ site.data.i18n[page.locale].global.authored_by | append: " "}}
-{% endcapture %} {% endcomment %}
-
-{% comment %} {% assign t_close = site.data.i18n[page.locale].global.close %}
-{% assign t_volumes_menu = site.data.i18n[page.locale].global.volumes_menu %}
-{% assign t_sitemap_menu = site.data.i18n[page.locale].global.sitemap_menu %}
-{% assign t_locale_menu = site.data.i18n[page.locale].global.locale_menu %}
-{% assign t_volumes_number = site.data.i18n[page.locale].global.journal_number %}
-{% assign t_gallery_previous = site.data.i18n[page.locale].article.gallery_previous %}
-{% assign t_gallery_next = site.data.i18n[page.locale].article.gallery_next %}
- {% endcomment %}

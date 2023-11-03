@@ -56,3 +56,15 @@ $(document).ready(function () {
 
 
 });
+
+    /*
+   * 
+   * Get current date for newsletter form
+   * 
+   */
+
+document.addEventListener("DOMContentLoaded", function () {
+  var element = document.getElementById("current_date");
+  var fechaActual = new Date();
+  element.value = fechaActual.toISOString(); 
+});

@@ -1,0 +1,15 @@
+{%- if person.facebook -%}
+  <a href="{{ person.facebook }}" class="text-reset no-underline btn btn-circle me-2">
+      <i class="fab fa-facebook-f"></i>
+  </a>
+{%- endif -%}
+{%- if person.twitter -%}
+  <a href="{{ person.twitter }}" class="text-reset no-underline btn btn-circle me-2">
+      <i class="fab fa-twitter"></i>
+  </a>
+{%- endif -%}          
+{%- if person.linkedin -%}
+  <a href="{{ person.linkedin }}" class="text-reset no-underline btn btn-circle me-2">
+      <i class="fab fa-linkedin"></i>
+  </a>
+{%- endif -%} 

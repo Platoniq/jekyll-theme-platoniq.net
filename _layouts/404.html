@@ -1,5 +1,11 @@
 ---
 layout: base
+permalink: 
+slug: /404.html
+uid: not-found
+img:
+    source: /media/site-symbols/not-found.png
+    alt: not found png
 ---
 
 <div class="container grid">
@@ -7,24 +13,10 @@ layout: base
     <div class="d-flex flex-column justify-content-center col-lg-6">
       <h1 class="title__main pb-3">{{ page.title }}</h1>
       <h3 class="title__description pb-5">{{ page.description }}</h3>
-
-      <!-- <div>
-        <div class="d-flex flex-row">
-          <input type="text" id="search-input-2" class="search-input" placeholder={{ page.search }}>
-          <button id="searchBtn" class="btn btn-primary p-2 col-lg-2">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <span>{{ page.search }}</span>
-          </button>
-        </div>
-        <ul class="list-group list-group-flush" id="results-container-2">
-        </ul>
-      </div> -->
     </div> 
     
     <div class="d-flex justify-content-center col-lg-5">
       <img src={{ page.img.source }} alt={{ page.img.alt }} class="not__found">
     </div>
   </div>
-
-
 </div>

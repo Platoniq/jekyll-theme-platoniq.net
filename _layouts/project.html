@@ -24,9 +24,9 @@ layout: base
         <span class="p-lg-3 d-lg-inline d-none order-lg-2"></span>
         <div class="p-3 p-bottom-0 order-lg-2 w-60"> 
           {% if locale == "es" or locale == "cat" %}
-            <p>{{ page.date | date: "%D"}}</p>
+            <p>{{ page.date | date: "%d/%m/%Y"}}</p>
           {% elsif locale == "en" %}
-            <p>{{ page.date | date: "%m/%d/%y"}}</p>
+            <p>{{ page.date | date: "%m/%d/%Y"}}</p>
           {% endif %}
         </div>
       </div>
@@ -50,13 +50,13 @@ layout: base
         </div>
 
         <div class="info__box mt-5">
-          <div class="p-3 col-lg-2 col-3" >
+          <div class="d-flex justify-content-center p-3 col-lg-3 col-3" >
             <img src={{ site.data[locale].project.info_box.image.path }} alt={{ site.data[locale].project.info_box.image.alt }}>
           </div>
-          <div class="info__text col-lg-8 col-9">
+          <div class="info__text col-lg-6 col-9">
             <h4>{{ site.data[locale].project.info_box.text }}</h4>
           </div>
-          <div class="p-lg-5 p-2 col-lg-2 col-12">
+          <div class="p-lg-4 p-2 col-lg-3 col-12">
             <a href="{{ contact_page | relative_url }}"><button class="btn info__btn w-100">{{ site.data[locale].project.info_box.contact }}</button></a>
           </div>
         </div>
@@ -77,18 +77,18 @@ layout: base
         {% endfor %}
       </div>
       <hr class="hr"></hr>
-      <div class="d-flex flex-row align-items-center">
+      <div class="d-flex flex-lg-row flex-column align-items-lg-center">
         <div class="pe-2">
           <b>{{ site.data[locale].project.team }}</b>
         </div>
         <div class="d-flex flex-row">
           {% for member in page.members %}
-          {% assign current_member = site.members | where: "slug", member | where: "locale", page.locale | first %}
-          
-          <img src={{ current_member.image.path }} 
-                alt={{ current_member.image.alt }}
-                class="thumbnail-portrail">
-          
+            {% assign current_member = site.members | where: "slug", member | where: "locale", page.locale | first %}
+            <div class="img__portrail">
+              <img src={{ current_member.image.path }} 
+                  alt={{ current_member.image.alt }}
+                  class="">
+            </div>
           {% endfor %}
         </div>
       </div>
@@ -183,7 +183,7 @@ layout: base
 </div>
 
 <section id="next_previous">
-  <div class="d-flex flex-row">
+  <div class="">
     {% include default/artlicle_next_previous.liquid %}
   </div>
 </section>

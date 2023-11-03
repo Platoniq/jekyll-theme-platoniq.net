@@ -15,15 +15,37 @@
     {% assign previousProject = project %}
   {% endif %}
 {% endfor %}
+ 
+  <div class="d-flex flex-row justify-content-between align-items-center">
+    <div id="previous" class="d-flex flex-row align-items-center p-4">
+      {% if previousProject %}
+        <a href="{{ previousProject | relative_url }}" class="d-flex flex-row">
 
-{% if assigns.previousProject %}
-    <h2>Previous Project: {{ previousProject.title }}</h2>
-  {% else %}
-    <!-- No previous project found -->
-  {% endif %}
+          <span class="link__icon link__icon-left p-2 pe-3">
+            <i class="fa-solid fa-arrow-left"></i>
+          </span>
 
-  {% if assigns.nextProject %}
-    <h2>Next Project: {{ nextProject.title }}</h2>
-  {% else %}
-    <!-- No next project found -->
-  {% endif %}
+          <span>
+            <h3>{{ previousProject.title }}</h3>
+          </span>
+        </a>
+      {% endif %}
+    </div>
+
+    <div class="vr project__divisor"></div>
+
+    <div id="next" class="d-flex flex-row align-items-center p-4">
+      {% if nextProject %}
+        <a class="link link-right d-flex flex-row align-items-center" href="{{ nextProject | relative_url }}">
+
+          <span class="link__label ">
+            <h3>{{ nextProject.title }}</h3>
+          </span>
+
+          <span class="link__icon link__icon-right p-2 ps-3">
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
+        </a>
+      {% endif %}
+    </div>
+  </div>

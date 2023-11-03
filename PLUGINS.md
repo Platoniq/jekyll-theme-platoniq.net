@@ -12,6 +12,7 @@ A collection of plugins for Jekyll:
 - Quote Block
 - Stickers Tag
 - Video Tag
+- Image with decorator
 
 ## Author Tag
 
@@ -156,3 +157,23 @@ To quote or not to quote: That is the question.
 {% video { "title": "I love cats", "url": "https://videos.com/embed/video-id" } %}
 ```
 
+## Image with decorator 
+| Part | Option | Type | Description | Example | Default |
+|---|---|---|---|---|---|
+| **img** | **path** | `string` | Image path | `/media/projects/photo-1620381891112-0418655927ed.jpg` | `""` |
+| **img** | **alt** | `string` | Image description | `"Image decorator"` | `""` |
+| **decorator** | **path** | `string` | Decorator path | `/media/site-symbols/img-line.png` | `""` |
+| **decorator** | **alt** | `string` | Decorator description | `"decorator text"` | `""` |
+
+```
+{% image 
+  {"img":{
+    "path":"/media/projects/photo-1620381891112-0418655927ed.jpg", 
+    "alt":"projecto2" 
+  },
+  "decorator":{
+    "path":"/media/site-symbols/img-line.png", 
+    "alt":"project-decorator"
+  }} 
+%}
+``

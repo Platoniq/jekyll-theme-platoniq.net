@@ -1,4 +1,5 @@
 {% assign locale = page.locale %}
+{% assign cookie_page = site.pages | where: "slug", "cookie-policy" | where: "locale", page.locale | first %}
 
 <div id="cookie-notice">
     <div class="d-flex flex-lg-row flex-column justify-content-around">
@@ -10,7 +11,7 @@
             <a id="cookie-notice-accept" class="btn btn-primary btn-sm cookie__btn">
                 {{ site.data[locale].global.cookies.approve }}
             </a>
-            <a href="/privacy" class="btn btn-primary btn-sm cookie__btn">
+            <a href="#" class="btn btn-primary btn-sm cookie__btn" onclick="location.href='{{ cookie_page | relative_url }}'">
                 {{ site.data[locale].global.cookies.info }}
             </a>
         </div>
