@@ -50,13 +50,13 @@ layout: base
         </div>
 
         <div class="info__box mt-5">
-          <div class="p-3 col-lg-2 col-3" >
+          <div class="d-flex justify-content-center p-3 col-lg-3 col-3" >
             <img src={{ site.data[locale].project.info_box.image.path }} alt={{ site.data[locale].project.info_box.image.alt }}>
           </div>
-          <div class="info__text col-lg-8 col-9">
+          <div class="info__text col-lg-6 col-9">
             <h4>{{ site.data[locale].project.info_box.text }}</h4>
           </div>
-          <div class="p-lg-5 p-2 col-lg-2 col-12">
+          <div class="p-lg-4 p-2 col-lg-3 col-12">
             <a href="{{ contact_page | relative_url }}"><button class="btn info__btn w-100">{{ site.data[locale].project.info_box.contact }}</button></a>
           </div>
         </div>
