@@ -6,7 +6,6 @@
     {% else %}
         {% assign limit =  2 %}
     {%endif%}
-    {{ paginator.projects[locale] | jsonify }} 
 
     {% for project in related_projects %}
         {% assign state = site.states | where: "slug", project.state | where: "locale", page.locale | first %}
