@@ -18,7 +18,9 @@ layout: base
 </section>
 
 <section>
-  <div class="p-lg-4 p-3">
+  <hr class="hr mx-3 d-lg-none"></hr>
+  <div class="d-flex justify-content-end flex-lg-row flex-column p-lg-4 p-3"">
+    <span class="p-2 d-flex">{{ page.category_select }}:</span>
     <select id="sectionSelector" class="form-select">
       <option value="section_all_projects" seleted>{{ site.data[locale].project.all_projects }}</option>
       {% for category in categories %}
@@ -26,6 +28,8 @@ layout: base
       {% endfor %}
     </select>
   </div>
+  <hr class="hr mb-5 mx-3 mb-lg-3"></hr>
+
   <div id="section_all_projects">
     {% assign related_projects = site.projects | where: "locale", page.locale %}
     {% include partials/recent_projects.liquid %} 
