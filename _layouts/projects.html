@@ -20,7 +20,7 @@ layout: base
 <section>
   <hr class="hr mx-3 d-lg-none"></hr>
   <div class="d-flex justify-content-end flex-lg-row flex-column p-lg-4 p-3"">
-    <span class="p-2 d-flex">{{ page.category_select }}:</span>
+    <label class="p-2 d-flex">{{ page.category_select }}:</label>
     <select id="sectionSelector" class="form-select">
       <option value="section_all_projects" seleted>{{ site.data[locale].project.all_projects }}</option>
       {% for category in categories %}
