@@ -1,5 +1,13 @@
+:root {
+    --font-primary: 'Inter';
+}
+
+body {
+    font-family: var(--font-primary), Arial, Helvetica, sans-serif;
+}
+
 b, strong {
-    color: #e94668;
+    color: $primary;
 }
 
 h1 strong {

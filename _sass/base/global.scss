@@ -38,12 +38,13 @@ ul li:before {
 .side-menu{
     background-color: $primary;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: absolute;
     z-index: 999;
     top: 0;
     right: 0;
     position: fixed;
+    overflow: scroll;
 
     @media (min-width: $bp-desktop) {
       width: 40%;
