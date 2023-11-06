@@ -7,15 +7,13 @@ This component defines the layout of the links in the side menu. It accepts the 
 {%- assign links = include.links -%}
 {%- assign locale = page.locale -%}
 
-<div class="pt-5 pb-5">
+<div class="pt-3 pb-3">
     <ul class="navbar-nav justify-content-end flex-grow-1">
         {%- for link in site.data[locale].[links] -%}
         <li class="nav-item ">
             <a class="nav-link side-nav-item" aria-current="page" href="{{ link.link }}">
                 {% if include.header%}
-                    <h5>
-                        {{ link.name }}
-                    </h5>
+                    <h5>{{ link.name }}</h5>
                 {% endif %}
             </a>
         </li>
