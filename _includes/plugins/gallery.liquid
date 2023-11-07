@@ -13,13 +13,13 @@
 
 <section class="pj-gallery {{gallery_class}}">
   {% if multiple %}
-    <button class="pj-gallery-button pj-gallery-button-previous">
+    <button class="pj-gallery-button pj-gallery-button-previous" aria-label="previous">
       {% include svg/icon-arrow_left.liquid
         class="pj-gallery-icon pj-gallery-icon-left"
         alt=t_gallery_previous %}
     </button>
       
-    <button class="pj-gallery-button pj-gallery-button-next">
+    <button class="pj-gallery-button pj-gallery-button-next" aria-label="next">
       {% include svg/icon-arrow_right.liquid
         class="pj-gallery-icon pj-gallery-icon-right"
         alt=t_gallery_next %}
