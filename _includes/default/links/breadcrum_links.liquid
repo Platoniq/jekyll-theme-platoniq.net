@@ -4,7 +4,9 @@
 
 <div>
     {%- for link in site.data[locale].breadcrum -%}
-    <a href="{{ link.link }}" class="me-2 no-underline text-link {{ fw }} {% unless url contains link.link %} not-current-link {% endunless %}">
+    <a href="{{ link.link }}" 
+       class="me-2 no-underline text-link {{ fw }} {% unless url contains link.link %} not-current-link {% endunless %}"
+       aria-label="breadcrum-link-{{ link.name }}">
         {{ link.name }}
     </a>
 

@@ -132,7 +132,9 @@ layout: base
         </div>
       </div>
       <div class="pb-5">
-        <a href="{{ contact_page | relative_url }}"><button class="btn btn-primary rounded-1 w-100 btn-contact-budget" aria-label="contact">{{ site.data[locale].project.colab_btn }}</button></a>
+        <a href="{{ contact_page | relative_url }}"><button class="btn btn-primary rounded-1 w-100 btn-contact-budget" aria-label="{{ site.data[locale].project.colab_btn }}">
+          {{ site.data[locale].project.colab_btn }}
+        </button></a>
       </div>
       <div class="d-flex flex-column">
         <h4>{{ site.data[locale].project.colaborators }}</h4>
@@ -168,7 +170,9 @@ layout: base
         </div>
       </div>
       <div class="pb-5">
-        <a href="{{ contact_page | relative_url }}"><button class="btn btn-primary rounded-1 w-100 btn-contact-budget" aria-label="contact">{{ site.data[locale].project.colab_btn }}</button></a>
+        <a href="{{ contact_page | relative_url }}"><button class="btn btn-primary rounded-1 w-100 btn-contact-budget" aria-label="{{ site.data[locale].project.colab_btn }}">
+          {{ site.data[locale].project.colab_btn }}
+        </button></a>
       </div>
       <div class="d-flex flex-column">
         <h4>{{ site.data[locale].project.colaborators }}</h4>

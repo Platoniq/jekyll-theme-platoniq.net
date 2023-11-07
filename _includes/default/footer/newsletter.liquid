@@ -11,14 +11,14 @@
             <div class="input-group mb-3 ">
                 <form name="newsletter-form" netlify class="newsletter-form">
                     <div class="d-flex">
-                        <input type="email" name="email" class="form-control bg-transparent text-white" required placeholder="{{ site.data[locale].newsletter.email-label }}"
-                            aria-label="Enter e-mail address" aria-describedby="button-addon2">
-                        <input type="hidden" name="current_date" id="current_date" value="">
-                        <button class="btn btn-primary text-white" type="submit" id="button-addon2" aria-label="Join newspaper">{{ site.data[locale].newsletter.submit-btn }}</button>
+                        <input id="email" type="email" name="email" class="form-control bg-transparent text-white" required placeholder="{{ site.data[locale].newsletter.email-label }}"
+                            aria-label="Enter e-mail address" aria-describedby="button-addon2" autocomplete>
+                        <input id="current_date" type="hidden" name="current_date" id="current_date" value="">
+                        <button class="btn btn-primary text-white" type="submit" id="button-addon2" aria-label="submit">{{ site.data[locale].newsletter.submit-btn }}</button>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input text-white" type="checkbox" required>
-                        <label class="form-check-label" f>
+                        <input id="newsletter-policy-check" class="form-check-input text-white" type="checkbox" aria-label="form-check-input" required>
+                        <label class="form-check-label" for="newsletter-policy-check">
                             {{ site.data[locale].newsletter.policy-label }}
                         </label>
                     </div>
