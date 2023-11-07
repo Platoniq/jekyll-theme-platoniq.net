@@ -18,7 +18,7 @@ layout: base
       <span>{{ page.description }}</span>
     </div>
     <div class="d-lg-inline d-none">
-      <img src={{ page.img.source }} alt={{ page.img.alt }} class="w-100">
+      <img src={{ page.img.source }} alt={{ page.img.alt }} class="w-100" loading="lazy">
     </div>
   </div>
 </section>
@@ -28,10 +28,10 @@ layout: base
     {% for person in authors %}
       <div class="d-flex flex-column pe-4 ps-4 author-img col-lg-4">
         <div class="position-relative">
-          <img src={{ person.image.path }} alt={{ person.image.alt }} class="w-100">
+          <img src={{ person.image.path }} alt={{ person.image.alt }} class="w-100" loading="lazy">
           <img src={{ site.data[locale].global.project_img_decorator.path }} 
                alt={{ site.data[locale].global.project_img_decorator.path }}
-               class="author-img-decorator" >
+               class="author-img-decorator" loading="lazy">
         </div>
         <div class="d-flex flex-column pt-2">
           <h3>{{ person.title }}</h3>
@@ -61,7 +61,7 @@ layout: base
       {% for person in colaborators %}
         <div class="d-flex flex-column pe-3 ps-3 author-img col-lg-3 col-6">
           <div class="">
-            <img src={{ person.image.path }} alt={{ person.image.alt }} class="w-100">
+            <img src={{ person.image.path }} alt={{ person.image.alt }} class="w-100" loading="lazy">
           </div>
           <div class="d-flex flex-column pt-2">
             <span>{{ person.title }}</span>
