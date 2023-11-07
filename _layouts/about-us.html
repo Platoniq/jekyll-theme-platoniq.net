@@ -1,6 +1,7 @@
 ---
 layout: base
 ---
+
 <section id="breadcrumb">
   <div class="container-lg d-lg-flex d-none flex-row">
     {% include default/links/breadcrum_links.liquid links='footer_links' fw='fw-bold' %}  
@@ -15,7 +16,7 @@ layout: base
       <span>{{ page.description }}</span>
     </div>
     <div class="">
-      <img src={{ page.img.source }} alt={{ page.img.alt }} class="w-100">
+      <img src={{ page.img.source }} alt={{ page.img.alt }} class="w-100" loading="lazy">
     </div>
 
   </div>

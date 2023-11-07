@@ -12,8 +12,10 @@ This component defines the layout of link lists that is common to all the websit
 
 <div>
     {%- for link in site.data[locale].[links] -%}
-    <a href="{{ link.link }}" class="me-2 no-underline text-link {{ fw }} {% unless url contains link.link %} not-current-link {% endunless %}">
-        <span>{{ link.name }}</span>{{ link.name }}
+    <a href="{{ link.link }}" 
+       class="me-2 no-underline text-link {{ fw }} {% unless url contains link.link %} not-current-link {% endunless %}"
+       aria-label="{{ link.name }}">
+        <span>{{ link.name }}</span>
     </a>
 
     {% if include.divider%}

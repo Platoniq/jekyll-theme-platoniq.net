@@ -4,15 +4,15 @@
     <div class="d-flex justify-content-center img__plugin">
         <img src="{{ image.img.path }}"
             alt="{{ image.img.alt }}"
-            class="">`
+            loading="lazy">
         {% if image.decorator.path %}
             <img src="{{ image.decorator.path }}" 
                 alt="{{ image.decorator.alt }}"
-                class="img-fluid img__plugin__decorator">
+                class="img-fluid img__plugin__decorator" loading="lazy">
         {% else %}
             <img src="{{ site.data[locale].global.project_img_decorator.path }}" 
                 alt="{{ site.data[locale].global.project_img_decorator.alt }}"
-                class="img-fluid img__plugin__decorator">
+                class="img-fluid img__plugin__decorator" loading="lazy">
         {% endif %}
     </div>
 </section>

@@ -4,14 +4,16 @@
       {% if stickers.sticker_one != "" %}
         <span class="pj-sticker pj-sticker-one {{ stickers.sticker_one_animation }}">
           <img src="{{ stickers.sticker_one | relative_url }}"
-          alt="Wilder Journal by Platoniq - Sticker pack">
+          alt="Wilder Journal by Platoniq - Sticker pack"
+          loading="lazy">
         </span>
       {% endif %}
       
       {% if stickers.sticker_two != "" %}
         <span class="pj-sticker pj-sticker-two {{ stickers.sticker_two_animation }}">
           <img src="{{ stickers.sticker_two | relative_url }}"
-          alt="Wilder Journal by Platoniq - Sticker pack">
+          alt="Wilder Journal by Platoniq - Sticker pack"
+          loading="lazy">
         </span>
       {% endif %}
     </div>

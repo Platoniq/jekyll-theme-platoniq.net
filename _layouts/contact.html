@@ -10,41 +10,9 @@ layout: base
         <span class="">{{ page.content }}</span>
     </div>
     <div class="col-lg-6 col-4 order-lg-3 w-50 d-none d-lg-inline">
-        <img src="{{ page.symbol.path }}" alt="{{ page.symbol.alt }}" class="img-fluid">
+        <img src="{{ page.symbol.path }}" alt="{{ page.symbol.alt }}" class="img-fluid" loading="lazy">
     </div>
   </div>
 </section>
 
 {% include default/call_to_action_block.liquid %}
-
-
-<!-- <section>
-  <form class="container-lg p-3 d-flex flex-column contact_form">
-    <div class="form-group flex-row">
-      <label for="exampleFormControlInput1" class="col-sm-6 col-form-label">Nom</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-    </div>
-    <div class="form-group flex-row">
-      <label for="exampleFormControlInput1">Organizatió</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-    </div>
-    <div class="form-group flex-row">
-      <label for="exampleFormControlInput1">Cárrec</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-    </div>
-    <div class="form-group flex-row">
-      <label for="exampleFormControlInput1">Mail</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-    </div>
-    <div class="form-group flex-row">
-      <label for="exampleFormControlInput1">Ciutat/País</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-    </div>
-  
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlTextarea1">Textarea</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-    </div>
-  </form>
-</section> -->

@@ -22,7 +22,7 @@ layout: base
         <span class="">{{ page.subtitle }}</span>
     </div>
     <div class="col-lg-6 col-4 order-lg-3 w-50 d-none d-lg-inline">
-        <img src="{{ page.symbol.path }}" alt="{{ page.symbol.alt }}" class="img-fluid">
+        <img src="{{ page.symbol.path }}" alt="{{ page.symbol.alt }}" class="img-fluid" loading="lazy">
     </div>
     </div>
 </section>
@@ -44,7 +44,9 @@ layout: base
                     </div>
                     <div class="d-flex pt-2 w-100">
                         <a href=# class="w-100">
-                            <button type="button" class="modalBtn btn btn-danger rounded-1 w-100"> {{ site.data[locale].global.contact_btn }} </button>
+                            <button type="button" class="modalBtn btn btn-danger rounded-1 w-100" aria-label="{{site.data[locale].global.contact_btn}}"> 
+                                {{ site.data[locale].global.contact_btn }} 
+                            </button>
                         </a>
                     </div>
                 </div>
@@ -63,7 +65,7 @@ layout: base
     {% include partials/recent_projects.liquid %}
 
     <div class="d-flex justify-content-center">
-        <button type="button" class="btn btn-danger rounded-1 w-50" onclick="location.href='{{ site.data[locale].global.all_projects_url | relative_url }}'"> 
+        <button type="button" class="btn btn-danger rounded-1 w-50" onclick="location.href='{{ site.data[locale].global.all_projects_url | relative_url }}'" aria-label="all projects"> 
            {{ site.data[locale].global.project_btn }}
         </button>
     </div>

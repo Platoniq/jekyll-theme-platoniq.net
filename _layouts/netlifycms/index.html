@@ -1,26 +1,17 @@
 ---
 layout: none
 ---
-
 <!doctype html>
 <html>
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8" name="description"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Journal Content Manager</title>
-   <!--<script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>-->
   <link href="{{ page.config_yml_url | relative_url }}" type="text/yaml" rel="cms-config-url">
 </head>
 <body>
-  <!-- <div data-netlify-identity-menu></div> -->
-  <!-- <div data-netlify-identity-button>Login with Netlify Identity</div> -->
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script> 
-  <!-- <script type="module" src="/admin/preview-templates/index.js"></script> -->
-
   <script>
     CMS.registerPreviewStyle("{{ '/assets/css/styles.css' | relative_url }}");
   </script>
-
-  <!-- <script src="{{ '/assets/js/cms.js' | relative_url }}"></script> -->
 </body>
 </html>

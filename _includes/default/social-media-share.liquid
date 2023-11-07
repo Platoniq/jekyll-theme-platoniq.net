@@ -8,16 +8,16 @@
 <div class="share-buttons d-flex flex-row"> 
 
   <a class="text-reset no-underline btn {{ button_style }} me-2" href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" onclick="window.open(this.href, 'mywin',
-  'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >
+  'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" aria-label="facebook">
       <i class="fab fa-facebook-f"></i>
   </a>
 
-  <a class="text-reset no-underline btn {{ button_style }} me-2" href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ site.baseurl }}{{ page.url }}" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter">
+  <a class="text-reset no-underline btn {{ button_style }} me-2" href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ site.baseurl }}{{ page.url }}" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter" aria-label="twiter">
       <i class="fab fa-twitter"></i>
   </a>
 
   <a class="text-reset no-underline btn {{ button_style }} me-2" href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}&title=&summary=&source=webjeda" onclick="window.open(this.href, 'mywin',
-  'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >
+  'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" aria-label="linkedin">
       <i class="fab fa-linkedin"></i>
   </a>
 
