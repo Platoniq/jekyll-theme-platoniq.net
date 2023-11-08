@@ -14,7 +14,9 @@
                         <input id="email-newsletter" type="email" name="email" class="form-control bg-transparent text-white" required placeholder="{{ site.data[locale].newsletter.email-label }}"
                             aria-label="{{ site.data[locale].newsletter.email-label }}" aria-describedby="button-addon2">
                         <input id="current_date" type="hidden" name="current_date" id="current_date" value="">
-                        <button class="btn btn-primary text-white" type="submit" id="button-addon2" aria-label="submit">{{ site.data[locale].newsletter.submit-btn }}</button>
+                        <button class="btn btn-primary text-white" type="submit" id="button-addon2" aria-label="{{ site.data[locale].newsletter.submit-btn }}">
+                            {{ site.data[locale].newsletter.submit-btn }}
+                        </button>
                     </div>
                     <div class="form-check">
                         <input id="newsletter-policy-check-id" class="form-check-input text-white" type="checkbox" aria-label="form-check-input" required>
