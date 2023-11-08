@@ -65,7 +65,8 @@ layout: base
     {% include partials/recent_projects.liquid %}
 
     <div class="d-flex justify-content-center">
-        <button type="button" class="btn btn-danger rounded-1 w-50" onclick="location.href='{{ site.data[locale].global.all_projects_url | relative_url }}'" aria-label="all projects"> 
+        <button type="button" class="btn btn-danger rounded-1 w-50" onclick="location.href='{{ site.data[locale].global.all_projects_url | relative_url }}'" 
+                aria-label="{{ site.data[locale].global.project_btn }}"> 
            {{ site.data[locale].global.project_btn }}
         </button>
     </div>

@@ -92,11 +92,20 @@ layout: base
     </div>
   </section> -->
 
-  <!-- <section id="work_with" class="pb-lg-5 pb-3">
+  <section id="work_with" class="pb-lg-5 pb-3">
     <div class="container-lg d-flex flex-column pb-lg-5">
       <h1>{{ site.data[locale].homepage.main.who_title }}</h1>
     </div>
-  </section> -->
+
+    {% assign collaborators = site.collaborators | where: "locale", page.locale %}
+    <div class="container-lg d-flex flex-row flex-wrap justify-content-between">
+      {% for collaborator in collaborators %}
+        <div class="col-lg-3 col-5 p-2">
+          <img src={{ collaborator.logo.path }} class="img-thumbnail bg-transparent border-0" alt={{ collaborator.logo.alt }}>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
 
 
 
