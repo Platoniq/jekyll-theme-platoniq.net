@@ -100,7 +100,7 @@ layout: base
     {% assign collaborators = site.collaborators | where: "locale", page.locale %}
     <div class="container-lg d-flex flex-row flex-wrap justify-content-between">
       {% for collaborator in collaborators %}
-        <div class="col-lg-3 col-5 p-2">
+        <div class="col-lg-3 col-5 pe-5 ps-5 p-2">
           <img src={{ collaborator.logo.path }} class="img-thumbnail bg-transparent border-0" alt={{ collaborator.logo.alt }}>
         </div>
       {% endfor %}
