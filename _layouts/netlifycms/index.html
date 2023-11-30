@@ -7,11 +7,10 @@ layout: none
   <meta charset="UTF-8" name="description"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="{{ page.config_yml_url | relative_url }}" type="text/yaml" rel="cms-config-url">
-  <link rel="stylesheet" href="https://unpkg.com/netlify-cms@^0.7.0/dist/cms.css" />
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <script src="https://unpkg.com/netlify-cms@^0.7.0/dist/cms.js"></script>
+  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/cms.js"></script>
   <script>
     CMS.registerPreviewStyle("{{ '/assets/css/styles.css' | relative_url }}");
   </script>
