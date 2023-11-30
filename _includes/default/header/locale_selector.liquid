@@ -31,4 +31,18 @@
       {% endfor %}
     </ul> 
 
+    {% if page_translations.size > 0 %}
+      <ul class="pj-language-menu dropdown-menu" aria-labelledby="navbarDropdown">
+        {% for translation in page_translations_index %}
+            <li class="p-1">
+              <a href="{{ translation.url | relative_url }}" class="dropdown-item {% if page.locale == translation.locale %}active rounded-2{% endif %}">
+                <div class="flex-row p-1">
+                  {{ site.data[page.locale].global.locales[translation.locale] }}
+                </div>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+    {% endif %}
+
 </li>
