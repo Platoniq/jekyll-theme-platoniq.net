@@ -6,7 +6,7 @@ local_backend: true
 backend:
 {% endraw %}
   name: {{ page.backend.name | default: "git-gateway" }}
-  repo: {{ page.backend.repo | default: "Platoniq/platoniq.net" }}
+  repo: {{ page.backend.repo | default: "temp-platoniq/platoniq.net" }}
   branch: {{ page.backend.branch | default: "develop" }}
   squash_merges: {{ page.backend.squash_merges | default: true }}
 {% raw %}
