@@ -8,7 +8,7 @@
 {% assign next_project = volumes | find: "volume-number", next_volume_uid %}
 
 {% assign page_translations = site.pages | where: "slug", page.slug %}
-{% assign page_translations_index = site.page | where: "slug", "home" %}
+{% assign page_translations_index = site.pages | where: "slug", "home" %}
 {% assign not_found_translations = site.not_found %}
 
 {% if page.collection %}
