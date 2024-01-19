@@ -24,12 +24,12 @@
     width: 100%;
 }
 
+.sponsor-div img{
+    width: 75%;
+}
+
 @include media-breakpoint-up(lg) {
     .contact_form {
         width: 40%
-    }
-
-    .goteo-logo {
-        width: 15%;
     }
 }
