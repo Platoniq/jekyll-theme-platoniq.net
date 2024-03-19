@@ -43,10 +43,8 @@ layout: base
                         <p align-self-end>{{ current_service.description }}</p>
                     </div>
                     <div class="d-flex pt-2 w-100">
-                        <a href=# class="w-100">
-                            <button type="button" class="modalBtn btn btn-danger rounded-1 w-100" aria-label="{{site.data[locale].global.contact_btn}}"> 
-                                {{ site.data[locale].global.contact_btn }} 
-                            </button>
+                        <a href="{{ current_service | absolute_url }}" class="btn btn-danger rounded-1 w-100">
+                            {{ site.data[locale].global.know_more }}
                         </a>
                     </div>
                 </div>

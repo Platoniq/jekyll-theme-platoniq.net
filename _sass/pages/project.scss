@@ -18,9 +18,16 @@
 }
 
 .project-content-box {
-    p{
-        display: flex;
-        justify-content: center;
+
+    a {
+        color: $primary;
+        &:hover {
+            font-weight: bolder;
+        }
+    }
+
+    p {
+        text-wrap: balance;
         
         img {
             width: 100%;
