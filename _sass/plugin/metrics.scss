@@ -1,0 +1,51 @@
+.pj-metrics>div {
+  @media (min-width: $bp-desktop) {
+    width: 30%;
+    margin: 0 auto;
+  } 
+}
+  .pj-metrics>div:not(:first-child) {
+    margin-top: 2rem;
+    @media (min-width: $bp-desktop) {
+      margin-top: 0;
+    }
+  }
+  .pj-metrics>div:not(:first-child,:nth-child(2),:nth-child(3)) {
+    @media (min-width: $bp-desktop) {
+      margin-top: 2rem;
+    }
+  }
+
+.project_content .metrics__number {
+  color: $brand;
+} 
+.metrics__number {
+  color: $grey-light;
+  h3 {
+    font-size: 3.5rem;
+  }
+}
+.metrics__text {
+  color: $brand;
+  background-color: $secondary;
+  margin: auto 0;
+  p {
+    font-weight: 600;
+  }
+  span {
+    cursor: pointer;
+    position: relative;
+    top: -85%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 100%;
+  }
+}
+
+.overflow {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}

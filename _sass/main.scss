@@ -1,5 +1,9 @@
 :root {
     --font-primary: 'Inter';
+    --bs-body-font-size: 1.5rem;
+    @media (min-width: $bp-desktop) {
+        --bs-body-font-size: 1rem;
+    } 
 }
 
 body {
@@ -191,7 +195,7 @@ width: 100%
 }
 
 .project-header { 
-    z-index: 1;
+    z-index: 102;
     max-width: 100%;
 }
 
@@ -218,7 +222,7 @@ width: 100%
     .project_header_img{
         width: 50%;
         position: absolute;
-        right: -2%;
+        right: -1rem;
         top: 0;
     }
 
@@ -312,6 +316,7 @@ width: 100%
         "plugin/image",
         "plugin/video",
         "plugin/document",
+        "plugin/metrics",
         "pages/modal.scss",
         "pages/form.scss",
         "pages/project.scss",
