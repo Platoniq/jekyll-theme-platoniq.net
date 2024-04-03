@@ -10,9 +10,9 @@
                 {% for category in categories %}
                     <li class="nav-item ">
                         <a class="nav-link side-nav-item" aria-current="page" href="{{ category | relative_url }}">
-                            <h4>
+                            <h5 class="h5">
                                 {{ category.title }}
-                            </h4>
+                            </h5>
                         </a>
                     </li>
                 {%- endfor -%}
