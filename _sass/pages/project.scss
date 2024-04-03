@@ -19,17 +19,15 @@
 
 .project-content-box {
     p{
-        display: flex;
-        justify-content: center;
-        
         img {
+            display: block;
+            margin: auto;
             width: 100%;
-        
             @media (min-width: $bp-desktop) {
                 width: 60%;
             } 
         }
-    }   
+    }
 }
 
 .project__divisor {
