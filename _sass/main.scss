@@ -40,6 +40,16 @@ h5 {
     font-size: 300;
 }
 
+.h-lg-18rem {
+    @media (min-width: $bp-desktop) {
+        height: 18rem !important;
+    } 
+}
+
+.h-15rem {
+    height: 15rem;
+}
+
 section {
     padding: 0;
     padding-left: 0;
