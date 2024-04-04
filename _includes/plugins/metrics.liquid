@@ -16,18 +16,19 @@
 </section>
 
 <script>
-  showSeeMore();
-
-  window.addEventListener(('resize'), ()=>{
+  document.addEventListener("DOMContentLoaded", ()=>{
+    window.addEventListener(('resize'), ()=>{
+      showSeeMore();
+    });
     showSeeMore();
   });
 
   function seeMore(span) {
-    console.log(span.innerHTML);
     span.innerHTML = span.innerHTML == '<i class="fa-solid fa-plus" aria-hidden="true"></i>' ? '<i class="fa-solid fa-minus"></i>' : '<i class="fa-solid fa-plus" aria-hidden="true"></i>';
     span.previousElementSibling.classList.toggle('overflow');
   }
   function showSeeMore() {
+    console.log("ShowSeeMore");
     document.querySelectorAll('.metrics__text > span').forEach(span =>{
       if (span.previousElementSibling.scrollHeight > span.previousElementSibling.clientHeight) {
         span.style.display = 'flex';

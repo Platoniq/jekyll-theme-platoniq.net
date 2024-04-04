@@ -26,6 +26,11 @@ ul li:before {
 .w-60 {
   width: 60%;
 }
+.w-lg-60 {
+  @media (min-width: $bp-desktop) {
+    width: 60%;
+  } 
+}
 
 .w-40 {
   width: 40%;
