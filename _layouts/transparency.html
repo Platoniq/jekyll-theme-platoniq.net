@@ -14,12 +14,12 @@ layout: base
       <span>{{ page.description }}</span>
     </div>
     <div class="">
-      <img src={{ page.img.source }} alt={{ page.img.alt }} class="w-100" loading="lazy">
+      <img src="{{ page.img.source }}" alt="{{ page.img.alt }}" class="w-100" loading="lazy">
     </div>
   </div>
 </section>
 
-<section id="hero" class= pb-3">
+<section id="hero" class="pb-3">
   <div class="container-lg d-flex flex-column about-us-content">
     {{ page.content }}
   </div>
