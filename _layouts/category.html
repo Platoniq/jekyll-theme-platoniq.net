@@ -30,17 +30,17 @@ layout: base
 <section id="footer_sub_hero" class="pb-lg-5 pb-3">
     <div class="container-lg d-flex flex-column pb-lg-5">
 
-        <div class="d-flex flex-lg-row flex-column p-lg-3">
+        <div class="row d-flex flex-lg-row flex-column p-lg-3">
         {% for service in page.services %}                 
             {% assign current_service = site.services | where: "slug", service | where: "locale", page.locale | first %}
-            <div class="d-flex flex-lg-row flex-column pe-lg-4">
+            <div class="col d-flex flex-lg-row flex-column pe-lg-4">
                 <div class="vr h-100 d-none d-lg-inline me-4"></div>
                 <div class="d-flex flex-column justify-content-around align-items-lg-start">
                     <div class="d-flex flex-fill">
-                        <h4 align-self-end>{{ current_service.title }}</h4>
+                        <h4 class="align-self-start" style="line-height: 1.2;">{{ current_service.title }}</h4>
                     </div>
-                    <div class="d-flex flex-fill">
-                        <p align-self-end>{{ current_service.description }}</p>
+                    <div class="d-flex flex-fill mt-4">
+                        <p class="align-self-center">{{ current_service.description }}</p>
                     </div>
                     <div class="d-flex pt-2 w-100">
                         <a href="{{ current_service | relative_url }}" class="btn btn-danger rounded-1 w-100">

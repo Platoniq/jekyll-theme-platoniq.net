@@ -1,0 +1,40 @@
+<section class="pj-metrics row d-flex flex-column flex-lg-row justify-content-lg-between mt-4 mb-5">
+
+  {% for item in metrics.items %}
+    
+    <div class="d-flex justify-content-start flex-column">
+      <div class="metrics__number text-center">
+        <h3>{{ item.number }}</h3>
+      </div>
+      <div class="metrics__text w-100 w-lg-auto text-center p-2">
+        <p class="m-0 overflow">{{ item.text }}</p>
+        <span onclick="seeMore(this)"><i class='fa-solid fa-plus'></i></span>
+      </div>
+    </div>
+  
+  {% endfor %}
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", ()=>{
+    window.addEventListener(('resize'), ()=>{
+      showSeeMore();
+    });
+    showSeeMore();
+  });
+
+  function seeMore(span) {
+    span.innerHTML = span.innerHTML == '<i class="fa-solid fa-plus" aria-hidden="true"></i>' ? '<i class="fa-solid fa-minus"></i>' : '<i class="fa-solid fa-plus" aria-hidden="true"></i>';
+    span.previousElementSibling.classList.toggle('overflow');
+  }
+  function showSeeMore() {
+    console.log("ShowSeeMore");
+    document.querySelectorAll('.metrics__text > span').forEach(span =>{
+      if (span.previousElementSibling.scrollHeight > span.previousElementSibling.clientHeight) {
+        span.style.display = 'flex';
+      } else {
+        span.style.display = 'none';
+      }
+    });
+  }
+</script>

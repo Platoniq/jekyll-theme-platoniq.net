@@ -176,4 +176,18 @@ To quote or not to quote: That is the question.
     "alt":"project-decorator"
   }} 
 %}
-``
+```
+
+## Metrics Tag
+
+| Option | Type | Description | Example | Default |
+|---|---|---|---|---|
+| **item** | `array` | List with the metrics | - | `"[]"` |
+| **number** | `string` | Number for the metric | `"523k"` | `""` |
+| **text** | `string` | Text or description for the metric | `"Estimated Benefits"` | `""` |
+
+```
+{% metrics { "items": [ { "number": "86%", "text": "Percentaje" }, { "number": "523k",  "text": "Benefits" }, { "number": "24", "text": "Group Members" } ] } %}
+```
+
+

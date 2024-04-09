@@ -4,11 +4,11 @@
     <div class="d-flex flex-lg-row flex-column">
         <div class="me-lg-5 d-block pb-3">
             <h6 class="fw-bold">{{site.data[locale].newsletter.title}}</h6>
-            <h4 class="fw-normal">{{site.data[locale].newsletter.description}}</h4>
+            <h5 class="fw-normal">{{site.data[locale].newsletter.description}}</h5>
         </div>
     
         <div class="email_footer">
-            <div class="input-group mb-3 ">
+            <div class="input-group h-100">
                 <form name="newsletter-form" netlify class="newsletter-form">
                     <div class="d-flex">
                         <input id="email-newsletter" type="email" name="email" class="form-control bg-transparent text-white" required placeholder="{{ site.data[locale].newsletter.email-label }}"
@@ -18,7 +18,7 @@
                             {{ site.data[locale].newsletter.submit-btn }}
                         </button>
                     </div>
-                    <div class="form-check">
+                    <div class="form-check mx-lg-0 mx-auto">
                         <input id="newsletter-policy-check-id" class="form-check-input text-white" type="checkbox" aria-label="form-check-input" required>
                         <label class="form-check-label" for="newsletter-policy-check-id">
                             {{ site.data[locale].newsletter.policy-label }}

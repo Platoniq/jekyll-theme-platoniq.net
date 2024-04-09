@@ -1,5 +1,9 @@
 :root {
     --font-primary: 'Inter';
+    --bs-body-font-size: 1.5rem;
+    @media (min-width: $bp-desktop) {
+        --bs-body-font-size: 1.2rem;
+    } 
 }
 
 body {
@@ -16,6 +20,34 @@ h1 strong {
 
 h1 {
     font-size: 7vw;
+    font-weight: 700;
+}
+
+
+h3 {
+    font-size: 2.3rem;
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 2.1rem;
+    font-weight: 700;
+    line-height: 2;
+}
+
+h5 {
+    font-size: 1.5rem;
+    font-size: 300;
+}
+
+.h-lg-18rem {
+    @media (min-width: $bp-desktop) {
+        height: 18rem !important;
+    } 
+}
+
+.h-15rem {
+    height: 15rem;
 }
 
 section {
@@ -52,6 +84,12 @@ width: 20%;
 width: 100%
 }
 
+.h1-home {
+    span {
+      font-weight: 300;
+    }
+  }  
+
 .project-preview-img{
     position: relative;
     width: 100%;
@@ -63,11 +101,11 @@ width: 100%
     }
     
     .value{
-        width: 25%;
+        width: 23%;
     }
     
     .vertical-text {
-        writing-mode: vertical-lr; 
+        writing-mode: vertical-rl; 
         text-orientation: mixed;
         transform: rotate(180deg);
         font-style: normal;
@@ -191,7 +229,7 @@ width: 100%
 }
 
 .project-header { 
-    z-index: 1;
+    z-index: 102;
     max-width: 100%;
 }
 
@@ -218,7 +256,7 @@ width: 100%
     .project_header_img{
         width: 50%;
         position: absolute;
-        right: -2%;
+        right: -1rem;
         top: 0;
     }
 
@@ -310,6 +348,7 @@ width: 100%
         "plugin/image",
         "plugin/video",
         "plugin/document",
+        "plugin/metrics",
         "pages/modal.scss",
         "pages/form.scss",
         "pages/project.scss",

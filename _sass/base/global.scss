@@ -26,6 +26,11 @@ ul li:before {
 .w-60 {
   width: 60%;
 }
+.w-lg-60 {
+  @media (min-width: $bp-desktop) {
+    width: 60%;
+  } 
+}
 
 .w-40 {
   width: 40%;
@@ -44,7 +49,8 @@ ul li:before {
     top: 0;
     right: 0;
     position: fixed;
-    overflow: scroll;
+    overflow-y: auto;
+    scrollbar-width: none;
 
     @media (min-width: $bp-desktop) {
       width: 40%;

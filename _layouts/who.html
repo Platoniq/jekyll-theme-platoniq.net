@@ -18,22 +18,22 @@ layout: base
       <span>{{ page.description }}</span>
     </div>
     <div class="d-lg-inline d-none">
-      <img src={{ page.img.source }} alt={{ page.img.alt }} class="w-100" loading="lazy">
+      <img src="{{ page.img.source }}" alt="{{ page.img.alt }}" class="w-100" loading="lazy">
     </div>
   </div>
 </section>
 
-<section id="main-members" class="pb-5">
+<section id="main-members">
   <div class="container-lg d-flex flex-lg-row flex-column flex-wrap">
     {% for person in authors %}
-      <div class="d-flex flex-column pe-4 ps-4 author-img col-lg-4">
+      <div class="d-flex flex-column justify-content-between pe-4 ps-4 pb-5 author-img col-lg-4">
         <div class="position-relative">
-          <img src={{ person.image.path }} alt={{ person.image.alt }} class="w-100" loading="lazy">
-          <img src={{ site.data[locale].global.project_img_decorator.path }} 
-               alt={{ site.data[locale].global.project_img_decorator.path }}
+          <img src="{{ person.image.path }}" alt="{{ person.image.alt }}" class="w-100" style="height: 24rem; object-fit: cover;" loading="lazy">
+          <img src="{{ site.data[locale].global.project_img_decorator.path }}" 
+               alt="{{ site.data[locale].global.project_img_decorator.path }}"
                class="author-img-decorator" loading="lazy">
         </div>
-        <div class="d-flex flex-column pt-2">
+        <div class="d-flex flex-column pt-2 justify-content-top flex-fill">
           <h3>{{ person.title }}</h3>
           <span class="who-position-label">{{ person.position }}</span>
           <span>{{ person.description }}</span>
@@ -42,7 +42,7 @@ layout: base
         <div> <!-- hide of no social media -->
           <hr class="hr me-lg-3"></hr>
           <div>
-            <span>
+            <span class="socials">
               {% include default/member-socials.liquid %}
             </span> 
           </div>
@@ -61,12 +61,12 @@ layout: base
       {% for person in colaborators %}
         <div class="d-flex flex-column pe-3 ps-3 author-img col-lg-3 col-6">
           <div class="">
-            <img src={{ person.image.path }} alt={{ person.image.alt }} class="w-100" loading="lazy">
+            <img src="{{ person.image.path }}" class="w-100 h-lg-18rem h-15rem" style="object-fit: cover;" alt="{{ person.image.alt }}" loading="lazy">
           </div>
           <div class="d-flex flex-column pt-2">
             <span>{{ person.title }}</span>
           </div>
-          <div>
+          <div class="flex-fill justify-content-end">
             <span>
               {% include default/member-socials.liquid %}
             </span>
