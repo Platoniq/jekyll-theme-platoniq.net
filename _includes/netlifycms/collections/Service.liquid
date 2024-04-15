@@ -10,6 +10,11 @@
     editor:
       preview: true
     fields:
+      - label: Layout
+        name: layout
+        widget: hidden
+        default: service
+        i18n: duplicate
 
       - label: Slug
         name: slug
@@ -27,4 +32,26 @@
         widget: markdown
         i18n: translate
 
+      - label: Image
+        name: Image
+        widget: object
+        i18n: true
+        fields:
+          - label: Imagen
+            name: path
+            widget: image
+            choose_url: false
+            default: "/media/projects/photo-1452745872182-022042dead8f.jpg"
+            media_library: { config: { multiple: false } }
+            media_folder: "/media/services"
+            i18n: duplicate
+          - label: Texto alternativo a la imagen
+            name: alt
+            widget: string
+            i18n: translate
+
+      - label: Contenido de la página
+        name: body
+        widget: markdown
+        i18n: true
 {% endraw %}
