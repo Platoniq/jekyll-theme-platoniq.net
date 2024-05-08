@@ -40,6 +40,49 @@
     }
 }
 
+#next_previous>div>div {
+    flex-wrap: wrap;
+    >div {
+        width: 100%;
+    }
+    .project__divisor {
+        display: none;
+    }
+    #next {
+        justify-content: flex-end;
+    }
+    #previous {
+        justify-content: flex-start;
+    }
+    @media (min-width: $bp-desktop) {
+        flex-wrap: nowrap;
+        >div {
+            width: 50%;
+        }
+        .project__divisor {
+            display: inline-block;
+            width: 1px;
+        }
+        #next, #previous {
+            justify-content: center;
+        }
+    }
+}
+
+#previous>a>span.link__icon {
+    margin: auto;
+    @media (min-width: $bp-desktop) {
+        margin: 0;
+    }
+}
+
+#next>a>span.link__icon {
+    margin: auto;
+    @media (min-width: $bp-desktop) {
+        margin: 0;
+    }
+}
+
 .project__divisor {
     height: 2em;
     align-self: center;
