@@ -6,12 +6,25 @@
 }
 
 .quote_icon_front {
-    width: 20%;
+    width: 100%;
     fill: $primary;
+    @media (min-width: $bp-desktop) {
+        width: 20%;
+    }
 }
 
 .quote_icon_back {
-    width: 15%;
+    width: 80%;
     transform: rotate(180deg);
     fill: $primary;
+    @media (min-width: $bp-desktop) {
+        width: 15%;
+    }
+}
+
+blockquote>div:nth-child(2) {
+    width: 85%;
+    @media (min-width: $bp-desktop) {
+        width: 50%;
+    }
 }
