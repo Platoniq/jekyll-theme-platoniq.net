@@ -2,7 +2,7 @@
     min-width: 50%;
 }
 
-.newsletter-form>div:first-child {
+.newsletter-form>div:nth-child(2).d-flex {
     margin-bottom: 40px;
     @media (min-width: $bp-desktop) {
         margin-bottom: 0;
@@ -25,16 +25,13 @@
 
 .goteo-div {
     width: 30%;
-
     @media (min-width: $bp-desktop) {
         width: 100%;
     }
 }
 
 .goteo-logo {
-    // width: 30%;
     width: 100%;
-
     @media (min-width: $bp-desktop) {
         width: 30%;
     } 
