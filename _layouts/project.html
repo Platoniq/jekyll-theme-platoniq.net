@@ -22,17 +22,25 @@ layout: base
           <h5>{{ page.subtitle }}</h5>
         </div>
         <span class="p-lg-3 d-lg-inline d-none order-lg-2"></span>
-        <div class="p-3 p-bottom-0 order-lg-2 w-60"> 
-          {% if locale == "es" or locale == "cat" %}
-            <p style="font-size: 1rem;">{{ page.date | date: "%d/%m/%Y"}}</p>
-          {% elsif locale == "en" %}
-            <p style="font-size: 1rem;">{{ page.date | date: "%m/%d/%Y"}}</p>
-          {% endif %}
+        <div class="p-3 p-bottom-0 order-lg-2 w-60">
+          <p style="font-size: 1rem;">
+            {% assign format = "%d/%m/%Y" %}
+
+            {% if locale == "es" or locale == "cat" %}
+            {% assign format = "%d/%m/%Y" %}
+            {% endif %}
+
+            {{ page.date_start | date: format }}
+            {% if page.date_end != nil %}
+            - {{ page.date_end | date: format }}
+            {% endif %}
+          </p>
         </div>
       </div>
     </div>
     <div class="project_header_icon position-absolute">
-      <img src={{ site.data[locale].project.header_symbol.path }} alt={{ site.data[locale].project.header_symbol.alt }} class="img-fluid" loading="lazy">
+      <img src={{ site.data[locale].project.header_symbol.path }} alt={{ site.data[locale].project.header_symbol.alt }}
+        class="img-fluid" loading="lazy">
     </div>
     <div class="project_img_background">
       <img src="{{ page.banner_image.path }}" alt="{{ page.slug }}" class="project_header_img" loading="lazy">
@@ -50,8 +58,9 @@ layout: base
         </div>
 
         <div class="info__box mt-5">
-          <div class="d-flex justify-content-center p-3 col-lg-3 col-3" >
-            <img src={{ site.data[locale].project.info_box.image.path }} alt={{ site.data[locale].project.info_box.image.alt }}>
+          <div class="d-flex justify-content-center p-3 col-lg-3 col-3">
+            <img src={{ site.data[locale].project.info_box.image.path }} alt={{
+              site.data[locale].project.info_box.image.alt }}>
           </div>
           <div class="info__text col-lg-6 col-9">
             <h4>{{ site.data[locale].project.info_box.text }}</h4>
@@ -65,38 +74,39 @@ layout: base
           </div>
         </div>
       </div>
-      <hr class="hr"></hr>
+      <hr class="hr">
+      </hr>
       <div class="d-flex flex-row align-items-center">
         <div class="pe-2">
           <b>{{ site.data[locale].project.services }}</b>
         </div>
         {% for service in page.services %}
-          {% assign current_service = site.services | where: "slug", service | where: "locale", page.locale | first %}
-          <div class="d-flex flex-row align-items-center">
-            <a href="#" class="project-link">
-              <spam>{{ current_service.title }}</spam>
-            </a>
-            <div class="vr m-3"></div>
-          </div>
+        {% assign current_service = site.services | where: "slug", service | where: "locale", page.locale | first %}
+        <div class="d-flex flex-row align-items-center">
+          <a href="#" class="project-link">
+            <spam>{{ current_service.title }}</spam>
+          </a>
+          <div class="vr m-3"></div>
+        </div>
         {% endfor %}
       </div>
-      <hr class="hr"></hr>
+      <hr class="hr">
+      </hr>
       <div class="d-flex flex-lg-row flex-column align-items-lg-center">
         <div class="pe-2">
           <b>{{ site.data[locale].project.team }}</b>
         </div>
         <div class="d-flex flex-row">
           {% for member in page.members %}
-            {% assign current_member = site.members | where: "slug", member | where: "locale", page.locale | first %}
-            <div class="img__portrail">
-              <img src={{ current_member.image.path }} 
-                  alt={{ current_member.image.alt }}
-                  class="">
-            </div>
+          {% assign current_member = site.members | where: "slug", member | where: "locale", page.locale | first %}
+          <div class="img__portrail">
+            <img src={{ current_member.image.path }} alt={{ current_member.image.alt }} class="">
+          </div>
           {% endfor %}
         </div>
       </div>
-      <hr class="hr"></hr>
+      <hr class="hr">
+      </hr>
       <div class="d-flex flex-row align-items-center">
         <div class="pe-2">
           <b>{{ site.data[locale].project.share }}</b>
@@ -107,18 +117,18 @@ layout: base
       </div>
     </div>
   </section>
-  
-  
+
+
   <section id="budget" class="d-flex flex-column justify-content-between">
-  
+
     <div class="d-flex flex-column">
       <div class="d-flex flex-column">
         <p>{{ site.data[locale].project.budget }}</p>
         <h1>{{ page.budget }}€</h1>
         <div class="d-flex flex-row">
-          <hr class="hr hr-budget public-line-percentage" style="width: {{ page.public_percentage }}%;"/>
-          <hr class="hr hr-budget private-line-percentage" style="width: {{ page.private_percentage }}%;"/>
-          <hr class="hr hr-budget looking-line-percentage" style="width: {{ page.looking_finance_percentage }}%;"/>
+          <hr class="hr hr-budget public-line-percentage" style="width: {{ page.public_percentage }}%;" />
+          <hr class="hr hr-budget private-line-percentage" style="width: {{ page.private_percentage }}%;" />
+          <hr class="hr hr-budget looking-line-percentage" style="width: {{ page.looking_finance_percentage }}%;" />
         </div>
         <div class="d-flex flex-column pt-2 pb-4 percentages-budget">
           <div class="d-flex flex-row">
@@ -136,19 +146,22 @@ layout: base
         </div>
       </div>
       <div class="pb-3">
-        <a href="{{ contact_page | relative_url }}"><button class="btn btn-primary rounded-1 w-100 btn-contact-budget" aria-label="{{ site.data[locale].project.colab_btn }}">
-          {{ site.data[locale].project.colab_btn }}
-        </button></a>
+        <a href="{{ contact_page | relative_url }}"><button class="btn btn-primary rounded-1 w-100 btn-contact-budget"
+            aria-label="{{ site.data[locale].project.colab_btn }}">
+            {{ site.data[locale].project.colab_btn }}
+          </button></a>
       </div>
       <div class="d-flex flex-column">
         <h5>{{ site.data[locale].project.collaborators }}</h5>
         <div class="d-flex flex-row  align-items-center">
           <div class="d-flex flex-row flex-wrap justify-content-between">
             {% for collaborator in page.collaborators %}
-              {% assign currrent_collab = site.collaborators | where: "slug", collaborator | where: "locale", page.locale | first %}
-              <div class="col-5">
-                <img src="{{ currrent_collab.logo.path }}" class="img-thumbnail bg-transparent border-0" alt="{{ currrent_collab.logo.alt }}">
-              </div>
+            {% assign currrent_collab = site.collaborators | where: "slug", collaborator | where: "locale", page.locale
+            | first %}
+            <div class="col-5">
+              <img src="{{ currrent_collab.logo.path }}" class="img-thumbnail bg-transparent border-0"
+                alt="{{ currrent_collab.logo.alt }}">
+            </div>
             {% endfor %}
           </div>
         </div>
@@ -159,9 +172,9 @@ layout: base
         <p>{{ site.data[locale].project.budget }}</p>
         <h1>{{ page.budget }}€</h1>
         <div class="d-flex flex-row">
-          <hr class="hr hr-budget public-line-percentage" style="width: {{ page.public_percentage }}%;"/>
-          <hr class="hr hr-budget private-line-percentage" style="width: {{ page.private_percentage }}%;"/>
-          <hr class="hr hr-budget looking-line-percentage" style="width: {{ page.looking_finance_percentage }}%;"/>
+          <hr class="hr hr-budget public-line-percentage" style="width: {{ page.public_percentage }}%;" />
+          <hr class="hr hr-budget private-line-percentage" style="width: {{ page.private_percentage }}%;" />
+          <hr class="hr hr-budget looking-line-percentage" style="width: {{ page.looking_finance_percentage }}%;" />
         </div>
         <div class="d-flex flex-column pt-2 pb-4 percentages-budget">
           <div class="d-flex flex-row">
@@ -179,19 +192,22 @@ layout: base
         </div>
       </div>
       <div class="pb-5">
-        <a href="{{ contact_page | relative_url }}"><button class="btn btn-primary rounded-1 w-100 btn-contact-budget" aria-label="{{ site.data[locale].project.colab_btn }}">
-          {{ site.data[locale].project.colab_btn }}
-        </button></a>
+        <a href="{{ contact_page | relative_url }}"><button class="btn btn-primary rounded-1 w-100 btn-contact-budget"
+            aria-label="{{ site.data[locale].project.colab_btn }}">
+            {{ site.data[locale].project.colab_btn }}
+          </button></a>
       </div>
       <div class="d-flex flex-column">
         <h5>{{ site.data[locale].project.collaborators }}</h5>
         <div class="d-flex flex-row  align-items-center">
           <div class="d-flex flex-row flex-wrap justify-content-between">
             {% for collaborator in page.collaborators %}
-              {% assign currrent_collab = site.collaborators | where: "slug", collaborator | where: "locale", page.locale | first %}
-              <div class="col-5">
-                <img src="{{ currrent_collab.logo.path }}" class="img-thumbnail bg-transparent border-0" alt="{{ currrent_collab.logo.alt }}">
-              </div>
+            {% assign currrent_collab = site.collaborators | where: "slug", collaborator | where: "locale", page.locale
+            | first %}
+            <div class="col-5">
+              <img src="{{ currrent_collab.logo.path }}" class="img-thumbnail bg-transparent border-0"
+                alt="{{ currrent_collab.logo.alt }}">
+            </div>
             {% endfor %}
           </div>
         </div>
