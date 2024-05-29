@@ -15,7 +15,7 @@
     - label: Slug
       name: slug
       hint: "Identificador único, compartido entre los distintos idiomas"
-      widget: string          
+      widget: string
       i18n: duplicate
 
     - label: Nombre
@@ -32,14 +32,15 @@
           name: path
           widget: image
           choose_url: false
-          default: "/media/collaborators/greenpeace.png"            
+          default: "/media/collaborators/greenpeace.png"
           media_library: { config: { multiple: false } }
-          media_folder: "/media/collaborators"                 
+          media_folder: "/media/collaborators"
           i18n: duplicate
         - label: Texto alternativo a la imagen
           name: alt
           widget: string
           i18n: translate
-
-
+    - label: Web
+      name: web
+      widget: string
 {% endraw %}
