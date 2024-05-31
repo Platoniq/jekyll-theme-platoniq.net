@@ -1,0 +1,49 @@
+{% raw %}
+  - name: Pages 
+    label: Pages
+    label_singular: Page
+    folder: "_pages"
+    i18n:
+      structure: multiple_folders
+      locales: *locales
+    fields:
+      - label: Layout
+        name: layout
+        widget: hidden
+        default: common_pages 
+        i18n: duplicate
+      - label: Slug
+        name: slug
+        hint: "Identificador único, compartido entre los distintos idiomas"
+        widget: string
+        i18n: duplicate
+      - label: Título
+        name: title
+        widget: string
+        i18n: translate
+      - label: Descripción
+        name: description
+        widget: markdown
+        i18n: translate
+      - label: Image
+        name: Image
+        widget: object
+        i18n: true
+        fields:
+          - label: Imagen
+            name: path
+            widget: image
+            choose_url: false
+            default: "/media/pages/photo-1452745872182-022042dead8f.jpg"
+            media_library: { config: { multiple: false } }
+            media_folder: "/media/pages"
+            i18n: duplicate
+          - label: Texto alternativo a la imagen
+            name: alt
+            widget: string
+            i18n: translate
+      - label: Contenido de la página
+        name: body
+        widget: markdown
+        i18n: true
+{% endraw %}
