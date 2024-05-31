@@ -33,7 +33,7 @@
         i18n: translate
 
       - label: Image
-        name: Image
+        name: image
         widget: object
         i18n: true
         fields:
@@ -54,4 +54,42 @@
         name: body
         widget: markdown
         i18n: true
+
+      - label: Colaboradores
+        name: collaborators
+        widget: relation
+        collection: collaborators
+        search_fields: [title]
+        value_field: slug
+        multiple: true
+        i18n: duplicate
+
+      - label: Call To Action
+        name: call_to_action 
+        widget: object
+        i18n: true
+        fields:
+          - label: Imagen
+            name: image_path
+            widget: image
+            choose_url: false
+            default: "/media/site-symbols/info.png"
+            media_library: { config: { multiple: false } }
+            media_folder: "/media/services"
+            i18n: duplicate
+          - label: Texto alternativo a la imagen
+            name: image_alt 
+            widget: string
+            i18n: translate
+          - label: Text
+            name: text
+            widget: string
+            i18n: translate
+          - label: Url
+            name: url
+            widget: string
+            i18n: duplicate
+          - label: Url Text
+            name: url_text
+            i18n: translate
 {% endraw %}
