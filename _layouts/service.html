@@ -1,32 +1,80 @@
 ---
 layout: base
 ---
-
-<section id="breadcrumb">
-  <div class="container-lg d-lg-flex d-none flex-row">
-    {% include default/links/breadcrum_links.liquid links='footer_links' fw='fw-bold' %}  
-  </div>
-</section>
-
+{% assign state = site.states | where: "slug", page.state | where: "locale", page.locale | first %}
+{% assign locale = page.locale %}
+{% assign contact_page = site.pages | where: "slug", "contact" | where: "locale", page.locale | first %}
 
 <section id="hero">
-  <div class="container-lg d-flex flex-row">
-    <div class="w-70">
-      <h1>{{ page.title }}</h1>
-      <span>{{ page.description }}</span>
+  <div class="position-relative">
+    <div class="position-relative service-header ps-lg-5">
+      <div class="d-flex flex-column">
+        <div class="p-3 order-lg-2 pt-lg-5">
+          <h1 class="service-page-title align-self-end">{{ page.title }}</h1>
+          <p>{{ page.subtitle }}</h5>
+        </div>
+      </div>
     </div>
-    <div class="">
-      <img src={{ page.img.source }} alt={{ page.img.alt }} class="w-100" loading="lazy">
+    <div class="project_img_background">
+      <img src="{{ page.image.path }}" alt="{{ page.slug }}" class="project_header_img" loading="lazy">
     </div>
-
   </div>
 </section>
 
 
-<section id="hero" class= pb-3">
-  <div class="container-lg d-flex service-content">
+<div class="d-flex flex-lg-row flex-column">
+  <section id="service-content">
+    <div class="service_content d-flex flex-column p-lg-5 p-3">
+      <div class="ps-lg-5 pe-lg-3">
+        <div class="service-content-box">
+          {{ page.content }}
+        </div>
 
-    <span>{{ page.content }}</span>
-    
-  </div>
-</section>
+        <div class="info__box mt-5">
+          <div class="d-flex justify-content-center p-3 col-lg-3 col-3">
+            <img width="150" src="{{ page.call_to_action.image_path }}" alt="{{ page.call_to_action.image_alt}}">
+          </div>
+          <div class="info__text col-lg-6 col-9">
+            <h4>{{ page.call_to_action.text}}</h4>
+          </div>
+          <div class="p-lg-4 p-2 col-lg-3 col-12">
+            <a href="{{ contact_page | relative_url }}" class="btn info__btn w-100">
+              {{ page.call_to_action.url_text }}
+            </a>
+          </div>
+        </div>
+      </div>
+      <hr class="hr">
+      </hr>
+      <div class="d-flex flex-row align-items-center">
+        <div class="pe-2">
+          <b>{{ site.data[locale].service.share }}</b>
+        </div>
+        <div class="">
+          {% include default/social-media-share.liquid %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="sidebar" class="d-flex flex-column justify-content-between">
+    <div class="d-flex flex-column">
+      <div class="d-flex flex-column">
+        <h5>{{ site.data[locale].global.collaborators }}</h5>
+        <div class="d-flex flex-row  align-items-center">
+          <div class="d-flex flex-row flex-wrap justify-content-between">
+            {% for collaborator in page.collaborators %}
+            {% assign currrent_collab = site.collaborators | where: "slug", collaborator | where: "locale", page.locale
+            | first %}
+            <div class="col-5">
+              <img src="{{ currrent_collab.logo.path }}" class="img-thumbnail bg-transparent border-0"
+                alt="{{ currrent_collab.logo.alt }}">
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
