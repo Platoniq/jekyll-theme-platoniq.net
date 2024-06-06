@@ -23,11 +23,18 @@ layout: base
         </div>
         <span class="p-lg-3 d-lg-inline d-none order-lg-2"></span>
         <div class="p-3 p-bottom-0 order-lg-2 w-60">
-          {% if locale == "es" or locale == "cat" %}
-          <p style="font-size: 1rem;">{{ page.date | date: "%d/%m/%Y"}}</p>
-          {% elsif locale == "en" %}
-          <p style="font-size: 1rem;">{{ page.date | date: "%m/%d/%Y"}}</p>
-          {% endif %}
+          <p style="font-size: 1rem;">
+            {% assign format = "%d/%m/%Y" %}
+
+            {% if locale == "es" or locale == "cat" %}
+            {% assign format = "%d/%m/%Y" %}
+            {% endif %}
+
+            {{ page.date_start | date: format }}
+            {% if page.date_end != nil %}
+            - {{ page.date_end | date: format }}
+            {% endif %}
+          </p>
         </div>
       </div>
     </div>
