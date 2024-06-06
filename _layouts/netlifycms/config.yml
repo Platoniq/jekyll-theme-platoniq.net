@@ -2,6 +2,7 @@
 layout: none
 dir_path: netlifycms/collections/
 collections:
+  - Pages.liquid
   - Project.liquid
   - Service.liquid
   - Category.liquid
