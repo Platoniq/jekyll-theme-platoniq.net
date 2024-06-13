@@ -10,14 +10,14 @@ layout: base
   <div class="container-lg d-flex flex-wrap flex-row pb-lg-5">
 
     <div class="d-flex col-lg-5 col-8 pb-3 order-lg-2">
-      <h1 class="align-self-end h1-home">{{ site.data[locale].homepage.main.main_title }}</h1>
+      <h1 class="align-self-end h1-home">{{ page.title }}</h1>
     </div>
-    <div class="col-lg-6 col-4 order-lg-3">
-      <img src="{{ site.data[locale].homepage.main.main_img }}" alt="happy_faces" class="img-fluid" loading="lazy">
+    <div>
+      <img src="{{ page.image.path }}" alt="happy_faces" class="img-fluid" loading="lazy">
     </div>
     <div class="d-flex col-lg col-12 p-0 order-lg-1">
       <p class="align-self-center vertical-text" style="height: 40%;">
-        {{ site.data[locale].homepage.main.main_subtitle }}
+        {{ page.subtitle }}
       </p>
     </div>
   </div>
@@ -26,7 +26,7 @@ layout: base
 <section id="footer_sub_hero" class="pb-lg-5 pb-3">
   <div class="container-lg d-flex flex-column pb-lg-5">
     <div class="row align-self-center gap-3">
-      <p class="w-lg-60 pb-lg-5 mx-auto">{{ site.data[locale].homepage.main.main_description }}</p>
+      <p class="w-lg-60 pb-lg-5 mx-auto">{{ page.description }}</p>
     </div>
 
     <div class="d-flex flex-lg-row flex-column p-3 pt-lg-5">
