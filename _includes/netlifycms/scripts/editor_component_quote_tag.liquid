@@ -1,0 +1,71 @@
+{% raw %}
+
+CMS.registerEditorComponent({
+  // Internal id of the component
+  id: "quote-tag",
+  // Visible label
+  label: "Quote",
+  // Fields the user need to fill out when adding an instance of the component
+  fields: [
+    {
+      name: 'quote',
+      label: 'Cita',
+      widget: 'string'
+    },
+    {
+      name: 'author',
+      label: 'Autoría',
+      widget: 'string'
+    }
+  ],
+  // Regex pattern used to search for instances of this block in the markdown document.
+  // Patterns are run in a multline environment (against the entire markdown document),
+  // and so generally should make use of the multiline flag (`m`). If you need to capture
+  // newlines in your capturing groups, you can either use something like
+  // `([\S\s]*)`, or you can additionally enable the "dot all" flag (`s`),
+  // which will cause `(.*)` to match newlines as well.
+  //
+  // Additionally, it's recommended that you use non-greedy capturing groups (e.g.
+  // `(.*?)` vs `(.*)`), especially if matching against newline characters.
+  pattern: /{% quote ({ "author": "(.*)" } )?%}(.*){% endquote %}/,
+  // Given a RegExp Match object
+  // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
+  // return an object with one property for each field defined in `fields`.
+  //
+  // This is used to populate the custom widget in the markdown editor in the CMS.
+  fromBlock: function(match) {
+    return {
+      author: match[2],
+      quote: match[3]
+    };
+  },
+  // Given an object with one property for each field defined in `fields`,
+  // return the string you wish to be inserted into your markdown.
+  //
+  // This is used to serialize the data from the custom widget to the
+  // markdown document
+  toBlock: function(data) {
+    var author = data.author ? `{ "author": "${data.author}" } ` : "";
+
+    return `{% quote ${author}%}${data.quote}{% endquote %}`;
+  },
+  // Preview output for this component. Can either be a string or a React component
+  // (component gives better render performance)
+  toPreview: function(data) {
+    return  `
+      <figure class="pj-quote">
+        <blockquote>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" class="svg-icon-quote " alt="A quote icon">
+            <path fill-rule="evenodd" d="M38.1424149 35.8266254v-13.250774l-5.0773994-1.9814242L40 7.59133127 33.8080495 4 23.4055728 22.0804954v13.74613h14.7368421Zm-23.4055728 0v-13.250774l-5.07739938-1.9814242L16.5944272 7.59133127 10.4024768 4 0 22.0804954v13.74613h14.7368421Z"></path>
+          </svg>
+          ${data.quote}
+          <figcaption class="pj-quote-author">
+            by ${data.author}
+          </figcaption>
+        <blockquote>
+      </figure>
+     `
+  }
+});
+{% endraw %}
+

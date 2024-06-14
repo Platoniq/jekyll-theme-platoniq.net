@@ -1,0 +1,91 @@
+{% raw %}
+
+CMS.registerEditorComponent({
+  // Internal id of the component
+  id: "documents-tag",
+  // Visible label
+  label: "Lista de documentos",
+  // Fields the user need to fill out when adding an instance of the component
+  fields: [
+    {
+      name: 'title',
+      label: 'Título de la lista',
+      widget: 'string'
+    },
+    {
+      name: 'items',
+      label: 'Documentos',
+      widget: 'list',
+      summary: '{{fields.title}}',
+      fields: [
+        { label: 'Título del documento', name: 'title',  widget: 'string' },
+        { label: 'Archivo', name: 'file',  widget: 'file', default: "", media_library: { config: { multiple: false } } }
+      ]
+    }
+  ],
+  // Regex pattern used to search for instances of this block in the markdown document.
+  // Patterns are run in a multline environment (against the entire markdown document),
+  // and so generally should make use of the multiline flag (`m`). If you need to capture
+  // newlines in your capturing groups, you can either use something like
+  // `([\S\s]*)`, or you can additionally enable the "dot all" flag (`s`),
+  // which will cause `(.*)` to match newlines as well.
+  //
+  // Additionally, it's recommended that you use non-greedy capturing groups (e.g.
+  // `(.*?)` vs `(.*)`), especially if matching against newline characters.
+  pattern: /{% documents { "title": "(.*)", "items": (.*) } %}/,
+  // Given a RegExp Match object
+  // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value),
+  // return an object with one property for each field defined in `fields`.
+  //
+  // This is used to populate the custom widget in the markdown editor in the CMS.
+  fromBlock: function(match) {
+    const title = match[1];
+    const items = JSON.parse(match[2]);
+    
+    return { title, items };
+  },
+  // Given an object with one property for each field defined in `fields`,
+  // return the string you wish to be inserted into your markdown.
+  //
+  // This is used to serialize the data from the custom widget to the
+  // markdown document
+  toBlock: function(data) {
+    const items = data.items || [];
+
+    return (
+      `{% documents { "title": "${data.title}", "items": ${JSON.stringify(items)} } %}`
+    );
+  },
+  // Preview output for this component. Can either be a string or a React component
+  // (component gives better render performance)
+  toPreview: function(data) {
+    let items = data.items.map(item => {
+      return `
+        <li>
+          <a href="${item.file}" class="link link-external">
+            <span class="link__icon link__icon-left">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="m10 3.5 3 1.8c.1.4.3 1.3.7 2.5l6.7 1.8c.2 0 .3.2.4.3.1.2.1.3.1.5l-2.7 10c-.1.2-.2.3-.3.4-.1.2-.3.2-.5.2l-7.3-2c-.2 0-.3-.2-.4-.3-.1-.2-.1-.3-.1-.5l.4-1.7-3.3.9c-.2 0-.4 0-.5-.1-.2-.1-.3-.2-.3-.4L3 6.1c0-.2 0-.4.1-.5.1-.2.2-.3.4-.3L10 3.5zm4.1 5.8 1.4 5.1c0 .2 0 .3-.1.5s-.3.3-.4.3l-3.5.9-.5 1.8 6.1 1.7 1.8-6.7-1.4-2.7-3.4-.9zM8.6 5.2 4.5 6.3 7.1 16l7-1.9-1.9-7.2-2.7.8-.9-2.5z" clip-rule="evenodd"/>
+              </svg>
+            </span>
+            
+            <span class="link__label">
+              ${item.title}
+            </span>
+          </a>
+        </li>
+      `;
+    });
+
+    return  `
+      <section class="pj-links">
+        <h3>${data.title}</h3>
+        <ul>
+          ${items.join("")}
+        </ul>
+      </section>
+     `
+  }
+});
+{% endraw %}
+

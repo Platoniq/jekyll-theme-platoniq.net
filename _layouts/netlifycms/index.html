@@ -3,12 +3,14 @@ layout: none
 ---
 <!doctype html>
 <html>
+
 <head>
-  <meta charset="UTF-8" name="description"/>
+  <meta charset="UTF-8" name="description" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="{{ page.config_yml_url | relative_url }}" type="text/yaml" rel="cms-config-url">
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
+
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
@@ -25,5 +27,7 @@ layout: none
   <script>
     CMS.registerPreviewStyle("{{ '/assets/css/styles.css' | relative_url }}");
   </script>
+  <script src="{{ '/assets/js/cms.js' | relative_url }}"></script>
 </body>
+
 </html>
