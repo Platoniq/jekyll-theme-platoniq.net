@@ -31,7 +31,7 @@ layout: base
   <hr class="hr mb-5 mx-3"></hr>
 
   <div id="section_all_projects">
-    {% assign related_projects = site.projects | where: "locale", page.locale %}
+    {% assign related_projects = site.projects | sort: "state", "first" | where: "locale", page.locale %}
     {% include partials/recent_projects.liquid %} 
   </div>
   
