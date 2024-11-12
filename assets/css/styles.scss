@@ -26,5 +26,5 @@ $bp-desktop-xxl: 1520px;
 $cta-background-color: $primary;
 $button-cta-background-color: $cta-background-color;
 
-@import "bootstrap/bootstrap";
+@import "../node_modules/bootstrap/scss/bootstrap";
 @import "main";
