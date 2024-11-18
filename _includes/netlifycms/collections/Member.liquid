@@ -21,12 +21,18 @@
         name: title
         widget: string
         i18n: duplicate
-      
+
       - label: type
         name: type
         widget: select
         options: [author, colaborator]
         i18n: duplicate
+
+      - label: Order
+        name: order
+        widget: select
+        options: ["direction", "technical_team"]
+        defaults: ["technical_team"]
 
       - label: Image
         name: image

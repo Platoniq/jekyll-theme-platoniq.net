@@ -319,8 +319,16 @@ section {
     }
 }
 
+.who-name {
+    text-wrap: pretty;
+}
+
 .who-position-label {
     color: $secondary
+}
+
+.who-description {
+    text-wrap: balance;
 }
 
 .author-img-decorator {
