@@ -1,8 +1,8 @@
 {% assign locale = page.locale %}
 {% if page.slug == "projects" %}
-    {% assign limit = related_projects | size%}
+    {% assign limit = related_projects | size %}
 {% else %}
-    {%assign limit = 2 %}
+    {% assign limit = 4 %}
 {% endif %}
 
 <div class="container-lg d-flex flex-column">
