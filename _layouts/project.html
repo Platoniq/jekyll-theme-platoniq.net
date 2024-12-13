@@ -80,8 +80,8 @@ layout: base
         {% for service in page.services %}
         {% assign current_service = site.services | where: "slug", service | where: "locale", page.locale | first %}
         <div class="d-flex flex-row align-items-center">
-          <a href="#" class="project-link">
-            <spam>{{ current_service.title }}</spam>
+          <a href="{{ current_service| relative_url }}" class="project-link">
+            <span>{{ current_service.title }}</span>
           </a>
           <div class="vr m-3"></div>
         </div>
@@ -130,15 +130,15 @@ layout: base
         <div class="d-flex flex-column pt-2 pb-4 percentages-budget">
           <div class="d-flex flex-row">
             <i class="d-flex align-self-center fa-solid fa-square pe-2 private-line-percentage"></i>
-            <spam>{{ page.private_percentage }}% {{ site.data[locale].project.private }}</spam>
+            <span>{{ page.private_percentage }}% {{ site.data[locale].project.private }}</span>
           </div>
           <div class="d-flex flex-row">
             <i class=" d-flex align-self-center fa-solid fa-square pe-2 public-line-percentage"></i>
-            <spam>{{ page.public_percentage }}% {{ site.data[locale].project.public }}</spam>
+            <span>{{ page.public_percentage }}% {{ site.data[locale].project.public }}</span>
           </div>
           <div class="d-flex flex-row">
             <i class=" d-flex align-self-center fa-solid fa-square pe-2 looking-line-percentage"></i>
-            <spam>{{ page.looking_finance_percentage }}% {{ site.data[locale].project.looking }}</sp>
+            <span>{{ page.looking_finance_percentage }}% {{ site.data[locale].project.looking }}</sp>
           </div>
         </div>
       </div>
@@ -176,15 +176,15 @@ layout: base
         <div class="d-flex flex-column pt-2 pb-4 percentages-budget">
           <div class="d-flex flex-row">
             <i class="d-flex align-self-center fa-solid fa-square pe-2 private-line-percentage"></i>
-            <spam>{{ page.private_percentage }}% {{ site.data[locale].project.private }}</spam>
+            <span>{{ page.private_percentage }}% {{ site.data[locale].project.private }}</span>
           </div>
           <div class="d-flex flex-row">
             <i class=" d-flex align-self-center fa-solid fa-square pe-2 public-line-percentage"></i>
-            <spam>{{ page.public_percentage }}% {{ site.data[locale].project.public }}</spam>
+            <span>{{ page.public_percentage }}% {{ site.data[locale].project.public }}</span>
           </div>
           <div class="d-flex flex-row">
             <i class=" d-flex align-self-center fa-solid fa-square pe-2 looking-line-percentage"></i>
-            <spam>{{ page.looking_finance_percentage }}% {{ site.data[locale].project.looking }}</sp>
+            <span>{{ page.looking_finance_percentage }}% {{ site.data[locale].project.looking }}</sp>
           </div>
         </div>
       </div>
