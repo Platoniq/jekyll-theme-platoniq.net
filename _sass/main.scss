@@ -23,23 +23,30 @@ h1 strong {
 h1 {
     font-size: 7vw;
     font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
 }
 
 
 h3 {
     font-size: 2.3rem;
     font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
 }
 
 h4 {
     font-size: 2.1rem;
     font-weight: 700;
-    line-height: 2;
+    line-height: 1.2;
+    margin-bottom: 1rem;
 }
 
 h5 {
     font-size: 1.5rem;
-    font-size: 300;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
 }
 
 .h-lg-18rem {
@@ -60,6 +67,19 @@ section {
 @include media-breakpoint-up(lg) {
     h1 {
         font-size: 3vw;
+        margin-bottom: 1rem;
+    }
+
+    h3 {
+        margin-bottom: 1rem;
+    }
+
+    h4 {
+        margin-bottom: 0.75rem;
+    }
+
+    h5 {
+        margin-bottom: 0.5rem;
     }
 
     section {

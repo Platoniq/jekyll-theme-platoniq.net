@@ -4,6 +4,7 @@
 
 a {
   color: $white;
+  text-decoration: none;
 }
 
 .project-link {
@@ -12,6 +13,7 @@ a {
 
 a:hover {
   color: $primary;
+  text-decoration: underline;
 }
 
 .not-current-link {
